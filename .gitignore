@@ -34,3 +34,5 @@ __pycache__/
 *.7z
 cmake-build-*/
 
+
+/tools/

@@ -2,7 +2,7 @@ KingMod source security review - 2026-10-15
 
 Scope: static inspection of startup, process access, network requests, file writes,
 command execution, persistence indicators, embedded binaries, and build configuration.
-The game/mod/injector was not executed. This is not a guarantee that all code is safe.
+The game/mod was not executed. This is not a guarantee that all code is safe.
 
 Findings:
 - No clear RAT command channel, browser credential theft, startup persistence,
@@ -17,9 +17,7 @@ Findings:
 - Map downloads/extraction trust external services and archive parsers. The legacy
   map downloader invokes PowerShell Expand-Archive; the other path may launch an
   installed 7-Zip/WinRAR tool. These are map features, not evidence of a RAT.
-- The separate KernelInjector reads/writes another process through a kernel-driver
-  interface and creates a remote thread. It is separate from the KingMod DLL build;
-  this behavior is powerful and was not executed or certified safe.
+- The optional kernel injector and its unused driver interface have been removed.
 - Discord RPC extracts its embedded DLL to a process-specific temporary path,
   loads it for local Discord IPC and removes it during shutdown. Both bundled
   discord-rpc.dll files have valid local Authenticode signatures by Discord Inc.

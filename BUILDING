@@ -15,10 +15,6 @@ The optional standalone CMake build remains available:
   cmake -S RocketSim -B RocketSim/build -A x64
   cmake --build RocketSim/build --config Release
 
-Optional standalone injector:
-  cmake -S . -B build-injector -A x64
-  cmake --build build-injector --config Release
-
 KingMod runs without a license key or authentication server.
 Third-party notices are retained in THIRD_PARTY_NOTICES and vendor license files.
 

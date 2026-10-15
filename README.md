@@ -1,6 +1,6 @@
 <div align="center">
 
-![KingMod — public source release](showcase/banner.svg)
+![KingMod — public source release](showcase/banner.png)
 
 **A Rocket League modding workspace for customization, training, workshop maps, and local experimentation.**
 
@@ -8,7 +8,7 @@
 ![C++20](https://img.shields.io/badge/C%2B%2B-20-ef233c?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![Source release](https://img.shields.io/badge/Source-Public-171a22?style=for-the-badge&logo=github&logoColor=white)
 
-[Explore the showcase](showcase/README.md) · [Build from source](#build-from-source) · [Publish updates](#publish-updates) · [Report an issue](https://github.com/KingMod2008/KingModSourceCode/issues)
+[Explore the showcase](showcase/README.md) · [Build from source](#build-from-source) · [Report an issue](https://github.com/KingMod2008/KingModSourceCode/issues)
 
 </div>
 
@@ -76,7 +76,7 @@ Or open `KingMod.sln`, select **Release | x64**, and build the solution.
 
 **RocketSim builds automatically as a project dependency.** You do not need to find or download a separate `RocketSim.lib`. FreeType and Discord RPC build dependencies are bundled.
 
-The DLL output is normally `x64/Release/KingMod.dll`. See [BUILDING](BUILDING) for the standalone RocketSim and optional injector builds. The separate injector is not required to compile the KingMod DLL.
+The DLL output is normally `x64/Release/KingMod.dll`. See [BUILDING](BUILDING) for additional build details and the standalone RocketSim build.
 
 ### Optional integrations
 
@@ -93,36 +93,7 @@ ImGui/            Interface and rendering code
 Extensions/       Shared memory, formatting, math, and color helpers
 CollisionMeshes/  Simulation collision assets
 showcase/         Screenshots and the complete visual gallery
-tools/            Public-source publishing utility
 ```
-
-## Publish updates
-
-The included uploader targets **KingMod2008/KingModSourceCode**. It uses Git credentials already configured on your machine; no token is stored in the script. Install Python 3.10+ and Git for Windows first, and create the destination repository on GitHub if it does not exist.
-
-Preview the exact file selection offline:
-
-```powershell
-python tools/publish.py --dry-run
-```
-
-Upload the source, documentation, required bundled dependencies, and showcase:
-
-```powershell
-python tools/publish.py
-```
-
-For later updates:
-
-```powershell
-python tools/publish.py --message "Update KingMod source and showcase"
-```
-
-The uploader excludes build directories, Visual Studio caches, generated binaries, logs, archives, user settings, and common credential files. Only the bundled dependency libraries/DLLs are allowed. It checks file sizes and common credential patterns before pushing.
-
-Commits use your configured Git name and email. Use your GitHub no-reply email in Git settings if you want to keep your personal email out of public commits.
-
-Uploads happen from a temporary clone, use a normal commit and push, and preserve existing remote-only files. The tool does not force-push, rewrite history, or modify the working folder's Git configuration. If your default branch is different, pass `--branch your-branch`. It stops on access errors, missing commit identity, or a non-fast-forward push.
 
 ## Before you run a build
 
@@ -141,6 +112,7 @@ Includes RocketSim, Dear ImGui, FreeType, Bullet, Discord RPC, and other third-p
 <div align="center">
 
 **Free to download. Source to explore. KingMod.**  
+** my last word , dont forget palestine! ** 
 [Back to top ↑](#)
 
 </div>
