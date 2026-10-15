@@ -110,7 +110,7 @@ showcase/         Screenshots and the complete visual gallery
 
 This is an independent project, not affiliated with or endorsed by Psyonix or Epic Games. Review the code and applicable game rules before use. Game updates can break SDK offsets and hooks; screenshots are not a compatibility guarantee.
 
-The [security review](SECURITY_REVIEW) records the checks performed and their limits. Optional webhooks can send match data, LAN features open sockets, and debugging dumps may contain account/session information. A source review is not a guarantee of safety or antivirus clearance.
+Optional webhooks can send match data, LAN features open sockets, and debugging dumps may contain account/session information. A source review is not a guarantee of safety or antivirus clearance.
 
 ## Credits & notices
 
@@ -121,11 +121,7 @@ Includes RocketSim, Dear ImGui, FreeType, Bullet, Discord RPC, and other third-p
 ---
 
 <div align="center">
-
-**Free to download. Source to explore. KingMod.**  
-** my last word , dont forget palestine! ** 
-[Back to top ↑](#)
-
+  <p><strong>Free to download. Source to explore. KingMod.</strong></p>
+  <p><a href="#">Back to top ↑</a></p>
+  <p><strong>Don't forget Palestine! 🇵🇸</strong></p>
 </div>
-
-**Don't forget Palestine! 🇵🇸**
