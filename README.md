@@ -82,6 +82,17 @@ The DLL output is normally `x64/Release/KingMod.dll`. See [BUILDING](BUILDING) f
 
 [PublicConfig.hpp](PublicConfig.hpp) provides empty defaults for `KINGMOD_DISCORD_APPLICATION_ID` and `KINGMOD_PSYNET_SIGNING_KEY`. Configure your own values locally if you need those integrations; never publish private keys. Discord RPC and response signing remain disabled with the empty defaults.
 
+## Updating KingMod for a new game version
+
+To update KingMod after a Rocket League update, use **[RLSDKGenerator](https://github.com/KingMod2008/RLSDKGenerator)** to generate an SDK for the game version you are targeting.
+
+1. Follow the generator's README to configure and build it. Verify its discovery patterns, offsets, and layouts against your game version.
+2. Generate fresh `SDK_HEADERS` and `SDK_SOURCE` files, then compare them with the corresponding folders in KingMod's `RLSDK/` directory.
+3. Merge the updated SDK into those folders, preserving any KingMod-specific additions. Keep the Discord RPC integration in `RLSDK/RPC_DISCORD/` intact.
+4. Review KingMod's own patterns, offsets, hooks, and calls for changes, then rebuild **Release | x64** and test the affected features.
+
+Generating a fresh SDK is part of updating the mod; it does not automatically update KingMod's hooks or guarantee compatibility with a new game version.
+
 ## Find your way around
 
 ```text
