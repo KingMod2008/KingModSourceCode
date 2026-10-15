@@ -127,3 +127,5 @@ Includes RocketSim, Dear ImGui, FreeType, Bullet, Discord RPC, and other third-p
 [Back to top ↑](#)
 
 </div>
+
+**Don't forget Palestine! 🇵🇸**
