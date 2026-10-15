@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0e009492-5109-44b5-aaa9-0d7867e847d0}</ProjectGuid>
+    <RootNamespace>KingMod</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>KingMod</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <TargetName>KingMod</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <TargetName>KingMod</TargetName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <VcpkgTriplet>x64-windows-static</VcpkgTriplet>
+    <VcpkgEnabled>true</VcpkgEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <VcpkgTriplet>x64-windows-static</VcpkgTriplet>
+    <VcpkgEnabled>true</VcpkgEnabled>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;IMGUI_DEFINE_MATH_OPERATORS=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)RLSDK\RPC_DISCORD;$(ProjectDir)ImGui\freetype\include;$(ProjectDir)Detours;$(VcpkgRoot)installed\$(VcpkgTriplet)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/FS /bigobj /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>MaxSpeed</Optimization>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)ImGui\freetype;$(VcpkgRoot)installed\$(VcpkgTriplet)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib;libcurl.lib;zlib.lib;detours.lib;libcrypto.lib;libssl.lib;minhook.x64.lib;Crypt32.lib;Bcrypt.lib;Ws2_32.lib;Wldap32.lib;Iphlpapi.lib;Secur32.lib;Advapi32.lib;d3d11.lib;dxgi.lib;windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;IMGUI_DEFINE_MATH_OPERATORS=1;_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)RLSDK\RPC_DISCORD;$(ProjectDir)ImGui\freetype\include;$(ProjectDir)Detours;$(VcpkgRoot)installed\$(VcpkgTriplet)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/FS /bigobj /wd26451 /wd4309 /wd4244 /wd4267 /wd4099 /wd26495 /wd4114 /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)ImGui\freetype;$(VcpkgRoot)installed\$(VcpkgTriplet)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>freetype.lib;libcurl.lib;zlib.lib;detours.lib;libcrypto.lib;libssl.lib;minhook.x64.lib;Crypt32.lib;Bcrypt.lib;Ws2_32.lib;Wldap32.lib;Iphlpapi.lib;Secur32.lib;Advapi32.lib;d3d11.lib;dxgi.lib;windowscodecs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Components\Component.cpp" />
+    <ClCompile Include="Components\Components\Main.cpp" />
+    <ClCompile Include="Components\Components\Console.cpp" />
+    <ClCompile Include="Components\Components\DevConsole.cpp" />
+    <ClCompile Include="Components\Components\Core.cpp" />
+    <ClCompile Include="Components\Components\Events.cpp" />
+    <ClCompile Include="Components\Components\Fun.cpp" />
+    <ClCompile Include="Components\Components\GameState.cpp" />
+    <ClCompile Include="Components\Components\Instances.cpp" />
+    <ClCompile Include="Components\Components\Manager.cpp" />
+    <ClCompile Include="Components\Components\Items.cpp" />
+    <ClCompile Include="Components\Components\PsyNetCommands.cpp" />
+    <ClCompile Include="Components\Components\PsyNetDump.cpp" />
+    <ClCompile Include="Components\Components\Titles.cpp" />
+    <ClCompile Include="Components\Components\Notify.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Extensions\Extensions\Colors.cpp" />
+    <ClCompile Include="Extensions\Extensions\Formatting.cpp" />
+    <ClCompile Include="Extensions\Extensions\Math.cpp" />
+    <ClCompile Include="Extensions\Extensions\Memory.cpp" />
+    <ClCompile Include="Extensions\Extensions\UnrealMemory.cpp" />
+    <ClCompile Include="Components\Components\GUI.cpp" />
+    <ClCompile Include="Components\Components\Watermark.cpp" />
+    <ClCompile Include="Components\Components\RankChanger.cpp" />
+    <ClCompile Include="ImGui\imgui.cpp" />
+    <ClCompile Include="ImGui\imgui_demo.cpp" />
+    <ClCompile Include="ImGui\imgui_draw.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="ImGui\imgui_stdlib.cpp" />
+    <ClCompile Include="ImGui\imgui_tables.cpp" />
+    <ClCompile Include="ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="ImGui\gui_widget.cpp" />
+    <ClCompile Include="ImGui\imgui_freetype.cpp" />
+    <ClCompile Include="ImGui\blur.cpp" />
+    <ClCompile Include="ImGui\menu_avatar.cpp" />
+    <ClCompile Include="ImGui\SimpleImGuiFileBrowser.cpp" />
+    <ClCompile Include="ImGui\Kiero\kiero.cpp" />
+    <ClCompile Include="Modules\Mods\Drawing.cpp" />
+    <ClCompile Include="Modules\Mods\GameEventHook.cpp" />
+    <ClCompile Include="Modules\Mods\BallPrediction.cpp" />
+    <ClCompile Include="Modules\Mods\BallTextures.cpp" />
+    <ClCompile Include="Modules\Mods\CustomAvatar.cpp" />
+    <ClCompile Include="Modules\Mods\CustomBorder.cpp" />
+    <ClCompile Include="Modules\Mods\CustomBoostMeter.cpp" />
+    <ClCompile Include="Modules\Mods\CustomTextureStudio.cpp" />
+    <ClCompile Include="Modules\Mods\CustomCar.cpp" />
+    <ClCompile Include="Modules\Mods\CustomMatch.cpp" />
+    <ClCompile Include="Modules\Mods\FakeSpectator.cpp" />
+    <ClCompile Include="Modules\Mods\HostSync.cpp" />
+    <ClCompile Include="Modules\Mods\MatchmakingShield.cpp" />
+    <ClCompile Include="Modules\Mods\KingFeatures.cpp" />
+    <ClCompile Include="Modules\Mods\KingSync.cpp" />
+    <ClCompile Include="Modules\Mods\TAS.cpp" />
+    <ClCompile Include="Modules\Mods\Visuals\__registry.cpp" />
+    <ClCompile Include="Modules\Mods\Visuals\Tracers.cpp" />
+    <ClCompile Include="Modules\Mods\Visuals\VelocityArrows.cpp" />
+    <ClCompile Include="Modules\Mods\Visuals\PlayerDistanceText.cpp" />
+    <ClCompile Include="Modules\Mods\Visuals\OpponentBoost.cpp" />
+    <ClCompile Include="Modules\Mods\Visuals\BallSphere.cpp" />
+    <ClCompile Include="Modules\Mods\Visuals\CarHitboxes.cpp" />
+    <ClCompile Include="Modules\Module.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="RLSDK\SDK_HEADERS\Extras.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\AkAudio\AkAudio_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\Core\Core_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\Engine\Engine_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\GameDefines.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\GFxUI\GFxUI_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\IpDrv\IpDrv_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\OnlineSubsystemEOS\OnlineSubsystemEOS_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\ProjectX\ProjectX_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\TAGame\TAGame_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\WinDrv\WinDrv_classes.cpp" />
+    <ClCompile Include="RLSDK\SDK_SOURCE\XAudio2\XAudio2_classes.cpp" />
+    <ClCompile Include="RLSDK\RPC_DISCORD\KingModRPC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Components\Component.hpp" />
+    <ClInclude Include="Components\Components\Main.hpp" />
+    <ClInclude Include="Components\Components\Console.hpp" />
+    <ClInclude Include="Components\Components\DevConsole.hpp" />
+    <ClInclude Include="Components\Components\Core.hpp" />
+    <ClInclude Include="Components\Components\Events.hpp" />
+    <ClInclude Include="Components\Components\GameState.hpp" />
+    <ClInclude Include="Components\Components\GUI.hpp" />
+    <ClInclude Include="Components\Components\Titles.hpp" />
+    <ClInclude Include="Components\Components\Watermark.hpp" />
+    <ClInclude Include="Components\Components\RankChanger.hpp" />
+    <ClInclude Include="Components\Components\Instances.hpp" />
+    <ClInclude Include="Components\Components\Manager.hpp" />
+    <ClInclude Include="Components\Components\Items.hpp" />
+    <ClInclude Include="Components\Components\Fun.hpp" />
+    <ClInclude Include="Components\Includes.hpp" />
+    <ClInclude Include="Detours\detours.h" />
+    <ClInclude Include="Detours\detver.h" />
+    <ClInclude Include="Detours\syelog.h" />
+    <ClInclude Include="Extensions\Extensions\Colors.hpp" />
+    <ClInclude Include="Extensions\Extensions\Formatting.hpp" />
+    <ClInclude Include="Extensions\Extensions\Math.hpp" />
+    <ClInclude Include="Extensions\Extensions\Memory.hpp" />
+    <ClInclude Include="Extensions\Extensions\UnrealMemory.hpp" />
+    <ClInclude Include="Extensions\Includes.hpp" />
+    <ClInclude Include="GamePacket.hpp" />
+    <ClInclude Include="ImGui\imconfig.h" />
+    <ClInclude Include="ImGui\imgui.h" />
+    <ClInclude Include="ImGui\imgui_impl_dx11.h" />
+    <ClInclude Include="ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="ImGui\imgui_internal.h" />
+    <ClInclude Include="ImGui\imgui_stdlib.h" />
+    <ClInclude Include="ImGui\imstb_rectpack.h" />
+    <ClInclude Include="ImGui\imstb_textedit.h" />
+    <ClInclude Include="ImGui\imstb_truetype.h" />
+    <ClInclude Include="ImGui\gui_widget.hpp" />
+    <ClInclude Include="ImGui\imgui_freetype.h" />
+    <ClInclude Include="ImGui\blur.hpp" />
+    <ClInclude Include="ImGui\menu_avatar.hpp" />
+    <ClInclude Include="ImGui\color_t.hpp" />
+    <ClInclude Include="ImGui\hashes.hpp" />
+    <ClInclude Include="ImGui\bytes.hpp" />
+    <ClInclude Include="ImGui\SimpleImGuiFileBrowser.hpp" />
+    <ClInclude Include="ImGui\Kiero\kiero.h" />
+    <ClInclude Include="ImGui\Kiero\minhook\MinHook.h" />
+    <ClInclude Include="Modules\Includes.hpp" />
+    <ClInclude Include="Modules\Mods\Drawing.hpp" />
+    <ClInclude Include="Modules\Mods\GameEventHook.hpp" />
+    <ClInclude Include="Modules\Mods\BallPrediction.hpp" />
+    <ClInclude Include="Modules\Mods\BallTextures.hpp" />
+    <ClInclude Include="Modules\Mods\CustomAvatar.hpp" />
+    <ClInclude Include="Modules\Mods\CustomBorder.hpp" />
+    <ClInclude Include="Modules\Mods\CustomBoostMeter.hpp" />
+    <ClInclude Include="Modules\Mods\CustomTextureStudio.hpp" />
+    <ClInclude Include="Modules\Mods\CustomCar.hpp" />
+    <ClInclude Include="Modules\Mods\CustomMatch.hpp" />
+    <ClInclude Include="Modules\Mods\FakeSpectator.hpp" />
+    <ClInclude Include="Modules\Mods\HostSync.hpp" />
+    <ClInclude Include="Modules\Mods\MatchmakingShield.hpp" />
+    <ClInclude Include="Modules\Mods\KingFeatures.hpp" />
+    <ClInclude Include="Modules\Mods\KingSync.hpp" />
+    <ClInclude Include="Modules\Mods\TAS.hpp" />
+    <ClInclude Include="Modules\Mods\Visuals\Tracers.hpp" />
+    <ClInclude Include="Modules\Mods\Visuals\VelocityArrows.hpp" />
+    <ClInclude Include="Modules\Mods\Visuals\PlayerDistanceText.hpp" />
+    <ClInclude Include="Modules\Mods\Visuals\OpponentBoost.hpp" />
+    <ClInclude Include="Modules\Mods\Visuals\BallSphere.hpp" />
+    <ClInclude Include="Modules\Mods\Visuals\CarHitboxes.hpp" />
+    <ClInclude Include="Modules\Module.hpp" />
+    <ClInclude Include="PacketJson.hpp" />
+    <ClInclude Include="pch.hpp" />
+    <ClInclude Include="tiny_obj_loader.h" />
+    <ClInclude Include="RLSDK\RPC_DISCORD\KingModRPC.hpp" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Fonts\king.ttf" />
+    <None Include="Fonts\kingitalc.ttf" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)'=='x64'">
+    <ProjectReference Include="RocketSim\RocketSim.vcxproj">
+      <Project>{425E78A3-5225-4ABC-BDE2-CC6A8DD0BA71}</Project>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Components">
+      <UniqueIdentifier>{9CD36C74-B17D-507B-A09D-A87FFDE81231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Detours">
+      <UniqueIdentifier>{CE480B42-1032-5C1C-8A93-3C69668EA2A4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extensions">
+      <UniqueIdentifier>{256199CF-5C7C-5BAB-BC90-3CF3F9740F87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fonts">
+      <UniqueIdentifier>{5A156B57-161D-594C-999E-2B63F8948EAC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{11DD6B8A-AA17-5025-889E-50386817C7A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{B8E35E84-74E4-5911-B589-B7532D9CFCE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK">
+      <UniqueIdentifier>{7E8F2673-D831-529F-BC29-DE4C74F1493A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Components">
+      <UniqueIdentifier>{D6BA6921-57C8-5DBC-9FE5-3DF63DF55C92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extensions\Extensions">
+      <UniqueIdentifier>{419DCBF8-2A8F-5E46-954F-73ABA8F191CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Kiero">
+      <UniqueIdentifier>{DC59EDB9-793E-56C1-BA93-0488D64EF427}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Mods">
+      <UniqueIdentifier>{2A1B9995-BFA6-50EA-95E1-AC915D242DF9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_HEADERS">
+      <UniqueIdentifier>{28FD1EDD-A476-590A-B5A9-B02B63B59271}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE">
+      <UniqueIdentifier>{19D64172-B78F-520F-A543-36006BD0B789}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Kiero\minhook">
+      <UniqueIdentifier>{9839B3EB-86AA-5AD1-9D18-B41F89D20EC5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\Mods\Visuals">
+      <UniqueIdentifier>{9D34EE16-ECE6-5C49-85F1-0A8052679F70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\AkAudio">
+      <UniqueIdentifier>{54CB477F-1649-56E8-BF29-D4D8BF78DC04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\Core">
+      <UniqueIdentifier>{3A8300BE-7F2B-5764-85E9-CB0748F438A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\Engine">
+      <UniqueIdentifier>{BD5DACA9-D711-5599-BB58-63F7DEC3CA2E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\GFxUI">
+      <UniqueIdentifier>{E44E1C16-7D85-5E7A-B211-799422B7471E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\IpDrv">
+      <UniqueIdentifier>{E0C82C3F-0193-51AE-9B87-97DCC53C9401}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\OnlineSubsystemEOS">
+      <UniqueIdentifier>{C981A1E7-1822-50C4-8032-5E0D73B6D6D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\ProjectX">
+      <UniqueIdentifier>{8F0923CB-92FF-504E-A651-B832B98D8D22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\TAGame">
+      <UniqueIdentifier>{B4271B83-E6D3-5EB9-95FD-03B143EF268E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\WinDrv">
+      <UniqueIdentifier>{8518F9A8-A2CB-510B-9731-1E20CE656D08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RLSDK\SDK_SOURCE\XAudio2">
+      <UniqueIdentifier>{3E16D793-A091-56BE-8FB7-678B1C3ECE55}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Components\Component.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Main.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Console.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\DevConsole.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Core.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Events.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Fun.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\GameState.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Instances.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Manager.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Items.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Titles.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Notify.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Extensions\Extensions\Colors.cpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="Extensions\Extensions\Formatting.cpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="Extensions\Extensions\Math.cpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="Extensions\Extensions\Memory.cpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="Extensions\Extensions\UnrealMemory.cpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\GUI.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\Watermark.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\RankChanger.cpp">
+      <Filter>Components\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_demo.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_dx11.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_stdlib.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\gui_widget.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_freetype.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\blur.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\menu_avatar.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\SimpleImGuiFileBrowser.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\Kiero\kiero.cpp">
+      <Filter>ImGui\Kiero</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Drawing.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\GameEventHook.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\BallPrediction.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\BallTextures.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\CustomAvatar.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\CustomBorder.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\CustomBoostMeter.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\CustomTextureStudio.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\CustomCar.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\CustomMatch.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\FakeSpectator.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\HostSync.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\MatchmakingShield.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\KingFeatures.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\KingSync.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\TAS.cpp">
+      <Filter>Modules\Mods</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Visuals\__registry.cpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Visuals\Tracers.cpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Visuals\VelocityArrows.cpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Visuals\PlayerDistanceText.cpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Visuals\OpponentBoost.cpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Visuals\BallSphere.cpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Mods\Visuals\CarHitboxes.cpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Module.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="RLSDK\SDK_HEADERS\Extras.cpp">
+      <Filter>RLSDK\SDK_HEADERS</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\AkAudio\AkAudio_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\AkAudio</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\Core\Core_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\Engine\Engine_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\GameDefines.cpp">
+      <Filter>RLSDK\SDK_SOURCE</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\GFxUI\GFxUI_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\GFxUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\IpDrv\IpDrv_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\IpDrv</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\OnlineSubsystemEOS\OnlineSubsystemEOS_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\OnlineSubsystemEOS</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\ProjectX\ProjectX_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\ProjectX</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\TAGame\TAGame_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\TAGame</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\WinDrv\WinDrv_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\WinDrv</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\SDK_SOURCE\XAudio2\XAudio2_classes.cpp">
+      <Filter>RLSDK\SDK_SOURCE\XAudio2</Filter>
+    </ClCompile>
+    <ClCompile Include="RLSDK\RPC_DISCORD\KingModRPC.cpp">
+      <Filter>RLSDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Components\Components\PsyNetCommands.cpp" />
+    <ClCompile Include="Components\Components\PsyNetDump.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Components\Component.hpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Main.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Console.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\DevConsole.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Core.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Events.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\GameState.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\GUI.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Titles.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Watermark.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\RankChanger.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Instances.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Manager.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Items.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Components\Fun.hpp">
+      <Filter>Components\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Components\Includes.hpp">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Detours\detours.h">
+      <Filter>Detours</Filter>
+    </ClInclude>
+    <ClInclude Include="Detours\detver.h">
+      <Filter>Detours</Filter>
+    </ClInclude>
+    <ClInclude Include="Detours\syelog.h">
+      <Filter>Detours</Filter>
+    </ClInclude>
+    <ClInclude Include="Extensions\Extensions\Colors.hpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="Extensions\Extensions\Formatting.hpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="Extensions\Extensions\Math.hpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="Extensions\Extensions\Memory.hpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="Extensions\Extensions\UnrealMemory.hpp">
+      <Filter>Extensions\Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="Extensions\Includes.hpp">
+      <Filter>Extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePacket.hpp" />
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_dx11.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_stdlib.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\gui_widget.hpp">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_freetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\blur.hpp">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\menu_avatar.hpp">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\color_t.hpp">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\hashes.hpp">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\bytes.hpp">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\SimpleImGuiFileBrowser.hpp">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\Kiero\kiero.h">
+      <Filter>ImGui\Kiero</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\Kiero\minhook\MinHook.h">
+      <Filter>ImGui\Kiero\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Includes.hpp">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\Drawing.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\GameEventHook.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\BallPrediction.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\BallTextures.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\CustomAvatar.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\CustomBorder.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\CustomBoostMeter.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\CustomTextureStudio.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\CustomCar.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\CustomMatch.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\FakeSpectator.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\HostSync.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\MatchmakingShield.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\KingFeatures.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\KingSync.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\TAS.hpp">
+      <Filter>Modules\Mods</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\Visuals\Tracers.hpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\Visuals\VelocityArrows.hpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\Visuals\PlayerDistanceText.hpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\Visuals\OpponentBoost.hpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\Visuals\BallSphere.hpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Mods\Visuals\CarHitboxes.hpp">
+      <Filter>Modules\Mods\Visuals</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Module.hpp">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketJson.hpp" />
+    <ClInclude Include="pch.hpp" />
+    <ClInclude Include="tiny_obj_loader.h" />
+    <ClInclude Include="RLSDK\RPC_DISCORD\KingModRPC.hpp">
+      <Filter>RLSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Fonts\king.ttf">
+      <Filter>Fonts</Filter>
+    </None>
+    <None Include="Fonts\kingitalc.ttf">
+      <Filter>Fonts</Filter>
+    </None>
+  </ItemGroup>
+</Project>

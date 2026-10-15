@@ -1,0 +1,43 @@
+KingMod source security review - 2026-10-15
+
+Scope: static inspection of startup, process access, network requests, file writes,
+command execution, persistence indicators, embedded binaries, and build configuration.
+The game/mod/injector was not executed. This is not a guarantee that all code is safe.
+
+Findings:
+- No clear RAT command channel, browser credential theft, startup persistence,
+  scheduled tasks, or antivirus-tampering code was identified in reviewed custom code.
+- Removed the HTTP helper fallback that disabled TLS peer and hostname verification.
+- Optional Discord webhooks transmit match data, player names and ranks to a
+  user-configured endpoint. Default: disabled and endpoint empty.
+- Optional LAN discovery broadcasts a player name/custom tag and accepts presence
+  packets. Default: disabled. LAN hosting exposes a small status/password service.
+- PsyNet dumping writes raw game request/response bodies locally when explicitly
+  enabled. Default: disabled. These logs may contain sensitive account/session data.
+- Map downloads/extraction trust external services and archive parsers. The legacy
+  map downloader invokes PowerShell Expand-Archive; the other path may launch an
+  installed 7-Zip/WinRAR tool. These are map features, not evidence of a RAT.
+- The separate KernelInjector reads/writes another process through a kernel-driver
+  interface and creates a remote thread. It is separate from the KingMod DLL build;
+  this behavior is powerful and was not executed or certified safe.
+- Discord RPC extracts its embedded DLL to a process-specific temporary path,
+  loads it for local Discord IPC and removes it during shutdown. Both bundled
+  discord-rpc.dll files have valid local Authenticode signatures by Discord Inc.
+- The bundled FreeType static library has not been independently verified against
+  a trusted reproducible upstream build. Signatures and imports are limited evidence.
+
+Antivirus: Microsoft Defender custom scan could not run: 0x800106ba, RPC server
+unavailable. There is no successful antivirus scan or runtime sandbox result.
+
+Build fix: RocketSim is now a native Visual Studio project dependency. A standard
+Release|x64 build compiles its source and links the produced library automatically.
+
+Bundled binary SHA-256:
+ImGui\freetype\freetype.lib: 08e0c991030441f00afa6f3b703cd045055b03628463da48f6f7e85173550507
+RLSDK\RPC_DISCORD\win32-dynamic\bin\discord-rpc.dll: ef7404768c7183bdce9e46666a121a89b77be40060d0aea4d67804cf0e5ce6d8
+RLSDK\RPC_DISCORD\win32-dynamic\lib\discord-rpc.lib: 75504d8424b2e2ed85c3e5a379f2544fb5d0048219cc8f1ae1594ae661cc3640
+RLSDK\RPC_DISCORD\win64-dynamic\bin\discord-rpc.dll: 5cc2e504800cf4ed2f4781364f661ea22349658ddc391b5d54195e573109d87b
+RLSDK\RPC_DISCORD\win64-dynamic\lib\discord-rpc.lib: c4197eee324e84f668d5aa6961c6e273de9df75897b33e18bdc1f7bf0b17b4a4
+
+Validation: clean Release|x64 solution build succeeded with warnings. RocketSim.lib
+was built from the new project dependency and KingMod.dll linked successfully.

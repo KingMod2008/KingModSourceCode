@@ -1,0 +1,3163 @@
+/*
+#############################################################################################
+# Rocket League (RLSDK) SDK 261001.2867.529371
+# Generated with the RLSDKGenerator v2.4.6
+# ========================================================================================= #
+# File: ProjectX\ProjectX_structs.hpp
+# ========================================================================================= #
+# Credits: rlsdk (KingMod)
+# Links: www.github.com/KingMod2008
+#############################################################################################
+*/
+#pragma once
+
+#ifdef _MSC_VER
+#pragma pack(push, 0x8)
+#endif
+
+/*
+# ========================================================================================= #
+# Structs
+# ========================================================================================= #
+*/
+
+// ScriptStruct ProjectX._Types_X.PsyNetPersonaData
+// 0x0078
+struct FPsyNetPersonaData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PresenceInfo;                                  // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PresenceState;                                 // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPsyNetPersonaData& other) const { return memcmp(this, &other, sizeof(FPsyNetPersonaData)) == 0; }
+	bool operator!=(const FPsyNetPersonaData& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetPersonaData& other) const { return memcmp(this, &other, sizeof(FPsyNetPersonaData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.MessagePayload
+// 0x0058
+struct FMessagePayload
+{
+	class FString                                      SenderId;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      RoomId;                                        // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      MessageText;                                   // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           TimeStamp;                                     // 0x0030 (0x0008) [0x0000000000000000]               
+	int32_t                                            SequenceNumber;                                // 0x0038 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bWantsToRecord : 1;                            // 0x003C (0x0004) [0x0000000000000000] [0x00000001] 
+	EChatChannel                                       ChannelType;                                   // 0x0040 (0x0001) [0x0000000000000000]               
+	class FString                                      MessageId;                                     // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FMessagePayload& other) const { return memcmp(this, &other, sizeof(FMessagePayload)) == 0; }
+	bool operator!=(const FMessagePayload& other) const { return !(*this == other); }
+	bool operator<(const FMessagePayload& other) const { return memcmp(this, &other, sizeof(FMessagePayload)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SignedMessagePacket
+// 0x0048
+struct FSignedMessagePacket
+{
+	class FString                                      MessagePayload;                                // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Signature;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           ReceivingTimestamp;                            // 0x0020 (0x0008) [0x0000000000000000]               
+	class FString                                      SanitizedReceivedTextMessage;                  // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PublicKey;                                     // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSignedMessagePacket& other) const { return memcmp(this, &other, sizeof(FSignedMessagePacket)) == 0; }
+	bool operator!=(const FSignedMessagePacket& other) const { return !(*this == other); }
+	bool operator<(const FSignedMessagePacket& other) const { return memcmp(this, &other, sizeof(FSignedMessagePacket)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SuperRegionData
+// 0x0030
+struct FSuperRegionData
+{
+	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Label;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        SubRegions;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSuperRegionData& other) const { return memcmp(this, &other, sizeof(FSuperRegionData)) == 0; }
+	bool operator!=(const FSuperRegionData& other) const { return !(*this == other); }
+	bool operator<(const FSuperRegionData& other) const { return memcmp(this, &other, sizeof(FSuperRegionData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.RegionSecret
+// 0x0020
+struct FRegionSecret
+{
+	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Secret;                                        // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FRegionSecret& other) const { return memcmp(this, &other, sizeof(FRegionSecret)) == 0; }
+	bool operator!=(const FRegionSecret& other) const { return !(*this == other); }
+	bool operator<(const FRegionSecret& other) const { return memcmp(this, &other, sizeof(FRegionSecret)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.OnlineStatus
+// 0x0059
+struct FOnlineStatus
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PresenceInfo;                                  // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	EOnlineFriendState                                 PresenceState;                                 // 0x0058 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FOnlineStatus& other) const { return memcmp(this, &other, sizeof(FOnlineStatus)) == 0; }
+	bool operator!=(const FOnlineStatus& other) const { return !(*this == other); }
+	bool operator<(const FOnlineStatus& other) const { return memcmp(this, &other, sizeof(FOnlineStatus)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.HonorDuelChallenge
+// 0x0090
+struct FHonorDuelChallenge
+{
+	struct FUniqueNetId                                Challenger;                                    // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                Defender;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FHonorDuelChallenge& other) const { return memcmp(this, &other, sizeof(FHonorDuelChallenge)) == 0; }
+	bool operator!=(const FHonorDuelChallenge& other) const { return !(*this == other); }
+	bool operator<(const FHonorDuelChallenge& other) const { return memcmp(this, &other, sizeof(FHonorDuelChallenge)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PsyNetBeaconPartyReservation
+// 0x0010
+struct FPsyNetBeaconPartyReservation
+{
+	class TArray<struct FUniqueNetId>                  Members;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPsyNetBeaconPartyReservation& other) const { return memcmp(this, &other, sizeof(FPsyNetBeaconPartyReservation)) == 0; }
+	bool operator!=(const FPsyNetBeaconPartyReservation& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetBeaconPartyReservation& other) const { return memcmp(this, &other, sizeof(FPsyNetBeaconPartyReservation)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PsyNetBeaconPlayerReservation
+// 0x00B8
+struct FPsyNetBeaconPlayerReservation
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UNetworkEncryptionKey*                       Keys;                                          // 0x0048 (0x0008) [0x0000000000000000]               
+	class FString                                      DSConnectToken;                                // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                EpicID;                                        // 0x0060 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EpicPUID;                                      // 0x00A8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPsyNetBeaconPlayerReservation& other) const { return memcmp(this, &other, sizeof(FPsyNetBeaconPlayerReservation)) == 0; }
+	bool operator!=(const FPsyNetBeaconPlayerReservation& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetBeaconPlayerReservation& other) const { return memcmp(this, &other, sizeof(FPsyNetBeaconPlayerReservation)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PsyNetBeaconReservation
+// 0x0048
+struct FPsyNetBeaconReservation
+{
+	class FString                                      ReservationID;                                 // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	uint32_t                                           IsBackfill : 1;                                // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           IsBotMatch : 1;                                // 0x0014 (0x0004) [0x0000000000000000] [0x00000002] 
+	class TArray<class FString>                        BotNames;                                      // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FPsyNetBeaconPlayerReservation> Players;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FPsyNetBeaconPartyReservation> Parties;                                       // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPsyNetBeaconReservation& other) const { return memcmp(this, &other, sizeof(FPsyNetBeaconReservation)) == 0; }
+	bool operator!=(const FPsyNetBeaconReservation& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetBeaconReservation& other) const { return memcmp(this, &other, sizeof(FPsyNetBeaconReservation)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.GFxBlurRect
+// 0x0020
+struct FGFxBlurRect
+{
+	class FString                                      RectID;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              TopLeftX;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	float                                              TopLeftY;                                      // 0x0014 (0x0004) [0x0000000000000000]               
+	float                                              BottomRightX;                                  // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              BottomRightY;                                  // 0x001C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FGFxBlurRect& other) const { return memcmp(this, &other, sizeof(FGFxBlurRect)) == 0; }
+	bool operator!=(const FGFxBlurRect& other) const { return !(*this == other); }
+	bool operator<(const FGFxBlurRect& other) const { return memcmp(this, &other, sizeof(FGFxBlurRect)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.HTTPRequestCapturedParam
+// 0x0020
+struct FHTTPRequestCapturedParam
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Value;                                         // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FHTTPRequestCapturedParam& other) const { return memcmp(this, &other, sizeof(FHTTPRequestCapturedParam)) == 0; }
+	bool operator!=(const FHTTPRequestCapturedParam& other) const { return !(*this == other); }
+	bool operator<(const FHTTPRequestCapturedParam& other) const { return memcmp(this, &other, sizeof(FHTTPRequestCapturedParam)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ImageContent
+// 0x0018
+struct FImageContent
+{
+	int32_t                                            Width;                                         // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            Height;                                        // 0x0004 (0x0004) [0x0000000000000000]               
+	class FString                                      URL;                                           // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FImageContent& other) const { return memcmp(this, &other, sizeof(FImageContent)) == 0; }
+	bool operator!=(const FImageContent& other) const { return !(*this == other); }
+	bool operator<(const FImageContent& other) const { return memcmp(this, &other, sizeof(FImageContent)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.NewsContent
+// 0x00D4
+struct FNewsContent
+{
+	class FString                                      Title;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      DescriptionHeader;                             // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Description;                                   // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      SubDescriptionHeader;                          // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      WebURL;                                        // 0x0040 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      CarName;                                       // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FImageContent>                 Image;                                         // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FImageContent>                 Thumbnail;                                     // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      LinkType;                                      // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      InfoURL;                                       // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      InfoButtonText;                                // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EventFolderID;                                 // 0x00B0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            ShopID;                                        // 0x00C0 (0x0004) [0x0000000000000000]               
+	int32_t                                            ShopItemID;                                    // 0x00C4 (0x0004) [0x0000000000000000]               
+	int32_t                                            ProductID;                                     // 0x00C8 (0x0004) [0x0000000000000000]               
+	int32_t                                            CategoryID;                                    // 0x00CC (0x0004) [0x0000000000000000]               
+	int32_t                                            PlaylistId;                                    // 0x00D0 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FNewsContent& other) const { return memcmp(this, &other, sizeof(FNewsContent)) == 0; }
+	bool operator!=(const FNewsContent& other) const { return !(*this == other); }
+	bool operator<(const FNewsContent& other) const { return memcmp(this, &other, sizeof(FNewsContent)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.NewsPlacement
+// 0x0010
+struct FNewsPlacement
+{
+	class FString                                      TrackingId;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FNewsPlacement& other) const { return memcmp(this, &other, sizeof(FNewsPlacement)) == 0; }
+	bool operator!=(const FNewsPlacement& other) const { return !(*this == other); }
+	bool operator<(const FNewsPlacement& other) const { return memcmp(this, &other, sizeof(FNewsPlacement)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.NewsTileData
+// 0x00E8
+struct FNewsTileData
+{
+	struct FNewsContent                                ContentFields;                                 // 0x0000 (0x00D8) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FNewsPlacement>                Placements;                                    // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FNewsTileData& other) const { return memcmp(this, &other, sizeof(FNewsTileData)) == 0; }
+	bool operator!=(const FNewsTileData& other) const { return !(*this == other); }
+	bool operator<(const FNewsTileData& other) const { return memcmp(this, &other, sizeof(FNewsTileData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.MMRCompensationData
+// 0x0008
+struct FMMRCompensationData
+{
+	int32_t                                            Playlist;                                      // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            MMRCompensation;                               // 0x0004 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FMMRCompensationData& other) const { return memcmp(this, &other, sizeof(FMMRCompensationData)) == 0; }
+	bool operator!=(const FMMRCompensationData& other) const { return !(*this == other); }
+	bool operator<(const FMMRCompensationData& other) const { return memcmp(this, &other, sizeof(FMMRCompensationData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ServerReservationData
+// 0x0070
+struct FServerReservationData
+{
+	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	class FString                                      Region;                                        // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ReservationID;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      DSRToken;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UNetworkEncryptionKey*                       Keys;                                          // 0x0048 (0x0008) [0x0000000000000000]               
+	class FString                                      JoinName;                                      // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinPassword;                                  // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FServerReservationData& other) const { return memcmp(this, &other, sizeof(FServerReservationData)) == 0; }
+	bool operator!=(const FServerReservationData& other) const { return !(*this == other); }
+	bool operator<(const FServerReservationData& other) const { return memcmp(this, &other, sizeof(FServerReservationData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.CheckReservationResponse
+// 0x007C
+struct FCheckReservationResponse
+{
+	class FString                                      IP;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ServerName;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Playlist;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+	class FString                                      Region;                                        // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Host;                                          // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Port;                                          // 0x0048 (0x0004) [0x0000000000000000]               
+	class FString                                      ReservationID;                                 // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      DSConnectToken;                                // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UNetworkEncryptionKey*                       Keys;                                          // 0x0070 (0x0008) [0x0000000000000000]               
+	uint32_t                                           IsServerKey : 1;                               // 0x0078 (0x0004) [0x0000000000000000] [0x00000001] 
+
+	bool operator==(const FCheckReservationResponse& other) const { return memcmp(this, &other, sizeof(FCheckReservationResponse)) == 0; }
+	bool operator!=(const FCheckReservationResponse& other) const { return !(*this == other); }
+	bool operator<(const FCheckReservationResponse& other) const { return memcmp(this, &other, sizeof(FCheckReservationResponse)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.MapPrefs
+// 0x0020
+struct FMapPrefs
+{
+	class TArray<class FName>                          Likes;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          Dislikes;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FMapPrefs& other) const { return memcmp(this, &other, sizeof(FMapPrefs)) == 0; }
+	bool operator!=(const FMapPrefs& other) const { return !(*this == other); }
+	bool operator<(const FMapPrefs& other) const { return memcmp(this, &other, sizeof(FMapPrefs)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.RenderProfile
+// 0x0028
+struct FRenderProfile
+{
+	float                                              GameThreadTime;                                // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              RenderThreadTime;                              // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              GPUTime;                                       // 0x0008 (0x0004) [0x0000000000000000]               
+	float                                              FrameTime;                                     // 0x000C (0x0004) [0x0000000000000000]               
+	float                                              FPS;                                           // 0x0010 (0x0004) [0x0000000000000000]               
+	float                                              AccumGameThreadTime;                           // 0x0014 (0x0004) [0x0000000000000000]               
+	float                                              AccumRenderThreadTime;                         // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              AccumGPUTime;                                  // 0x001C (0x0004) [0x0000000000000000]               
+	float                                              AccumFrameTime;                                // 0x0020 (0x0004) [0x0000000000000000]               
+	int32_t                                            NumSamples;                                    // 0x0024 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FRenderProfile& other) const { return memcmp(this, &other, sizeof(FRenderProfile)) == 0; }
+	bool operator!=(const FRenderProfile& other) const { return !(*this == other); }
+	bool operator<(const FRenderProfile& other) const { return memcmp(this, &other, sizeof(FRenderProfile)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.MetricsEvent
+// 0x0070
+struct FMetricsEvent
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0020000000400000] (CPF_NeedCtorLink)
+	float                                              TimeSeconds;                                   // 0x0048 (0x0004) [0x0000000000000000]               
+	int32_t                                            Version;                                       // 0x004C (0x0004) [0x0000000000000000]               
+	class FString                                      EventName;                                     // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EventData;                                     // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FMetricsEvent& other) const { return memcmp(this, &other, sizeof(FMetricsEvent)) == 0; }
+	bool operator!=(const FMetricsEvent& other) const { return !(*this == other); }
+	bool operator<(const FMetricsEvent& other) const { return memcmp(this, &other, sizeof(FMetricsEvent)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.BumpAngleCheckConfig
+// 0x0014
+struct FBumpAngleCheckConfig
+{
+	uint32_t                                           bEnabled : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              BumpAngleYaw;                                  // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              BumpAnglePitch;                                // 0x0008 (0x0004) [0x0000000000000000]               
+	float                                              DemolishAngleYaw;                              // 0x000C (0x0004) [0x0000000000000000]               
+	float                                              DemolishAnglePitch;                            // 0x0010 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FBumpAngleCheckConfig& other) const { return memcmp(this, &other, sizeof(FBumpAngleCheckConfig)) == 0; }
+	bool operator!=(const FBumpAngleCheckConfig& other) const { return !(*this == other); }
+	bool operator<(const FBumpAngleCheckConfig& other) const { return memcmp(this, &other, sizeof(FBumpAngleCheckConfig)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.BumpAngleCurveCheckConfig
+// 0x0068
+struct FBumpAngleCurveCheckConfig
+{
+	uint32_t                                           bEnabled : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FInterpCurveFloat                           BumpAngleCurveYaw;                             // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FInterpCurveFloat                           BumpAngleCurvePitch;                           // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FInterpCurveFloat                           DemolishAngleCurveYaw;                         // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FInterpCurveFloat                           DemolishAngleCurvePitch;                       // 0x0050 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FBumpAngleCurveCheckConfig& other) const { return memcmp(this, &other, sizeof(FBumpAngleCurveCheckConfig)) == 0; }
+	bool operator!=(const FBumpAngleCurveCheckConfig& other) const { return !(*this == other); }
+	bool operator<(const FBumpAngleCurveCheckConfig& other) const { return memcmp(this, &other, sizeof(FBumpAngleCurveCheckConfig)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.CarInteractionConfig
+// 0x0104
+struct FCarInteractionConfig
+{
+	float                                              PushFactor;                                    // 0x0000 (0x0004) [0x0000000000000000]               
+	struct FInterpCurveFloat                           BumperPushFactorCurveGround;                   // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FInterpCurveFloat                           BumperPushFactorCurveAir;                      // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FInterpCurveFloat                           ZPushFactorCurve;                              // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              BumpInterval;                                  // 0x0050 (0x0004) [0x0000000000000000]               
+	struct FBumpAngleCheckConfig                       COMAngleCheck;                                 // 0x0054 (0x0014) [0x0000000000000000]               
+	struct FBumpAngleCheckConfig                       VictimHitAngleCheck;                           // 0x0068 (0x0014) [0x0000000000000000]               
+	struct FBumpAngleCheckConfig                       AttackerHitAngleCheck;                         // 0x007C (0x0014) [0x0000000000000000]               
+	struct FBumpAngleCurveCheckConfig                  VictimHitAngleCurveCheck;                      // 0x0090 (0x0068) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bCheckImpactNormal : 1;                        // 0x00F8 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              ImpactNormalDotProductDemo;                    // 0x00FC (0x0004) [0x0000000000000000]               
+	float                                              ImpactNormalDotProductBump;                    // 0x0100 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FCarInteractionConfig& other) const { return memcmp(this, &other, sizeof(FCarInteractionConfig)) == 0; }
+	bool operator!=(const FCarInteractionConfig& other) const { return !(*this == other); }
+	bool operator<(const FCarInteractionConfig& other) const { return memcmp(this, &other, sizeof(FCarInteractionConfig)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SuperSonicConfig
+// 0x000C
+struct FSuperSonicConfig
+{
+	float                                              Speed;                                         // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              TurnoffSpeedBuffer;                            // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              TurnoffTime;                                   // 0x0008 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FSuperSonicConfig& other) const { return memcmp(this, &other, sizeof(FSuperSonicConfig)) == 0; }
+	bool operator!=(const FSuperSonicConfig& other) const { return !(*this == other); }
+	bool operator<(const FSuperSonicConfig& other) const { return memcmp(this, &other, sizeof(FSuperSonicConfig)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SkillRating
+// 0x0008
+struct FSkillRating
+{
+	float                                              Mu;                                            // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              Sigma;                                         // 0x0004 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FSkillRating& other) const { return memcmp(this, &other, sizeof(FSkillRating)) == 0; }
+	bool operator!=(const FSkillRating& other) const { return !(*this == other); }
+	bool operator<(const FSkillRating& other) const { return memcmp(this, &other, sizeof(FSkillRating)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.MigrationReservationData
+// 0x0108
+struct FMigrationReservationData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EpicID;                                        // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EpicPUID;                                      // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                PartyID;                                       // 0x0078 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           ClubID;                                        // 0x00C0 (0x0008) [0x0000000000000000]               
+	EReservationStatus                                 Status;                                        // 0x00C8 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00CC (0x0004) [0x0000000000000000] [0x00000001] 
+	uint8_t                                            Team;                                          // 0x00D0 (0x0001) [0x0000000000000000]               
+	struct FSkillRating                                Skill;                                         // 0x00D4 (0x0008) [0x0000000000000000]               
+	class TArray<class FName>                          MapLikes;                                      // 0x00E0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapDislikes;                                   // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UNetworkEncryptionKey*                       SecurityKey;                                   // 0x0100 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FMigrationReservationData& other) const { return memcmp(this, &other, sizeof(FMigrationReservationData)) == 0; }
+	bool operator!=(const FMigrationReservationData& other) const { return !(*this == other); }
+	bool operator<(const FMigrationReservationData& other) const { return memcmp(this, &other, sizeof(FMigrationReservationData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ClubReplicationInfo
+// 0x0043
+struct FClubReplicationInfo
+{
+	uint64_t                                           ClubID;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bVerified : 1;                                 // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	class FName                                        EquippedTitle;                                 // 0x000C (0x0008) [0x0000000000000000]               
+	class FString                                      ClubName;                                      // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ClubTag;                                       // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PrimaryColor;                                  // 0x0038 (0x0004) [0x0000000000000000]               
+	int32_t                                            AccentColor;                                   // 0x003C (0x0004) [0x0000000000000000]               
+	EClubBadge                                         FirstBadgeTier;                                // 0x0040 (0x0001) [0x0000000000000000]               
+	EClubBadge                                         SecondBadgeTier;                               // 0x0041 (0x0001) [0x0000000000000000]               
+	EClubBadge                                         ThirdBadgeTier;                                // 0x0042 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FClubReplicationInfo& other) const { return memcmp(this, &other, sizeof(FClubReplicationInfo)) == 0; }
+	bool operator!=(const FClubReplicationInfo& other) const { return !(*this == other); }
+	bool operator<(const FClubReplicationInfo& other) const { return memcmp(this, &other, sizeof(FClubReplicationInfo)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerSeasonRewardProgress
+// 0x0050
+struct FPlayerSeasonRewardProgress
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            SeasonLevel;                                   // 0x0048 (0x0004) [0x0000000000000000]               
+	int32_t                                            SeasonLevelWins;                               // 0x004C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPlayerSeasonRewardProgress& other) const { return memcmp(this, &other, sizeof(FPlayerSeasonRewardProgress)) == 0; }
+	bool operator!=(const FPlayerSeasonRewardProgress& other) const { return !(*this == other); }
+	bool operator<(const FPlayerSeasonRewardProgress& other) const { return memcmp(this, &other, sizeof(FPlayerSeasonRewardProgress)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ReservationData
+// 0x0110
+struct FReservationData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                PartyID;                                       // 0x0058 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	EReservationStatus                                 Status;                                        // 0x00A0 (0x0001) [0x0000000000000000]               
+	float                                              TimeoutTime;                                   // 0x00A4 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
+	class APlayerReplicationInfo*                      PRI;                                           // 0x00B0 (0x0008) [0x0000000000000000]               
+	uint8_t                                            Team;                                          // 0x00B8 (0x0001) [0x0000000000000000]               
+	uint64_t                                           ClubID;                                        // 0x00C0 (0x0008) [0x0000000000000000]               
+	class UAddReservationMessage_X*                    ReservationMessage;                            // 0x00C8 (0x0008) [0x0000000000000000]               
+	class UIReservationConnection_X*                   Connection_Object;                             // 0x00D0 (0x0010) [0x0000000000000000] 
+	class UIReservationConnection_X*                   Connection_Interface;                          // 0x00D0 (0x0010) [0x0000000000000000]               
+	uint32_t                                           bIgnoreBeaconDisconnect : 1;                   // 0x00E0 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FSkillRating                                Skill;                                         // 0x00E4 (0x0008) [0x0000000000000000]               
+	class TArray<class FName>                          MapLikes;                                      // 0x00F0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapDislikes;                                   // 0x0100 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FReservationData& other) const { return memcmp(this, &other, sizeof(FReservationData)) == 0; }
+	bool operator!=(const FReservationData& other) const { return !(*this == other); }
+	bool operator<(const FReservationData& other) const { return memcmp(this, &other, sizeof(FReservationData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ActiveServerData
+// 0x00A0
+struct FActiveServerData
+{
+	struct FServerReservationData                      Reservation;                                   // 0x0000 (0x0070) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PingURL;                                       // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      GameURL;                                       // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinCredentials;                               // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FActiveServerData& other) const { return memcmp(this, &other, sizeof(FActiveServerData)) == 0; }
+	bool operator!=(const FActiveServerData& other) const { return !(*this == other); }
+	bool operator<(const FActiveServerData& other) const { return memcmp(this, &other, sizeof(FActiveServerData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.CrossplayGroup
+// 0x0010
+struct FCrossplayGroup
+{
+	class TArray<EOnlinePlatform>                      Platforms;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FCrossplayGroup& other) const { return memcmp(this, &other, sizeof(FCrossplayGroup)) == 0; }
+	bool operator!=(const FCrossplayGroup& other) const { return !(*this == other); }
+	bool operator<(const FCrossplayGroup& other) const { return memcmp(this, &other, sizeof(FCrossplayGroup)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ServerConnectionInfo
+// 0x0030
+struct FServerConnectionInfo
+{
+	class FString                                      ServerAddress;                                 // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PingAddress;                                   // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ServerName;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FServerConnectionInfo& other) const { return memcmp(this, &other, sizeof(FServerConnectionInfo)) == 0; }
+	bool operator!=(const FServerConnectionInfo& other) const { return !(*this == other); }
+	bool operator<(const FServerConnectionInfo& other) const { return memcmp(this, &other, sizeof(FServerConnectionInfo)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.TierSkillRating
+// 0x0018 (0x0008 - 0x0020)
+struct FTierSkillRating : FSkillRating
+{
+	int32_t                                            Tier;                                          // 0x0008 (0x0004) [0x0000000000000000]               
+	int32_t                                            Division;                                      // 0x000C (0x0004) [0x0000000000000000]               
+	int32_t                                            MatchesPlayed;                                 // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            PlacementMatchesPlayed;                        // 0x0014 (0x0004) [0x0000000000000000]               
+	int32_t                                            WinStreak;                                     // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              MMR;                                           // 0x001C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FTierSkillRating& other) const { return memcmp(this, &other, sizeof(FTierSkillRating)) == 0; }
+	bool operator!=(const FTierSkillRating& other) const { return !(*this == other); }
+	bool operator<(const FTierSkillRating& other) const { return memcmp(this, &other, sizeof(FTierSkillRating)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchPartyRating
+// 0x0004 (0x0020 - 0x0024)
+struct FSkillMatchPartyRating : FTierSkillRating
+{
+	int32_t                                            PartyID;                                       // 0x0020 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FSkillMatchPartyRating& other) const { return memcmp(this, &other, sizeof(FSkillMatchPartyRating)) == 0; }
+	bool operator!=(const FSkillMatchPartyRating& other) const { return !(*this == other); }
+	bool operator<(const FSkillMatchPartyRating& other) const { return memcmp(this, &other, sizeof(FSkillMatchPartyRating)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchParty
+// 0x0020
+struct FSkillMatchParty
+{
+	int32_t                                            PartyID;                                       // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              PctTimePlayed;                                 // 0x0004 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bQuitter : 1;                                  // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSkillMatchParty& other) const { return memcmp(this, &other, sizeof(FSkillMatchParty)) == 0; }
+	bool operator!=(const FSkillMatchParty& other) const { return !(*this == other); }
+	bool operator<(const FSkillMatchParty& other) const { return memcmp(this, &other, sizeof(FSkillMatchParty)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchData
+// 0x0024
+struct FSkillMatchData
+{
+	class FString                                      ServerId;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Playlist;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            WinningTeam;                                   // 0x0014 (0x0004) [0x0000000000000000]               
+	int32_t                                            Team0Score;                                    // 0x0018 (0x0004) [0x0000000000000000]               
+	int32_t                                            Team1Score;                                    // 0x001C (0x0004) [0x0000000000000000]               
+	uint32_t                                           bOverTime : 1;                                 // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+
+	bool operator==(const FSkillMatchData& other) const { return memcmp(this, &other, sizeof(FSkillMatchData)) == 0; }
+	bool operator!=(const FSkillMatchData& other) const { return !(*this == other); }
+	bool operator<(const FSkillMatchData& other) const { return memcmp(this, &other, sizeof(FSkillMatchData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ClubColorSet
+// 0x0008
+struct FClubColorSet
+{
+	uint8_t                                            TeamColorID;                                   // 0x0000 (0x0001) [0x0000000000000000]               
+	uint8_t                                            CustomColorID;                                 // 0x0001 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bTeamColorSet : 1;                             // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bCustomColorSet : 1;                           // 0x0004 (0x0004) [0x0000000000000000] [0x100000002] 
+
+	bool operator==(const FClubColorSet& other) const { return memcmp(this, &other, sizeof(FClubColorSet)) == 0; }
+	bool operator!=(const FClubColorSet& other) const { return !(*this == other); }
+	bool operator<(const FClubColorSet& other) const { return memcmp(this, &other, sizeof(FClubColorSet)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.CustomMatchTeamSettings
+// 0x001C
+struct FCustomMatchTeamSettings
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FClubColorSet                               Colors;                                        // 0x0010 (0x0008) [0x0000000000000000]               
+	int32_t                                            GameScore;                                     // 0x0018 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FCustomMatchTeamSettings& other) const { return memcmp(this, &other, sizeof(FCustomMatchTeamSettings)) == 0; }
+	bool operator!=(const FCustomMatchTeamSettings& other) const { return !(*this == other); }
+	bool operator<(const FCustomMatchTeamSettings& other) const { return memcmp(this, &other, sizeof(FCustomMatchTeamSettings)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.CustomMatchSettings
+// 0x0088
+struct FCustomMatchSettings
+{
+	class FString                                      GameTags;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FName                                        MapName;                                       // 0x0010 (0x0008) [0x0000000000000000]               
+	uint8_t                                            GameMode;                                      // 0x0018 (0x0001) [0x0000000000000000]               
+	int32_t                                            MaxPlayerCount;                                // 0x001C (0x0004) [0x0000000000000000]               
+	class FString                                      ServerName;                                    // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Password;                                      // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bPublic : 1;                                   // 0x0040 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bClubServer : 1;                               // 0x0040 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FCustomMatchTeamSettings                    TeamSettings[2];                               // 0x0048 (0x0040) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FCustomMatchSettings& other) const { return memcmp(this, &other, sizeof(FCustomMatchSettings)) == 0; }
+	bool operator!=(const FCustomMatchSettings& other) const { return !(*this == other); }
+	bool operator<(const FCustomMatchSettings& other) const { return memcmp(this, &other, sizeof(FCustomMatchSettings)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ServerResult
+// 0x00A8
+struct FServerResult
+{
+	class FString                                      Address;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ServerName;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FCustomMatchSettings                        Settings;                                      // 0x0020 (0x0088) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FServerResult& other) const { return memcmp(this, &other, sizeof(FServerResult)) == 0; }
+	bool operator!=(const FServerResult& other) const { return !(*this == other); }
+	bool operator<(const FServerResult& other) const { return memcmp(this, &other, sizeof(FServerResult)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.SkillMatchPlayer
+// 0x0060
+struct FSkillMatchPlayer
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              PctTimePlayed;                                 // 0x0048 (0x0004) [0x0000000000000000]               
+	float                                              TimePlayed;                                    // 0x004C (0x0004) [0x0000000000000000]               
+	uint32_t                                           bQuitter : 1;                                  // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	int32_t                                            PartyID;                                       // 0x0054 (0x0004) [0x0000000000000000]               
+	int32_t                                            Score;                                         // 0x0058 (0x0004) [0x0000000000000000]               
+	int32_t                                            Team;                                          // 0x005C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FSkillMatchPlayer& other) const { return memcmp(this, &other, sizeof(FSkillMatchPlayer)) == 0; }
+	bool operator!=(const FSkillMatchPlayer& other) const { return !(*this == other); }
+	bool operator<(const FSkillMatchPlayer& other) const { return memcmp(this, &other, sizeof(FSkillMatchPlayer)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ReplicatedReservationData
+// 0x0059
+struct FReplicatedReservationData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	EReservationStatus                                 Status;                                        // 0x0058 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FReplicatedReservationData& other) const { return memcmp(this, &other, sizeof(FReplicatedReservationData)) == 0; }
+	bool operator!=(const FReplicatedReservationData& other) const { return !(*this == other); }
+	bool operator<(const FReplicatedReservationData& other) const { return memcmp(this, &other, sizeof(FReplicatedReservationData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PartyJoinMatchSettings
+// 0x0058
+struct FPartyJoinMatchSettings
+{
+	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PlaylistId;                                    // 0x0010 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bFriendJoin : 1;                               // 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
+	class FString                                      CustomPassword;                                // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      ReservationID;                                 // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinName;                                      // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinPassword;                                  // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPartyJoinMatchSettings& other) const { return memcmp(this, &other, sizeof(FPartyJoinMatchSettings)) == 0; }
+	bool operator!=(const FPartyJoinMatchSettings& other) const { return !(*this == other); }
+	bool operator<(const FPartyJoinMatchSettings& other) const { return memcmp(this, &other, sizeof(FPartyJoinMatchSettings)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.JoinMatchSettings
+// 0x0020
+struct FJoinMatchSettings
+{
+	EJoinMatchType                                     MatchType;                                     // 0x0000 (0x0001) [0x0000000000000000]               
+	int32_t                                            PlaylistId;                                    // 0x0004 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bFriendJoin : 1;                               // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bMigration : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bRankedReconnect : 1;                          // 0x0008 (0x0004) [0x0000000000000000] [0x00000004] 
+	class FString                                      Password;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FJoinMatchSettings& other) const { return memcmp(this, &other, sizeof(FJoinMatchSettings)) == 0; }
+	bool operator!=(const FJoinMatchSettings& other) const { return !(*this == other); }
+	bool operator<(const FJoinMatchSettings& other) const { return memcmp(this, &other, sizeof(FJoinMatchSettings)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ReservationPlayerData
+// 0x00A0
+struct FReservationPlayerData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              SkillMu;                                       // 0x0058 (0x0004) [0x0000000000000000]               
+	float                                              SkillSigma;                                    // 0x005C (0x0004) [0x0000000000000000]               
+	int32_t                                            Tier;                                          // 0x0060 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bRemotePlayer : 1;                             // 0x0064 (0x0004) [0x0000000000000000] [0x00000001] 
+	class TArray<int32_t>                              Loadout;                                       // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapLikes;                                      // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapDislikes;                                   // 0x0088 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           ClubID;                                        // 0x0098 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FReservationPlayerData& other) const { return memcmp(this, &other, sizeof(FReservationPlayerData)) == 0; }
+	bool operator!=(const FReservationPlayerData& other) const { return !(*this == other); }
+	bool operator<(const FReservationPlayerData& other) const { return memcmp(this, &other, sizeof(FReservationPlayerData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ReplicatedRBStateNoQuat
+// 0x0038
+struct FReplicatedRBStateNoQuat
+{
+	float                                              QuatX;                                         // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              QuatY;                                         // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              QuatZ;                                         // 0x0008 (0x0004) [0x0000000000000000]               
+	float                                              QuatW;                                         // 0x000C (0x0004) [0x0000000000000000]               
+	struct FVector                                     Location;                                      // 0x0010 (0x000C) [0x0000000000000000]               
+	struct FVector                                     LinearVelocity;                                // 0x001C (0x000C) [0x0000000000000000]               
+	struct FVector                                     AngularVelocity;                               // 0x0028 (0x000C) [0x0000000000000000]               
+	uint32_t                                           bSleeping : 1;                                 // 0x0034 (0x0004) [0x0000000000000000] [0x100000001] 
+
+	bool operator==(const FReplicatedRBStateNoQuat& other) const { return memcmp(this, &other, sizeof(FReplicatedRBStateNoQuat)) == 0; }
+	bool operator!=(const FReplicatedRBStateNoQuat& other) const { return !(*this == other); }
+	bool operator<(const FReplicatedRBStateNoQuat& other) const { return memcmp(this, &other, sizeof(FReplicatedRBStateNoQuat)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ReplicatedRBState
+// 0x003C
+struct FReplicatedRBState
+{
+	struct FQuat                                       Quaternion;                                    // 0x0000 (0x0010) [0x0000000000000000]               
+	struct FVector                                     Location;                                      // 0x0010 (0x000C) [0x0000000000000000]               
+	struct FVector                                     LinearVelocity;                                // 0x001C (0x000C) [0x0000000000000000]               
+	struct FVector                                     AngularVelocity;                               // 0x0028 (0x000C) [0x0000000000000000]               
+	float                                              Time;                                          // 0x0034 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bSleeping : 1;                                 // 0x0038 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bNewData : 1;                                  // 0x0038 (0x0004) [0x0000000000000000] [0x100000002] 
+	uint8_t                                            MinStructAlignment[0x4];                         // 0x003C (0x0004) ADDED PADDING
+
+	bool operator==(const FReplicatedRBState& other) const { return memcmp(this, &other, sizeof(FReplicatedRBState)) == 0; }
+	bool operator!=(const FReplicatedRBState& other) const { return !(*this == other); }
+	bool operator<(const FReplicatedRBState& other) const { return memcmp(this, &other, sizeof(FReplicatedRBState)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerBinding
+// 0x002C
+struct FPlayerBinding
+{
+	class FName                                        Action;                                        // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	class FName                                        Key;                                           // 0x0008 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	EAxisSign                                          AxisSign;                                      // 0x0010 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	EButtonPressType                                   PressType;                                     // 0x0011 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	float                                              Speed;                                         // 0x0014 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	uint32_t                                           bRequired : 1;                                 // 0x0018 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	ERemappable                                        Remappable;                                    // 0x001C (0x0001) [0x0000000000000000]               
+	float                                              PressedTime;                                   // 0x0020 (0x0004) [0x0000000000002000] (CPF_Transient)
+	float                                              ReleasedTime;                                  // 0x0024 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint32_t                                           bTapped : 1;                                   // 0x0028 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bToggled : 1;                                  // 0x0028 (0x0004) [0x0000000000002000] [0x100000002] (CPF_Transient)
+
+	bool operator==(const FPlayerBinding& other) const { return memcmp(this, &other, sizeof(FPlayerBinding)) == 0; }
+	bool operator!=(const FPlayerBinding& other) const { return !(*this == other); }
+	bool operator<(const FPlayerBinding& other) const { return memcmp(this, &other, sizeof(FPlayerBinding)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.BindingAction
+// 0x0038
+struct FBindingAction
+{
+	class FName                                        Action;                                        // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	class FName                                        Category;                                      // 0x0008 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	class FName                                        Axis;                                          // 0x0010 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	EAxisSign                                          AxisSign;                                      // 0x0018 (0x0001) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      Command;                                       // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bDisableRemapping : 1;                         // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
+	int32_t                                            Priority;                                      // 0x0034 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FBindingAction& other) const { return memcmp(this, &other, sizeof(FBindingAction)) == 0; }
+	bool operator!=(const FBindingAction& other) const { return !(*this == other); }
+	bool operator<(const FBindingAction& other) const { return memcmp(this, &other, sizeof(FBindingAction)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlaylistTierSkillRating
+// 0x0004 (0x0020 - 0x0024)
+struct FPlaylistTierSkillRating : FTierSkillRating
+{
+	int32_t                                            Playlist;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPlaylistTierSkillRating& other) const { return memcmp(this, &other, sizeof(FPlaylistTierSkillRating)) == 0; }
+	bool operator!=(const FPlaylistTierSkillRating& other) const { return !(*this == other); }
+	bool operator<(const FPlaylistTierSkillRating& other) const { return memcmp(this, &other, sizeof(FPlaylistTierSkillRating)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerPermissions
+// 0x0010
+struct FPlayerPermissions
+{
+	EChatPermissionLevel                               TextChat;                                      // 0x0000 (0x0001) [0x0000000000000000]               
+	EChatPermissionLevel                               VoiceChat;                                     // 0x0001 (0x0001) [0x0000000000000000]               
+	ETradePermissionLevel                              Trade;                                         // 0x0002 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bRequirePinForFriends : 1;                     // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bItemShopNotificationsAllowed : 1;             // 0x0004 (0x0004) [0x0000000000000000] [0x00000002] 
+	EChatReportingLevel                                VoiceReporting;                                // 0x0008 (0x0001) [0x0000000000000000]               
+	EChatReportingLevel                                TextReporting;                                 // 0x0009 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bFilterMatureLanguage : 1;                     // 0x000C (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bEnableCPCCShowRoWModal : 1;                   // 0x000C (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bEnableCPCCShowRealPrice : 1;                  // 0x000C (0x0004) [0x0000000000000000] [0x00000004] 
+	uint32_t                                           bAllowTargetedNewsSetting_Functional : 1;      // 0x000C (0x0004) [0x0001000000000000] [0x00000008] 
+	uint32_t                                           bAllowTargetedNewsSetting_Marketing : 1;       // 0x000C (0x0004) [0x0001000000000000] [0x00000010] 
+	uint32_t                                           bAllowTargetedNewsSetting_Experience : 1;      // 0x000C (0x0004) [0x0001000000000000] [0x00000020] 
+
+	bool operator==(const FPlayerPermissions& other) const { return memcmp(this, &other, sizeof(FPlayerPermissions)) == 0; }
+	bool operator!=(const FPlayerPermissions& other) const { return !(*this == other); }
+	bool operator<(const FPlayerPermissions& other) const { return memcmp(this, &other, sizeof(FPlayerPermissions)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.RankedDisparitySettings
+// 0x000C
+struct FRankedDisparitySettings
+{
+	int32_t                                            MaximumRankDisparity;                          // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            HighestTierNewPlayersCanPlayWith;              // 0x0004 (0x0004) [0x0000000000000000]               
+	int32_t                                            HighestMuNewPlayersCanHave;                    // 0x0008 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FRankedDisparitySettings& other) const { return memcmp(this, &other, sizeof(FRankedDisparitySettings)) == 0; }
+	bool operator!=(const FRankedDisparitySettings& other) const { return !(*this == other); }
+	bool operator<(const FRankedDisparitySettings& other) const { return memcmp(this, &other, sizeof(FRankedDisparitySettings)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlaylistSkillRating
+// 0x0004 (0x0020 - 0x0024)
+struct FPlaylistSkillRating : FTierSkillRating
+{
+	int32_t                                            Playlist;                                      // 0x0020 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPlaylistSkillRating& other) const { return memcmp(this, &other, sizeof(FPlaylistSkillRating)) == 0; }
+	bool operator!=(const FPlaylistSkillRating& other) const { return !(*this == other); }
+	bool operator<(const FPlaylistSkillRating& other) const { return memcmp(this, &other, sizeof(FPlaylistSkillRating)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerSkillRating
+// 0x004C (0x0024 - 0x0070)
+struct FPlayerSkillRating : FPlaylistSkillRating
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0028 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPlayerSkillRating& other) const { return memcmp(this, &other, sizeof(FPlayerSkillRating)) == 0; }
+	bool operator!=(const FPlayerSkillRating& other) const { return !(*this == other); }
+	bool operator<(const FPlayerSkillRating& other) const { return memcmp(this, &other, sizeof(FPlayerSkillRating)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.UpdatedPlayerSkillRating
+// 0x0014 (0x0070 - 0x0084)
+struct FUpdatedPlayerSkillRating : FPlayerSkillRating
+{
+	float                                              PrevMu;                                        // 0x0070 (0x0004) [0x0000000000000000]               
+	float                                              PrevSigma;                                     // 0x0074 (0x0004) [0x0000000000000000]               
+	int32_t                                            PrevTier;                                      // 0x0078 (0x0004) [0x0000000000000000]               
+	int32_t                                            PrevDivision;                                  // 0x007C (0x0004) [0x0000000000000000]               
+	float                                              PrevMMR;                                       // 0x0080 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FUpdatedPlayerSkillRating& other) const { return memcmp(this, &other, sizeof(FUpdatedPlayerSkillRating)) == 0; }
+	bool operator!=(const FUpdatedPlayerSkillRating& other) const { return !(*this == other); }
+	bool operator<(const FUpdatedPlayerSkillRating& other) const { return memcmp(this, &other, sizeof(FUpdatedPlayerSkillRating)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.CachedRegionPing
+// 0x000C
+struct FCachedRegionPing
+{
+	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	float                                              Ping;                                          // 0x0008 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FCachedRegionPing& other) const { return memcmp(this, &other, sizeof(FCachedRegionPing)) == 0; }
+	bool operator!=(const FCachedRegionPing& other) const { return !(*this == other); }
+	bool operator<(const FCachedRegionPing& other) const { return memcmp(this, &other, sizeof(FCachedRegionPing)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PartyMemberServer
+// 0x0044
+struct FPartyMemberServer
+{
+	class FString                                      ServerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      CustomPassword;                                // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinName;                                      // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinPassword;                                  // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PlaylistId;                                    // 0x0040 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPartyMemberServer& other) const { return memcmp(this, &other, sizeof(FPartyMemberServer)) == 0; }
+	bool operator!=(const FPartyMemberServer& other) const { return !(*this == other); }
+	bool operator<(const FPartyMemberServer& other) const { return memcmp(this, &other, sizeof(FPartyMemberServer)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PartyMember
+// 0x0180
+struct FPartyMember
+{
+	struct FUniqueNetId                                PrimaryMemberId;                               // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                MemberId;                                      // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      MemberName;                                    // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            MatchmakeRestrictions;                         // 0x00A0 (0x0004) [0x0000000000000000]               
+	int32_t                                            LocalControllerId;                             // 0x00A4 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bDataLoaded : 1;                               // 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
+	int32_t                                            XpLevel;                                       // 0x00AC (0x0004) [0x0000000000000000]               
+	uint32_t                                           bCompletedChallenges : 1;                      // 0x00B0 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bLegacyPlayer : 1;                             // 0x00B0 (0x0004) [0x0000000000000000] [0x00000002] 
+	uint32_t                                           bGuestAccount : 1;                             // 0x00B0 (0x0004) [0x0000000000000000] [0x00000004] 
+	ECrossPlatformChatState                            CrossChatState;                                // 0x00B4 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bDisableCrossPlay : 1;                         // 0x00B8 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bTradingEnabled : 1;                           // 0x00B8 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FUniqueNetId                                TradingMemberId;                               // 0x00C0 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FGuid                                       TradeId;                                       // 0x0108 (0x0010) [0x0000000000000000]               
+	uint32_t                                           bReadyToLockTrade : 1;                         // 0x0118 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bReadyToConfirmTrade : 1;                      // 0x0118 (0x0004) [0x0000000000000000] [0x00000002] 
+	struct FPartyMemberServer                          Server;                                        // 0x0120 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueLobbyId                              PlatformParty;                                 // 0x0168 (0x0010) [0x0000000000000000]               
+	EChatReportingLevel                                VoiceReportingLevel;                           // 0x0178 (0x0001) [0x0000000000000000]               
+	EChatReportingLevel                                TextReportingLevel;                            // 0x0179 (0x0001) [0x0001000000000000]               
+	uint32_t                                           bAntiCheatEnabled : 1;                         // 0x017C (0x0004) [0x0001000000000000] [0x00000001] 
+
+	bool operator==(const FPartyMember& other) const { return memcmp(this, &other, sizeof(FPartyMember)) == 0; }
+	bool operator!=(const FPartyMember& other) const { return !(*this == other); }
+	bool operator<(const FPartyMember& other) const { return memcmp(this, &other, sizeof(FPartyMember)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerTitleData
+// 0x0058
+struct FPlayerTitleData
+{
+	class FName                                        Id;                                            // 0x0000 (0x0008) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      Text;                                          // 0x0008 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FName                                        Category;                                      // 0x0018 (0x0008) [0x0000000000000000]               
+	int32_t                                            SortPriority;                                  // 0x0020 (0x0004) [0x0000000000000000]               
+	struct FColor                                      Color;                                         // 0x0024 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	struct FColor                                      GlowColor;                                     // 0x0028 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	class FString                                      MarkupFragment;                                // 0x0030 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      IconTexture;                                   // 0x0040 (0x0010) [0x0001000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FName                                        StatName;                                      // 0x0050 (0x0008) [0x0001000000000000]               
+
+	bool operator==(const FPlayerTitleData& other) const { return memcmp(this, &other, sizeof(FPlayerTitleData)) == 0; }
+	bool operator!=(const FPlayerTitleData& other) const { return !(*this == other); }
+	bool operator<(const FPlayerTitleData& other) const { return memcmp(this, &other, sizeof(FPlayerTitleData)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerTitleCategory
+// 0x0028
+struct FPlayerTitleCategory
+{
+	class FName                                        Id;                                            // 0x0000 (0x0008) [0x0000000000000000]               
+	class FString                                      Color;                                         // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      GlowColor;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPlayerTitleCategory& other) const { return memcmp(this, &other, sizeof(FPlayerTitleCategory)) == 0; }
+	bool operator!=(const FPlayerTitleCategory& other) const { return !(*this == other); }
+	bool operator<(const FPlayerTitleCategory& other) const { return memcmp(this, &other, sizeof(FPlayerTitleCategory)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.LinkedAccount
+// 0x0020
+struct FLinkedAccount
+{
+	class FString                                      identityProviderId;                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      AccountId;                                     // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FLinkedAccount& other) const { return memcmp(this, &other, sizeof(FLinkedAccount)) == 0; }
+	bool operator!=(const FLinkedAccount& other) const { return !(*this == other); }
+	bool operator<(const FLinkedAccount& other) const { return memcmp(this, &other, sizeof(FLinkedAccount)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.IntVector3
+// 0x000C
+struct FIntVector3
+{
+	int32_t                                            X;                                             // 0x0000 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	int32_t                                            Y;                                             // 0x0004 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	int32_t                                            Z;                                             // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FIntVector3& other) const { return memcmp(this, &other, sizeof(FIntVector3)) == 0; }
+	bool operator!=(const FIntVector3& other) const { return !(*this == other); }
+	bool operator<(const FIntVector3& other) const { return memcmp(this, &other, sizeof(FIntVector3)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.DownloadedImage
+// 0x0018
+struct FDownloadedImage
+{
+	class FString                                      URL;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UTexture2DDynamic*                           Texture;                                       // 0x0010 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FDownloadedImage& other) const { return memcmp(this, &other, sizeof(FDownloadedImage)) == 0; }
+	bool operator!=(const FDownloadedImage& other) const { return !(*this == other); }
+	bool operator<(const FDownloadedImage& other) const { return memcmp(this, &other, sizeof(FDownloadedImage)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.ClubMember
+// 0x00B1
+struct FClubMember
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                EpicPlayerID;                                  // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      EpicPlayerName;                                // 0x00A0 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	EClubRole                                          RoleID;                                        // 0x00B0 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FClubMember& other) const { return memcmp(this, &other, sizeof(FClubMember)) == 0; }
+	bool operator!=(const FClubMember& other) const { return !(*this == other); }
+	bool operator<(const FClubMember& other) const { return memcmp(this, &other, sizeof(FClubMember)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.PlayerPermissionsList
+// 0x0058
+struct FPlayerPermissionsList
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<EOnlinePlayerPermission>              Permissions;                                   // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPlayerPermissionsList& other) const { return memcmp(this, &other, sizeof(FPlayerPermissionsList)) == 0; }
+	bool operator!=(const FPlayerPermissionsList& other) const { return !(*this == other); }
+	bool operator<(const FPlayerPermissionsList& other) const { return memcmp(this, &other, sizeof(FPlayerPermissionsList)) < 0; }
+};
+
+// ScriptStruct ProjectX._Types_X.NetStats
+// 0x000C
+struct FNetStats
+{
+	float                                              PingMin;                                       // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              Jitter;                                        // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              LossPct;                                       // 0x0008 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FNetStats& other) const { return memcmp(this, &other, sizeof(FNetStats)) == 0; }
+	bool operator!=(const FNetStats& other) const { return !(*this == other); }
+	bool operator<(const FNetStats& other) const { return memcmp(this, &other, sizeof(FNetStats)) < 0; }
+};
+
+// ScriptStruct ProjectX.SetPlayerStorageResult_X.SetPlayerStorageResultItem
+// 0x0010
+struct FSetPlayerStorageResultItem
+{
+	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
+	int32_t                                            Tick;                                          // 0x0008 (0x0004) [0x0001000000000000]               
+	uint32_t                                           bOutOfSync : 1;                                // 0x000C (0x0004) [0x0001000000000000] [0x00000001] 
+
+	bool operator==(const FSetPlayerStorageResultItem& other) const { return memcmp(this, &other, sizeof(FSetPlayerStorageResultItem)) == 0; }
+	bool operator!=(const FSetPlayerStorageResultItem& other) const { return !(*this == other); }
+	bool operator<(const FSetPlayerStorageResultItem& other) const { return memcmp(this, &other, sizeof(FSetPlayerStorageResultItem)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageQueue_X.PendingStorage
+// 0x0014
+struct FPendingStorage
+{
+	class UObject*                                     Data;                                          // 0x0000 (0x0008) [0x0001000000000000]               
+	class UClass*                                      DataClass;                                     // 0x0008 (0x0008) [0x0001000000000000]               
+	int32_t                                            Tick;                                          // 0x0010 (0x0004) [0x0001000000000000]               
+
+	bool operator==(const FPendingStorage& other) const { return memcmp(this, &other, sizeof(FPendingStorage)) == 0; }
+	bool operator!=(const FPendingStorage& other) const { return !(*this == other); }
+	bool operator<(const FPendingStorage& other) const { return memcmp(this, &other, sizeof(FPendingStorage)) < 0; }
+};
+
+// ScriptStruct ProjectX.BlockStatusReporter_X.PlayerBlockListenData
+// 0x0028
+struct FPlayerBlockListenData
+{
+	class FString                                      EpicID;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0010 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPlayerBlockListenData& other) const { return memcmp(this, &other, sizeof(FPlayerBlockListenData)) == 0; }
+	bool operator!=(const FPlayerBlockListenData& other) const { return !(*this == other); }
+	bool operator<(const FPlayerBlockListenData& other) const { return memcmp(this, &other, sizeof(FPlayerBlockListenData)) < 0; }
+};
+
+// ScriptStruct ProjectX.CabinedModeResponse.CabinedModeData
+// 0x0028
+struct FCabinedModeData
+{
+	uint32_t                                           cabinedMode : 1;                               // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	class FString                                      AccountId;                                     // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FLinkedAccount>                linkedAccounts;                                // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FCabinedModeData& other) const { return memcmp(this, &other, sizeof(FCabinedModeData)) == 0; }
+	bool operator!=(const FCabinedModeData& other) const { return !(*this == other); }
+	bool operator<(const FCabinedModeData& other) const { return memcmp(this, &other, sizeof(FCabinedModeData)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameMatchmaking_X.DSRegionInfo
+// 0x0014
+struct FDSRegionInfo
+{
+	class FString                                      Name;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Ping;                                          // 0x0010 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FDSRegionInfo& other) const { return memcmp(this, &other, sizeof(FDSRegionInfo)) == 0; }
+	bool operator!=(const FDSRegionInfo& other) const { return !(*this == other); }
+	bool operator<(const FDSRegionInfo& other) const { return memcmp(this, &other, sizeof(FDSRegionInfo)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineMessageComponent_X.OnlineMessageHandler
+// 0x0018
+struct FOnlineMessageHandler
+{
+	class UClass*                                      MessageClass;                                  // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<struct FScriptDelegate>               Delegates;                                     // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FOnlineMessageHandler& other) const { return memcmp(this, &other, sizeof(FOnlineMessageHandler)) == 0; }
+	bool operator!=(const FOnlineMessageHandler& other) const { return !(*this == other); }
+	bool operator<(const FOnlineMessageHandler& other) const { return memcmp(this, &other, sizeof(FOnlineMessageHandler)) < 0; }
+};
+
+// ScriptStruct ProjectX.PartyMessage_LocalPlayers_X.SimplePartyMember
+// 0x0058
+struct FSimplePartyMember
+{
+	struct FUniqueNetId                                MemberId;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      MemberName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSimplePartyMember& other) const { return memcmp(this, &other, sizeof(FSimplePartyMember)) == 0; }
+	bool operator!=(const FSimplePartyMember& other) const { return !(*this == other); }
+	bool operator<(const FSimplePartyMember& other) const { return memcmp(this, &other, sizeof(FSimplePartyMember)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameParty_X.PlaylistRestrictionPlayer
+// 0x004C
+struct FPlaylistRestrictionPlayer
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Tier;                                          // 0x0048 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPlaylistRestrictionPlayer& other) const { return memcmp(this, &other, sizeof(FPlaylistRestrictionPlayer)) == 0; }
+	bool operator!=(const FPlaylistRestrictionPlayer& other) const { return !(*this == other); }
+	bool operator<(const FPlaylistRestrictionPlayer& other) const { return memcmp(this, &other, sizeof(FPlaylistRestrictionPlayer)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlinePlayerFriends_X.EpicSocialTaskData
+// 0x0060
+struct FEpicSocialTaskData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnCompleteCallback;                            // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FEpicSocialTaskData& other) const { return memcmp(this, &other, sizeof(FEpicSocialTaskData)) == 0; }
+	bool operator!=(const FEpicSocialTaskData& other) const { return !(*this == other); }
+	bool operator<(const FEpicSocialTaskData& other) const { return memcmp(this, &other, sizeof(FEpicSocialTaskData)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageQueue_X.StorageMaxSize
+// 0x000C
+struct FStorageMaxSize
+{
+	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
+	int32_t                                            MaxSizeBytes;                                  // 0x0008 (0x0004) [0x0001000000000000]               
+
+	bool operator==(const FStorageMaxSize& other) const { return memcmp(this, &other, sizeof(FStorageMaxSize)) == 0; }
+	bool operator!=(const FStorageMaxSize& other) const { return !(*this == other); }
+	bool operator<(const FStorageMaxSize& other) const { return memcmp(this, &other, sizeof(FStorageMaxSize)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_PlayerStorageSet_X.SetPlayerStorageRequestItem
+// 0x0021
+struct FSetPlayerStorageRequestItem
+{
+	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
+	int32_t                                            Tick;                                          // 0x0008 (0x0004) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x000C (0x0004) [0x0001000000000000]               
+	class FString                                      Data;                                          // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	EObjectEncoding                                    Encoding;                                      // 0x0020 (0x0001) [0x0001000000000000]               
+
+	bool operator==(const FSetPlayerStorageRequestItem& other) const { return memcmp(this, &other, sizeof(FSetPlayerStorageRequestItem)) == 0; }
+	bool operator!=(const FSetPlayerStorageRequestItem& other) const { return !(*this == other); }
+	bool operator<(const FSetPlayerStorageRequestItem& other) const { return memcmp(this, &other, sizeof(FSetPlayerStorageRequestItem)) < 0; }
+};
+
+// ScriptStruct ProjectX.Parties_X.PsyNetPartyInfo
+// 0x0070
+struct FPsyNetPartyInfo
+{
+	class FString                                      PartyID;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           CreatedAt;                                     // 0x0010 (0x0008) [0x0000000000000000]               
+	struct FUniqueNetId                                CreatedByUserId;                               // 0x0018 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      JoinID;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPsyNetPartyInfo& other) const { return memcmp(this, &other, sizeof(FPsyNetPartyInfo)) == 0; }
+	bool operator!=(const FPsyNetPartyInfo& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetPartyInfo& other) const { return memcmp(this, &other, sizeof(FPsyNetPartyInfo)) < 0; }
+};
+
+// ScriptStruct ProjectX.WordFilterTypes_X.WordFilterPair
+// 0x0078
+struct FWordFilterPair
+{
+	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Key;                                           // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Value;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	EWordFilterUsage                                   Usage;                                         // 0x0030 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bPending : 1;                                  // 0x0034 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              LastRequestTime;                               // 0x0038 (0x0004) [0x0000000000000000]               
+	class UError*                                      Error;                                         // 0x0040 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0048 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ErrorCallback;                                 // 0x0060 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FWordFilterPair& other) const { return memcmp(this, &other, sizeof(FWordFilterPair)) == 0; }
+	bool operator!=(const FWordFilterPair& other) const { return !(*this == other); }
+	bool operator<(const FWordFilterPair& other) const { return memcmp(this, &other, sizeof(FWordFilterPair)) < 0; }
+};
+
+// ScriptStruct ProjectX._SharedHelpers.Orientation
+// 0x0018
+struct FOrientation
+{
+	struct FVector                                     Location;                                      // 0x0000 (0x000C) [0x0000000000000000]               
+	struct FRotator                                    Rotation;                                      // 0x000C (0x000C) [0x0000000000000000]               
+
+	bool operator==(const FOrientation& other) const { return memcmp(this, &other, sizeof(FOrientation)) == 0; }
+	bool operator!=(const FOrientation& other) const { return !(*this == other); }
+	bool operator<(const FOrientation& other) const { return memcmp(this, &other, sizeof(FOrientation)) < 0; }
+};
+
+// ScriptStruct ProjectX.AddReservationMessagePublic_X.OnlinePlayerMapPrefs
+// 0x0068
+struct FOnlinePlayerMapPrefs
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapLikes;                                      // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          MapDislikes;                                   // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FOnlinePlayerMapPrefs& other) const { return memcmp(this, &other, sizeof(FOnlinePlayerMapPrefs)) == 0; }
+	bool operator!=(const FOnlinePlayerMapPrefs& other) const { return !(*this == other); }
+	bool operator<(const FOnlinePlayerMapPrefs& other) const { return memcmp(this, &other, sizeof(FOnlinePlayerMapPrefs)) < 0; }
+};
+
+// ScriptStruct ProjectX.AnimateParametersComponent_X.AnimatedParam
+// 0x0008
+struct FAnimatedParam
+{
+	class FName                                        ParamName;                                     // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FAnimatedParam& other) const { return memcmp(this, &other, sizeof(FAnimatedParam)) == 0; }
+	bool operator!=(const FAnimatedParam& other) const { return !(*this == other); }
+	bool operator<(const FAnimatedParam& other) const { return memcmp(this, &other, sizeof(FAnimatedParam)) < 0; }
+};
+
+// ScriptStruct ProjectX.AnimateParametersComponent_X.AnimatedFloatParam
+// 0x0018 (0x0008 - 0x0020)
+struct FAnimatedFloatParam : FAnimatedParam
+{
+	struct FInterpCurveFloat                           ValueOverTime;                                 // 0x0008 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+
+	bool operator==(const FAnimatedFloatParam& other) const { return memcmp(this, &other, sizeof(FAnimatedFloatParam)) == 0; }
+	bool operator!=(const FAnimatedFloatParam& other) const { return !(*this == other); }
+	bool operator<(const FAnimatedFloatParam& other) const { return memcmp(this, &other, sizeof(FAnimatedFloatParam)) < 0; }
+};
+
+// ScriptStruct ProjectX.AnimateParametersComponent_X.AnimatedVectorParam
+// 0x0018 (0x0008 - 0x0020)
+struct FAnimatedVectorParam : FAnimatedParam
+{
+	struct FInterpCurveVector                          ValueOverTime;                                 // 0x0008 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+
+	bool operator==(const FAnimatedVectorParam& other) const { return memcmp(this, &other, sizeof(FAnimatedVectorParam)) == 0; }
+	bool operator!=(const FAnimatedVectorParam& other) const { return !(*this == other); }
+	bool operator<(const FAnimatedVectorParam& other) const { return memcmp(this, &other, sizeof(FAnimatedVectorParam)) < 0; }
+};
+
+// ScriptStruct ProjectX.AnimateParametersComponent_X.AnimatedLinearColorParam
+// 0x0018 (0x0008 - 0x0020)
+struct FAnimatedLinearColorParam : FAnimatedParam
+{
+	struct FInterpCurveLinearColor                     ValueOverTime;                                 // 0x0008 (0x0018) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+
+	bool operator==(const FAnimatedLinearColorParam& other) const { return memcmp(this, &other, sizeof(FAnimatedLinearColorParam)) == 0; }
+	bool operator!=(const FAnimatedLinearColorParam& other) const { return !(*this == other); }
+	bool operator<(const FAnimatedLinearColorParam& other) const { return memcmp(this, &other, sizeof(FAnimatedLinearColorParam)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineConfig_X.ModifierSubscription
+// 0x0038
+struct FModifierSubscription
+{
+	class UClass*                                      ObjClass;                                      // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             OnAdd;                                         // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnRemove;                                      // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FModifierSubscription& other) const { return memcmp(this, &other, sizeof(FModifierSubscription)) == 0; }
+	bool operator!=(const FModifierSubscription& other) const { return !(*this == other); }
+	bool operator<(const FModifierSubscription& other) const { return memcmp(this, &other, sizeof(FModifierSubscription)) < 0; }
+};
+
+// ScriptStruct ProjectX.AprilConfig_X.QuickChatOverridePair
+// 0x0020
+struct FQuickChatOverridePair
+{
+	class FString                                      Id;                                            // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Override;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FQuickChatOverridePair& other) const { return memcmp(this, &other, sizeof(FQuickChatOverridePair)) == 0; }
+	bool operator!=(const FQuickChatOverridePair& other) const { return !(*this == other); }
+	bool operator<(const FQuickChatOverridePair& other) const { return memcmp(this, &other, sizeof(FQuickChatOverridePair)) < 0; }
+};
+
+// ScriptStruct ProjectX.Camera_X.CameraKnockBase
+// 0x0010
+struct FCameraKnockBase
+{
+	float                                              BlendInTime;                                   // 0x0000 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              BlendOutTime;                                  // 0x0004 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              Falloff;                                       // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              Time;                                          // 0x000C (0x0004) [0x0000000000002000] (CPF_Transient)
+
+	bool operator==(const FCameraKnockBase& other) const { return memcmp(this, &other, sizeof(FCameraKnockBase)) == 0; }
+	bool operator!=(const FCameraKnockBase& other) const { return !(*this == other); }
+	bool operator<(const FCameraKnockBase& other) const { return memcmp(this, &other, sizeof(FCameraKnockBase)) < 0; }
+};
+
+// ScriptStruct ProjectX.Camera_X.CameraOrientation
+// 0x002C
+struct FCameraOrientation
+{
+	struct FVector                                     Focus;                                         // 0x0000 (0x000C) [0x0000000000000000]               
+	struct FRotator                                    Rotation;                                      // 0x000C (0x000C) [0x0000000000000000]               
+	float                                              Distance;                                      // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              FOV;                                           // 0x001C (0x0004) [0x0000000000000000]               
+	struct FVector                                     CalculatedLocation;                            // 0x0020 (0x000C) [0x0000000000000000]               
+
+	bool operator==(const FCameraOrientation& other) const { return memcmp(this, &other, sizeof(FCameraOrientation)) == 0; }
+	bool operator!=(const FCameraOrientation& other) const { return !(*this == other); }
+	bool operator<(const FCameraOrientation& other) const { return memcmp(this, &other, sizeof(FCameraOrientation)) < 0; }
+};
+
+// ScriptStruct ProjectX.CameraStateBlender_X.CameraTransition
+// 0x004C
+struct FCameraTransition
+{
+	class UCameraState_X*                              CameraState;                                   // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FViewTargetTransitionParams                 BlendParams;                                   // 0x0008 (0x0010) [0x0000000000000000]               
+	float                                              RemainingTime;                                 // 0x0018 (0x0004) [0x0000000000000000]               
+	struct FCameraOrientation                          SnapshotPOV;                                   // 0x001C (0x002C) [0x0000000000000000]               
+	uint32_t                                           bStarted : 1;                                  // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+
+	bool operator==(const FCameraTransition& other) const { return memcmp(this, &other, sizeof(FCameraTransition)) == 0; }
+	bool operator!=(const FCameraTransition& other) const { return !(*this == other); }
+	bool operator<(const FCameraTransition& other) const { return memcmp(this, &other, sizeof(FCameraTransition)) < 0; }
+};
+
+// ScriptStruct ProjectX.Camera_X.RotationCameraKnock
+// 0x000C (0x0010 - 0x001C)
+struct FRotationCameraKnock : FCameraKnockBase
+{
+	struct FRotator                                    Amount;                                        // 0x0010 (0x000C) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FRotationCameraKnock& other) const { return memcmp(this, &other, sizeof(FRotationCameraKnock)) == 0; }
+	bool operator!=(const FRotationCameraKnock& other) const { return !(*this == other); }
+	bool operator<(const FRotationCameraKnock& other) const { return memcmp(this, &other, sizeof(FRotationCameraKnock)) < 0; }
+};
+
+// ScriptStruct ProjectX.Camera_X.LocationCameraKnock
+// 0x000C (0x0010 - 0x001C)
+struct FLocationCameraKnock : FCameraKnockBase
+{
+	struct FVector                                     Amount;                                        // 0x0010 (0x000C) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FLocationCameraKnock& other) const { return memcmp(this, &other, sizeof(FLocationCameraKnock)) == 0; }
+	bool operator!=(const FLocationCameraKnock& other) const { return !(*this == other); }
+	bool operator<(const FLocationCameraKnock& other) const { return memcmp(this, &other, sizeof(FLocationCameraKnock)) < 0; }
+};
+
+// ScriptStruct ProjectX.Camera_X.VectorInterpRate
+// 0x0018
+struct FVectorInterpRate
+{
+	float                                              MaxDistance;                                   // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              InterpRate;                                    // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              ForwardScale;                                  // 0x0008 (0x0004) [0x0000000000000000]               
+	float                                              BackwardScale;                                 // 0x000C (0x0004) [0x0000000000000000]               
+	float                                              SideScale;                                     // 0x0010 (0x0004) [0x0000000000000000]               
+	float                                              UpDownScale;                                   // 0x0014 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FVectorInterpRate& other) const { return memcmp(this, &other, sizeof(FVectorInterpRate)) == 0; }
+	bool operator!=(const FVectorInterpRate& other) const { return !(*this == other); }
+	bool operator<(const FVectorInterpRate& other) const { return memcmp(this, &other, sizeof(FVectorInterpRate)) < 0; }
+};
+
+// ScriptStruct ProjectX.CheatManager_X.TestStructEvent
+// 0x0018
+struct FTestStructEvent
+{
+	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FTestStructEvent& other) const { return memcmp(this, &other, sizeof(FTestStructEvent)) == 0; }
+	bool operator!=(const FTestStructEvent& other) const { return !(*this == other); }
+	bool operator<(const FTestStructEvent& other) const { return memcmp(this, &other, sizeof(FTestStructEvent)) < 0; }
+};
+
+// ScriptStruct ProjectX.ClassPropertyConfig_X.PropertyOverride
+// 0x0030
+struct FPropertyOverride
+{
+	class FString                                      Class;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Property;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Value;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPropertyOverride& other) const { return memcmp(this, &other, sizeof(FPropertyOverride)) == 0; }
+	bool operator!=(const FPropertyOverride& other) const { return !(*this == other); }
+	bool operator<(const FPropertyOverride& other) const { return memcmp(this, &other, sizeof(FPropertyOverride)) < 0; }
+};
+
+// ScriptStruct ProjectX.ClientNetMetrics_X.PingStats
+// 0x0010
+struct FPingStats
+{
+	float                                              Min;                                           // 0x0000 (0x0004) [0x0000000000000000]               
+	float                                              Max;                                           // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              Average;                                       // 0x0008 (0x0004) [0x0000000000000000]               
+	float                                              Median;                                        // 0x000C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPingStats& other) const { return memcmp(this, &other, sizeof(FPingStats)) == 0; }
+	bool operator!=(const FPingStats& other) const { return !(*this == other); }
+	bool operator<(const FPingStats& other) const { return memcmp(this, &other, sizeof(FPingStats)) < 0; }
+};
+
+// ScriptStruct ProjectX.ClubDetails_X.StatBadge
+// 0x0009
+struct FStatBadge
+{
+	class FName                                        Stat;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	EClubBadge                                         Badge;                                         // 0x0008 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FStatBadge& other) const { return memcmp(this, &other, sizeof(FStatBadge)) == 0; }
+	bool operator!=(const FStatBadge& other) const { return !(*this == other); }
+	bool operator<(const FStatBadge& other) const { return memcmp(this, &other, sizeof(FStatBadge)) < 0; }
+};
+
+// ScriptStruct ProjectX.ColorPalette_X.ColorPosition
+// 0x0008
+struct FColorPosition
+{
+	int32_t                                            Row;                                           // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            Column;                                        // 0x0004 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FColorPosition& other) const { return memcmp(this, &other, sizeof(FColorPosition)) == 0; }
+	bool operator!=(const FColorPosition& other) const { return !(*this == other); }
+	bool operator<(const FColorPosition& other) const { return memcmp(this, &other, sizeof(FColorPosition)) < 0; }
+};
+
+// ScriptStruct ProjectX.ContentConfig_X.ContentPair
+// 0x0020
+struct FContentPair
+{
+	class FName                                        KeyName;                                       // 0x0000 (0x0008) [0x0000000000000000]               
+	class FString                                      Content;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FEncryptedKeyIndex                          Index;                                         // 0x0018 (0x0004) [0x0000000000002000] (CPF_Transient)
+	uint32_t                                           bUnreleased : 1;                               // 0x001C (0x0004) [0x0000000000002000] [0x100000001] (CPF_Transient)
+
+	bool operator==(const FContentPair& other) const { return memcmp(this, &other, sizeof(FContentPair)) == 0; }
+	bool operator!=(const FContentPair& other) const { return !(*this == other); }
+	bool operator<(const FContentPair& other) const { return memcmp(this, &other, sizeof(FContentPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.DDoSService_X.DDoSServicePayloadStruct
+// 0x0038
+struct FDDoSServicePayloadStruct
+{
+	uint32_t                                           Enabled : 1;                                   // 0x0000 (0x0004) [0x0001000000000000] [0x00000001] 
+	class FString                                      Port;                                          // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      iid;                                           // 0x0018 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        ip_addresses;                                  // 0x0028 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FDDoSServicePayloadStruct& other) const { return memcmp(this, &other, sizeof(FDDoSServicePayloadStruct)) == 0; }
+	bool operator!=(const FDDoSServicePayloadStruct& other) const { return !(*this == other); }
+	bool operator<(const FDDoSServicePayloadStruct& other) const { return memcmp(this, &other, sizeof(FDDoSServicePayloadStruct)) < 0; }
+};
+
+// ScriptStruct ProjectX.EffectsMap_X.EffectsMapping
+// 0x0010
+struct FEffectsMapping
+{
+	class UPhysicalMaterial*                           PhysicalMaterial;                              // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UParticleSystem*                             Particle;                                      // 0x0008 (0x0008) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FEffectsMapping& other) const { return memcmp(this, &other, sizeof(FEffectsMapping)) == 0; }
+	bool operator!=(const FEffectsMapping& other) const { return !(*this == other); }
+	bool operator<(const FEffectsMapping& other) const { return memcmp(this, &other, sizeof(FEffectsMapping)) < 0; }
+};
+
+// ScriptStruct ProjectX.EngineShare_X.DynamicallyLoadedPackage
+// 0x0020
+struct FDynamicallyLoadedPackage
+{
+	class FString                                      Tag;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PackageName;                                   // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FDynamicallyLoadedPackage& other) const { return memcmp(this, &other, sizeof(FDynamicallyLoadedPackage)) == 0; }
+	bool operator!=(const FDynamicallyLoadedPackage& other) const { return !(*this == other); }
+	bool operator<(const FDynamicallyLoadedPackage& other) const { return memcmp(this, &other, sizeof(FDynamicallyLoadedPackage)) < 0; }
+};
+
+// ScriptStruct ProjectX.EOS_GetAccountsResponse.EOSAccountInfo
+// 0x0038
+struct FEOSAccountInfo
+{
+	class FString                                      AccountId;                                     // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Created;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           Favorite : 1;                                  // 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
+	class FString                                      NickName;                                      // 0x0028 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FEOSAccountInfo& other) const { return memcmp(this, &other, sizeof(FEOSAccountInfo)) == 0; }
+	bool operator!=(const FEOSAccountInfo& other) const { return !(*this == other); }
+	bool operator<(const FEOSAccountInfo& other) const { return memcmp(this, &other, sizeof(FEOSAccountInfo)) < 0; }
+};
+
+// ScriptStruct ProjectX.EOS_AccountSummaryResponse.PrivacySettings
+// 0x0010
+struct FPrivacySettings
+{
+	class FString                                      ReceiveInvites;                                // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPrivacySettings& other) const { return memcmp(this, &other, sizeof(FPrivacySettings)) == 0; }
+	bool operator!=(const FPrivacySettings& other) const { return !(*this == other); }
+	bool operator<(const FPrivacySettings& other) const { return memcmp(this, &other, sizeof(FPrivacySettings)) < 0; }
+};
+
+// ScriptStruct ProjectX.EOS_AccountSummaryResponse.AccountSettings
+// 0x0010
+struct FAccountSettings
+{
+	struct FPrivacySettings                            Privacy;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FAccountSettings& other) const { return memcmp(this, &other, sizeof(FAccountSettings)) == 0; }
+	bool operator!=(const FAccountSettings& other) const { return !(*this == other); }
+	bool operator<(const FAccountSettings& other) const { return memcmp(this, &other, sizeof(FAccountSettings)) < 0; }
+};
+
+// ScriptStruct ProjectX.EOSMetrics_X.MetricEventJsonStruct
+// 0x0010
+struct FMetricEventJsonStruct
+{
+	class TArray<class UEOSMetricEvent_X*>             Events;                                        // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FMetricEventJsonStruct& other) const { return memcmp(this, &other, sizeof(FMetricEventJsonStruct)) == 0; }
+	bool operator!=(const FMetricEventJsonStruct& other) const { return !(*this == other); }
+	bool operator<(const FMetricEventJsonStruct& other) const { return memcmp(this, &other, sizeof(FMetricEventJsonStruct)) < 0; }
+};
+
+// ScriptStruct ProjectX.EpicConfig_X.ChatPermissionPair
+// 0x0011
+struct FChatPermissionPair
+{
+	class FString                                      PermissionLabel;                               // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	EChatPermissionLevel                               Level;                                         // 0x0010 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FChatPermissionPair& other) const { return memcmp(this, &other, sizeof(FChatPermissionPair)) == 0; }
+	bool operator!=(const FChatPermissionPair& other) const { return !(*this == other); }
+	bool operator<(const FChatPermissionPair& other) const { return memcmp(this, &other, sizeof(FChatPermissionPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.EpicConfig_X.TradePermissionPair
+// 0x0011
+struct FTradePermissionPair
+{
+	class FString                                      PermissionLabel;                               // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	ETradePermissionLevel                              Level;                                         // 0x0010 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FTradePermissionPair& other) const { return memcmp(this, &other, sizeof(FTradePermissionPair)) == 0; }
+	bool operator!=(const FTradePermissionPair& other) const { return !(*this == other); }
+	bool operator<(const FTradePermissionPair& other) const { return memcmp(this, &other, sizeof(FTradePermissionPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.EpicConfig_X.TradePermissionEnabledPair
+// 0x0008
+struct FTradePermissionEnabledPair
+{
+	ETradePermissionLevel                              Level;                                         // 0x0000 (0x0001) [0x0000000000000000]               
+	uint32_t                                           bEnabled : 1;                                  // 0x0004 (0x0004) [0x0000000000000000] [0x00000001] 
+
+	bool operator==(const FTradePermissionEnabledPair& other) const { return memcmp(this, &other, sizeof(FTradePermissionEnabledPair)) == 0; }
+	bool operator!=(const FTradePermissionEnabledPair& other) const { return !(*this == other); }
+	bool operator<(const FTradePermissionEnabledPair& other) const { return memcmp(this, &other, sizeof(FTradePermissionEnabledPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.EpochTimerTick_X.EpochTimer
+// 0x0020
+struct FEpochTimer
+{
+	struct FScriptDelegate                             Callback;                                      // 0x0000 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           EpochTime;                                     // 0x0018 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FEpochTimer& other) const { return memcmp(this, &other, sizeof(FEpochTimer)) == 0; }
+	bool operator!=(const FEpochTimer& other) const { return !(*this == other); }
+	bool operator<(const FEpochTimer& other) const { return memcmp(this, &other, sizeof(FEpochTimer)) < 0; }
+};
+
+// ScriptStruct ProjectX.ParameterDispenser_X.NameParamPair
+// 0x0010
+struct FNameParamPair
+{
+	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class FName                                        Value;                                         // 0x0008 (0x0008) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FNameParamPair& other) const { return memcmp(this, &other, sizeof(FNameParamPair)) == 0; }
+	bool operator!=(const FNameParamPair& other) const { return !(*this == other); }
+	bool operator<(const FNameParamPair& other) const { return memcmp(this, &other, sizeof(FNameParamPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.ParameterDispenser_X.FloatParamPair
+// 0x000C
+struct FFloatParamPair
+{
+	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	float                                              Value;                                         // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FFloatParamPair& other) const { return memcmp(this, &other, sizeof(FFloatParamPair)) == 0; }
+	bool operator!=(const FFloatParamPair& other) const { return !(*this == other); }
+	bool operator<(const FFloatParamPair& other) const { return memcmp(this, &other, sizeof(FFloatParamPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.ParameterDispenser_X.VectorParamPair
+// 0x0014
+struct FVectorParamPair
+{
+	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	struct FVector                                     Value;                                         // 0x0008 (0x000C) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FVectorParamPair& other) const { return memcmp(this, &other, sizeof(FVectorParamPair)) == 0; }
+	bool operator!=(const FVectorParamPair& other) const { return !(*this == other); }
+	bool operator<(const FVectorParamPair& other) const { return memcmp(this, &other, sizeof(FVectorParamPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.ParameterDispenser_X.ColorParamPair
+// 0x0018
+struct FColorParamPair
+{
+	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	struct FLinearColor                                Value;                                         // 0x0008 (0x0010) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FColorParamPair& other) const { return memcmp(this, &other, sizeof(FColorParamPair)) == 0; }
+	bool operator!=(const FColorParamPair& other) const { return !(*this == other); }
+	bool operator<(const FColorParamPair& other) const { return memcmp(this, &other, sizeof(FColorParamPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.ParameterDispenser_X.ActorParamPair
+// 0x0010
+struct FActorParamPair
+{
+	class FName                                        Key;                                           // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class AActor*                                      Value;                                         // 0x0008 (0x0008) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FActorParamPair& other) const { return memcmp(this, &other, sizeof(FActorParamPair)) == 0; }
+	bool operator!=(const FActorParamPair& other) const { return !(*this == other); }
+	bool operator<(const FActorParamPair& other) const { return memcmp(this, &other, sizeof(FActorParamPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.FXActor_X.AttachToParameterWithUnlockAxes
+// 0x0009
+struct FAttachToParameterWithUnlockAxes
+{
+	class FName                                        Parameter;                                     // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	EAttachActorLocationUnlockFlags                    IgnoredAxis;                                   // 0x0008 (0x0001) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FAttachToParameterWithUnlockAxes& other) const { return memcmp(this, &other, sizeof(FAttachToParameterWithUnlockAxes)) == 0; }
+	bool operator!=(const FAttachToParameterWithUnlockAxes& other) const { return !(*this == other); }
+	bool operator<(const FAttachToParameterWithUnlockAxes& other) const { return memcmp(this, &other, sizeof(FAttachToParameterWithUnlockAxes)) < 0; }
+};
+
+// ScriptStruct ProjectX.FXActor_X.FXAttachment
+// 0x012C
+struct FFXAttachment
+{
+	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class FName                                        SkeletalMeshAttachName;                        // 0x0008 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class FName                                        SocketOrBoneName;                              // 0x0010 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class FName                                        AttachToParameter;                             // 0x0018 (0x0008) [0x0000000000020001] (CPF_Edit | CPF_EditConst)
+	float                                              AttachDelay;                                   // 0x0020 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              DetachDelay;                                   // 0x0024 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	float                                              LifeTime;                                      // 0x0028 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	EFXComponentTarget                                 Target;                                        // 0x002C (0x0001) [0x0000000000000001] (CPF_Edit)    
+	class UActorComponent*                             Component;                                     // 0x0030 (0x0008) [0x0000000004080009] (CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class TArray<class UFXActorEvent_X*>               AttachAny;                                     // 0x0038 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<class UFXActorEvent_X*>               DetachAny;                                     // 0x0048 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<class UFXActorEvent_X*>               AttachAll;                                     // 0x0058 (0x0010) [0x0000000000400001] (CPF_Edit | CPF_NeedCtorLink)
+	class TArray<class URuntimeParameterBase_X*>       RuntimeParameters;                             // 0x0068 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
+	class TArray<class UFXAttachmentTraitBase_X*>      Traits;                                        // 0x0078 (0x0010) [0x0000000004400001] (CPF_Edit | CPF_NeedCtorLink | CPF_EditInline)
+	struct FAttachToParameterWithUnlockAxes            AttachToParameterActor;                        // 0x0088 (0x000C) [0x0000000000000001] (CPF_Edit)    
+	EFXOverrideAttachBehavior                          OverrideAttachBehavior;                        // 0x0094 (0x0001) [0x0000000000000001] (CPF_Edit)    
+	struct FVector                                     OverrideAttachLocationOffset;                  // 0x0098 (0x000C) [0x0000000000000001] (CPF_Edit)    
+	struct FRotator                                    OverrideAttachRotationOffset;                  // 0x00A4 (0x000C) [0x0000000000000001] (CPF_Edit)    
+	uint32_t                                           bCreateDuplicates : 1;                         // 0x00B0 (0x0004) [0x0000000000000002] [0x00000001] (CPF_Const)
+	uint32_t                                           bWantsAttachment : 1;                          // 0x00B0 (0x0004) [0x0000000000002000] [0x00000002] (CPF_Transient)
+	uint32_t                                           bInitializedTraits : 1;                        // 0x00B0 (0x0004) [0x0000000000002000] [0x00000004] (CPF_Transient)
+	uint32_t                                           bWarnedMissingSocket : 1;                      // 0x00B0 (0x0004) [0x0000000000002000] [0x00000008] (CPF_Transient)
+	uint32_t                                           bExistingComponent : 1;                        // 0x00B0 (0x0004) [0x0000000800000000] [0x00000010] (CPF_EditorOnly)
+	uint32_t                                           bExistingAttachment : 1;                       // 0x00B0 (0x0004) [0x0000000800000000] [0x00000020] (CPF_EditorOnly)
+	float                                              AttachedTime;                                  // 0x00B4 (0x0004) [0x0000000000002000] (CPF_Transient)
+	EFXComponentState                                  State;                                         // 0x00B8 (0x0001) [0x0000000000002000] (CPF_Transient)
+	float                                              WantsAttachmentChangeTime;                     // 0x00BC (0x0004) [0x0000000000002000] (CPF_Transient)
+	class USkeletalMeshComponent*                      AttachedToMesh;                                // 0x00C0 (0x0008) [0x0000000004082008] (CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline)
+	uint8_t                                            UnknownData00[0x8];                              // 0x00C8 (0x0008) MISSED OFFSET
+	struct FMatrix                                     RelativeTransform;                             // 0x00D0 (0x0040) [0x0000000000002000] (CPF_Transient)
+	int32_t                                            BoneIndex;                                     // 0x0110 (0x0004) [0x0000000000002000] (CPF_Transient)
+	class AActor*                                      AttachToActor;                                 // 0x0118 (0x0008) [0x0000000000002000] (CPF_Transient)
+	struct FVector                                     OffsetToAttachActor;                           // 0x0120 (0x000C) [0x0000000000002000] (CPF_Transient)
+	uint8_t                                            MinStructAlignment[0x4];                         // 0x012C (0x0004) ADDED PADDING
+
+	bool operator==(const FFXAttachment& other) const { return memcmp(this, &other, sizeof(FFXAttachment)) == 0; }
+	bool operator!=(const FFXAttachment& other) const { return !(*this == other); }
+	bool operator<(const FFXAttachment& other) const { return memcmp(this, &other, sizeof(FFXAttachment)) < 0; }
+};
+
+// ScriptStruct ProjectX.FXActor_X.FXActorEventCheck
+// 0x000C
+struct FFXActorEventCheck
+{
+	class UFXActorEvent_X*                             Event;                                         // 0x0000 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bHasTicked : 1;                                // 0x0008 (0x0004) [0x0000000000000000] [0x100000001] 
+
+	bool operator==(const FFXActorEventCheck& other) const { return memcmp(this, &other, sizeof(FFXActorEventCheck)) == 0; }
+	bool operator!=(const FFXActorEventCheck& other) const { return !(*this == other); }
+	bool operator<(const FFXActorEventCheck& other) const { return memcmp(this, &other, sizeof(FFXActorEventCheck)) < 0; }
+};
+
+// ScriptStruct ProjectX.FXActor_X.FXEventSubscription
+// 0x0038
+struct FFXEventSubscription
+{
+	class UFXActorEvent_X*                             Event;                                         // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             OnPushed;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             OnPopped;                                      // 0x0020 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FFXEventSubscription& other) const { return memcmp(this, &other, sizeof(FFXEventSubscription)) == 0; }
+	bool operator!=(const FFXEventSubscription& other) const { return !(*this == other); }
+	bool operator<(const FFXEventSubscription& other) const { return memcmp(this, &other, sizeof(FFXEventSubscription)) < 0; }
+};
+
+// ScriptStruct ProjectX.ExplosionHitHandler_X.ContactInformation
+// 0x001C
+struct FContactInformation
+{
+	struct FVector                                     ContactLocation;                               // 0x0000 (0x000C) [0x0000000000002000] (CPF_Transient)
+	struct FVector                                     ContactVelocity;                               // 0x000C (0x000C) [0x0000000000002000] (CPF_Transient)
+	float                                              ContactTime;                                   // 0x0018 (0x0004) [0x0000000000002000] (CPF_Transient)
+
+	bool operator==(const FContactInformation& other) const { return memcmp(this, &other, sizeof(FContactInformation)) == 0; }
+	bool operator!=(const FContactInformation& other) const { return !(*this == other); }
+	bool operator<(const FContactInformation& other) const { return memcmp(this, &other, sizeof(FContactInformation)) < 0; }
+};
+
+// ScriptStruct ProjectX.FakeData_X.FakeData1
+// 0x0035
+struct FFakeData1
+{
+	class FString                                      string1;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FName                                        name1;                                         // 0x0010 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bool1 : 1;                                     // 0x0018 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint64_t                                           qword1;                                        // 0x0020 (0x0008) [0x0000000000000000]               
+	float                                              float1;                                        // 0x0028 (0x0004) [0x0000000000000000]               
+	uint8_t                                            byte1;                                         // 0x002C (0x0001) [0x0000000000000000]               
+	int32_t                                            int1;                                          // 0x0030 (0x0004) [0x0000000000000000]               
+	EFakeDataEnum                                      enum1;                                         // 0x0034 (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FFakeData1& other) const { return memcmp(this, &other, sizeof(FFakeData1)) == 0; }
+	bool operator!=(const FFakeData1& other) const { return !(*this == other); }
+	bool operator<(const FFakeData1& other) const { return memcmp(this, &other, sizeof(FFakeData1)) < 0; }
+};
+
+// ScriptStruct ProjectX.FakeData_X.FakeData2
+// 0x0090
+struct FFakeData2
+{
+	struct FFakeData1                                  struct1;                                       // 0x0000 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      string1;                                       // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FName                                        name1;                                         // 0x0048 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bool1 : 1;                                     // 0x0050 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint64_t                                           qword1;                                        // 0x0058 (0x0008) [0x0000000000000000]               
+	float                                              float1;                                        // 0x0060 (0x0004) [0x0000000000000000]               
+	uint8_t                                            byte1;                                         // 0x0064 (0x0001) [0x0000000000000000]               
+	int32_t                                            int1;                                          // 0x0068 (0x0004) [0x0000000000000000]               
+	EFakeDataEnum                                      enum1;                                         // 0x006C (0x0001) [0x0000000000000000]               
+	class TArray<struct FFakeData1>                    array1;                                        // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        array2;                                        // 0x0080 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FFakeData2& other) const { return memcmp(this, &other, sizeof(FFakeData2)) == 0; }
+	bool operator!=(const FFakeData2& other) const { return !(*this == other); }
+	bool operator<(const FFakeData2& other) const { return memcmp(this, &other, sizeof(FFakeData2)) < 0; }
+};
+
+// ScriptStruct ProjectX.FakeData_X.FakeData3
+// 0x0130
+struct FFakeData3
+{
+	class TArray<struct FFakeData2>                    array1;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      string1;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FFakeData1                                  struct1;                                       // 0x0020 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FName                                        name1;                                         // 0x0058 (0x0008) [0x0000000000000000]               
+	class TArray<struct FFakeData2>                    array2;                                        // 0x0060 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FFakeData2>                    array3;                                        // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bool1 : 1;                                     // 0x0080 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint64_t                                           qword1;                                        // 0x0088 (0x0008) [0x0000000000000000]               
+	float                                              float1;                                        // 0x0090 (0x0004) [0x0000000000000000]               
+	uint8_t                                            byte1;                                         // 0x0094 (0x0001) [0x0000000000000000]               
+	int32_t                                            int1;                                          // 0x0098 (0x0004) [0x0000000000000000]               
+	EFakeDataEnum                                      enum1;                                         // 0x009C (0x0001) [0x0000000000000000]               
+	struct FFakeData2                                  struct2;                                       // 0x00A0 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FFakeData3& other) const { return memcmp(this, &other, sizeof(FFakeData3)) == 0; }
+	bool operator!=(const FFakeData3& other) const { return !(*this == other); }
+	bool operator<(const FFakeData3& other) const { return memcmp(this, &other, sizeof(FFakeData3)) < 0; }
+};
+
+// ScriptStruct ProjectX.FakeData_X.FakeData4
+// 0x011D
+struct FFakeData4
+{
+	struct FFakeData2                                  struct2;                                       // 0x0000 (0x0090) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FFakeData3>                    array1;                                        // 0x0090 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FFakeData1                                  struct1;                                       // 0x00A0 (0x0038) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FFakeData2>                    array2;                                        // 0x00D8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      string1;                                       // 0x00E8 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FName                                        name1;                                         // 0x00F8 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bool1 : 1;                                     // 0x0100 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint64_t                                           qword1;                                        // 0x0108 (0x0008) [0x0000000000000000]               
+	float                                              float1;                                        // 0x0110 (0x0004) [0x0000000000000000]               
+	uint8_t                                            byte1;                                         // 0x0114 (0x0001) [0x0000000000000000]               
+	int32_t                                            int1;                                          // 0x0118 (0x0004) [0x0000000000000000]               
+	EFakeDataEnum                                      enum1;                                         // 0x011C (0x0001) [0x0000000000000000]               
+
+	bool operator==(const FFakeData4& other) const { return memcmp(this, &other, sizeof(FFakeData4)) == 0; }
+	bool operator!=(const FFakeData4& other) const { return !(*this == other); }
+	bool operator<(const FFakeData4& other) const { return memcmp(this, &other, sizeof(FFakeData4)) < 0; }
+};
+
+// ScriptStruct ProjectX.GameInfo_X.PauserData
+// 0x000C
+struct FPauserData
+{
+	class APlayerController*                           PC;                                            // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            PauseNum;                                      // 0x0008 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPauserData& other) const { return memcmp(this, &other, sizeof(FPauserData)) == 0; }
+	bool operator!=(const FPauserData& other) const { return !(*this == other); }
+	bool operator<(const FPauserData& other) const { return memcmp(this, &other, sizeof(FPauserData)) < 0; }
+};
+
+// ScriptStruct ProjectX.GameSettingConfig_X.GameSettingHidingOverride
+// 0x000C
+struct FGameSettingHidingOverride
+{
+	class FName                                        SettingName;                                   // 0x0000 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bHidden : 1;                                   // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+
+	bool operator==(const FGameSettingHidingOverride& other) const { return memcmp(this, &other, sizeof(FGameSettingHidingOverride)) == 0; }
+	bool operator!=(const FGameSettingHidingOverride& other) const { return !(*this == other); }
+	bool operator<(const FGameSettingHidingOverride& other) const { return memcmp(this, &other, sizeof(FGameSettingHidingOverride)) < 0; }
+};
+
+// ScriptStruct ProjectX.GFxDataStore_X.GFxDataStoreColumn
+// 0x000C
+struct FGFxDataStoreColumn
+{
+	EASType                                            Type;                                          // 0x0000 (0x0001) [0x0000000000000000]               
+	class FName                                        Name;                                          // 0x0004 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FGFxDataStoreColumn& other) const { return memcmp(this, &other, sizeof(FGFxDataStoreColumn)) == 0; }
+	bool operator!=(const FGFxDataStoreColumn& other) const { return !(*this == other); }
+	bool operator<(const FGFxDataStoreColumn& other) const { return memcmp(this, &other, sizeof(FGFxDataStoreColumn)) < 0; }
+};
+
+// ScriptStruct ProjectX.GFxDataStore_X.GFxDataStoreRow
+// 0x0018
+struct FGFxDataStoreRow
+{
+	class TArray<struct FASValue>                      Values;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UGFxDataRow_X*                               BoundObject;                                   // 0x0010 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FGFxDataStoreRow& other) const { return memcmp(this, &other, sizeof(FGFxDataStoreRow)) == 0; }
+	bool operator!=(const FGFxDataStoreRow& other) const { return !(*this == other); }
+	bool operator<(const FGFxDataStoreRow& other) const { return memcmp(this, &other, sizeof(FGFxDataStoreRow)) < 0; }
+};
+
+// ScriptStruct ProjectX.GFxDataStore_X.GFxDataStoreTable
+// 0x0080
+struct FGFxDataStoreTable
+{
+	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<struct FGFxDataStoreColumn>           Columns;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FGFxDataStoreRow>              Rows;                                          // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bLevelTransitionPersistent : 1;                // 0x0028 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FMap_Mirror                                 PrimaryKeyMap;                                 // 0x0030 (0x0050) [0x0000000000001000] (CPF_Native)  
+
+	bool operator==(const FGFxDataStoreTable& other) const { return memcmp(this, &other, sizeof(FGFxDataStoreTable)) == 0; }
+	bool operator!=(const FGFxDataStoreTable& other) const { return !(*this == other); }
+	bool operator<(const FGFxDataStoreTable& other) const { return memcmp(this, &other, sizeof(FGFxDataStoreTable)) < 0; }
+};
+
+// ScriptStruct ProjectX.GFxDataStore_X.GFxDirtyRow
+// 0x0018
+struct FGFxDirtyRow
+{
+	int32_t                                            RowNum;                                        // 0x0000 (0x0004) [0x0000000000000000]               
+	class TArray<class FName>                          DirtyValues;                                   // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FGFxDirtyRow& other) const { return memcmp(this, &other, sizeof(FGFxDirtyRow)) == 0; }
+	bool operator!=(const FGFxDirtyRow& other) const { return !(*this == other); }
+	bool operator<(const FGFxDirtyRow& other) const { return memcmp(this, &other, sizeof(FGFxDirtyRow)) < 0; }
+};
+
+// ScriptStruct ProjectX.GFxDataStore_X.GFxDirtyTable
+// 0x0018
+struct FGFxDirtyTable
+{
+	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<struct FGFxDirtyRow>                  DirtyRows;                                     // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FGFxDirtyTable& other) const { return memcmp(this, &other, sizeof(FGFxDirtyTable)) == 0; }
+	bool operator!=(const FGFxDirtyTable& other) const { return !(*this == other); }
+	bool operator<(const FGFxDirtyTable& other) const { return memcmp(this, &other, sizeof(FGFxDirtyTable)) < 0; }
+};
+
+// ScriptStruct ProjectX.GFxEngine_X.DirtyObject
+// 0x0014
+struct FDirtyObject
+{
+	class UObject*                                     Object;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class UProperty*                                   Property;                                      // 0x0008 (0x0008) [0x0000000000000000]               
+	int32_t                                            Index;                                         // 0x0010 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FDirtyObject& other) const { return memcmp(this, &other, sizeof(FDirtyObject)) == 0; }
+	bool operator!=(const FDirtyObject& other) const { return !(*this == other); }
+	bool operator<(const FDirtyObject& other) const { return memcmp(this, &other, sizeof(FDirtyObject)) < 0; }
+};
+
+// ScriptStruct ProjectX.GFxSoundPack_X.SoundPackSoundRef
+// 0x0010
+struct FSoundPackSoundRef
+{
+	class UAkSoundCue*                                 Sound;                                         // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class FName                                        Name;                                          // 0x0008 (0x0008) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FSoundPackSoundRef& other) const { return memcmp(this, &other, sizeof(FSoundPackSoundRef)) == 0; }
+	bool operator!=(const FSoundPackSoundRef& other) const { return !(*this == other); }
+	bool operator<(const FSoundPackSoundRef& other) const { return memcmp(this, &other, sizeof(FSoundPackSoundRef)) < 0; }
+};
+
+// ScriptStruct ProjectX.LensFlareComponent_X.LensFlareFloatParamCurve
+// 0x0038
+struct FLensFlareFloatParamCurve
+{
+	class FName                                        MaterialParamName;                             // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	int32_t                                            MaterialParamIndex;                            // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
+	struct FRawDistributionFloat                       ValueOverTime;                                 // 0x0010 (0x0028) [0x0000000000480001] (CPF_Edit | CPF_Component | CPF_NeedCtorLink)
+
+	bool operator==(const FLensFlareFloatParamCurve& other) const { return memcmp(this, &other, sizeof(FLensFlareFloatParamCurve)) == 0; }
+	bool operator!=(const FLensFlareFloatParamCurve& other) const { return !(*this == other); }
+	bool operator<(const FLensFlareFloatParamCurve& other) const { return memcmp(this, &other, sizeof(FLensFlareFloatParamCurve)) < 0; }
+};
+
+// ScriptStruct ProjectX.LocalCache_X.CacheImportCallbackData
+// 0x0020
+struct FCacheImportCallbackData
+{
+	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001000] (CPF_Native)  
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FCacheImportCallbackData& other) const { return memcmp(this, &other, sizeof(FCacheImportCallbackData)) == 0; }
+	bool operator!=(const FCacheImportCallbackData& other) const { return !(*this == other); }
+	bool operator<(const FCacheImportCallbackData& other) const { return memcmp(this, &other, sizeof(FCacheImportCallbackData)) < 0; }
+};
+
+// ScriptStruct ProjectX.LocalCache_X.CacheIOTaskBase
+// 0x0030
+struct FCacheIOTaskBase
+{
+	class UObject*                                     CacheObject;                                   // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<uint8_t>                              Data;                                          // 0x0008 (0x0010) [0x0000000000500000] (CPF_NeedCtorLink)
+	class FString                                      Path;                                          // 0x0018 (0x0010) [0x0000000000500000] (CPF_NeedCtorLink)
+	class UErrorType*                                  Error;                                         // 0x0028 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FCacheIOTaskBase& other) const { return memcmp(this, &other, sizeof(FCacheIOTaskBase)) == 0; }
+	bool operator!=(const FCacheIOTaskBase& other) const { return !(*this == other); }
+	bool operator<(const FCacheIOTaskBase& other) const { return memcmp(this, &other, sizeof(FCacheIOTaskBase)) < 0; }
+};
+
+// ScriptStruct ProjectX.LocalCache_X.CacheExportTask
+// 0x0000 (0x0030 - 0x0030)
+struct FCacheExportTask : FCacheIOTaskBase
+{
+
+	bool operator==(const FCacheExportTask& other) const { return memcmp(this, &other, sizeof(FCacheExportTask)) == 0; }
+	bool operator!=(const FCacheExportTask& other) const { return !(*this == other); }
+	bool operator<(const FCacheExportTask& other) const { return memcmp(this, &other, sizeof(FCacheExportTask)) < 0; }
+};
+
+// ScriptStruct ProjectX.LocalCache_X.CacheExportCallbackData
+// 0x0020
+struct FCacheExportCallbackData
+{
+	struct FPointer                                    Task;                                          // 0x0000 (0x0008) [0x0000000000001000] (CPF_Native)  
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FCacheExportCallbackData& other) const { return memcmp(this, &other, sizeof(FCacheExportCallbackData)) == 0; }
+	bool operator!=(const FCacheExportCallbackData& other) const { return !(*this == other); }
+	bool operator<(const FCacheExportCallbackData& other) const { return memcmp(this, &other, sizeof(FCacheExportCallbackData)) < 0; }
+};
+
+// ScriptStruct ProjectX.LocalCache_X.CacheImportTask
+// 0x0000 (0x0030 - 0x0030)
+struct FCacheImportTask : FCacheIOTaskBase
+{
+
+	bool operator==(const FCacheImportTask& other) const { return memcmp(this, &other, sizeof(FCacheImportTask)) == 0; }
+	bool operator!=(const FCacheImportTask& other) const { return !(*this == other); }
+	bool operator<(const FCacheImportTask& other) const { return memcmp(this, &other, sizeof(FCacheImportTask)) < 0; }
+};
+
+// ScriptStruct ProjectX.LocalClubData_X.PlayerClubPair
+// 0x0050
+struct FPlayerClubPair
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           ClubID;                                        // 0x0048 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FPlayerClubPair& other) const { return memcmp(this, &other, sizeof(FPlayerClubPair)) == 0; }
+	bool operator!=(const FPlayerClubPair& other) const { return !(*this == other); }
+	bool operator<(const FPlayerClubPair& other) const { return memcmp(this, &other, sizeof(FPlayerClubPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.LocalizationConfig_X.LocOverride
+// 0x0040
+struct FLocOverride
+{
+	class FString                                      Section;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Key;                                           // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Value;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Package;                                       // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FLocOverride& other) const { return memcmp(this, &other, sizeof(FLocOverride)) == 0; }
+	bool operator!=(const FLocOverride& other) const { return !(*this == other); }
+	bool operator<(const FLocOverride& other) const { return memcmp(this, &other, sizeof(FLocOverride)) < 0; }
+};
+
+// ScriptStruct ProjectX.MatchInfoWebService_X.MatchInfoJson
+// 0x0024
+struct FMatchInfoJson
+{
+	class FString                                      Guid;                                          // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        ip_addresses;                                  // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bIsPlaylistProtected : 1;                      // 0x0020 (0x0004) [0x0001000000000000] [0x00000001] 
+
+	bool operator==(const FMatchInfoJson& other) const { return memcmp(this, &other, sizeof(FMatchInfoJson)) == 0; }
+	bool operator!=(const FMatchInfoJson& other) const { return !(*this == other); }
+	bool operator<(const FMatchInfoJson& other) const { return memcmp(this, &other, sizeof(FMatchInfoJson)) < 0; }
+};
+
+// ScriptStruct ProjectX.MatchPlayerData_X.MatchSkillUpdate
+// 0x0024
+struct FMatchSkillUpdate
+{
+	uint32_t                                           bValid : 1;                                    // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	float                                              Mu;                                            // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              Sigma;                                         // 0x0008 (0x0004) [0x0000000000000000]               
+	int32_t                                            Tier;                                          // 0x000C (0x0004) [0x0000000000000000]               
+	int32_t                                            Division;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	float                                              PrevMu;                                        // 0x0014 (0x0004) [0x0000000000000000]               
+	float                                              PrevSigma;                                     // 0x0018 (0x0004) [0x0000000000000000]               
+	int32_t                                            PrevTier;                                      // 0x001C (0x0004) [0x0000000000000000]               
+	int32_t                                            PrevDivision;                                  // 0x0020 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FMatchSkillUpdate& other) const { return memcmp(this, &other, sizeof(FMatchSkillUpdate)) == 0; }
+	bool operator!=(const FMatchSkillUpdate& other) const { return !(*this == other); }
+	bool operator<(const FMatchSkillUpdate& other) const { return memcmp(this, &other, sizeof(FMatchSkillUpdate)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineClubProvider_X.PlayerClubSyncResult
+// 0x0050
+struct FPlayerClubSyncResult
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UError*                                      Error;                                         // 0x0048 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FPlayerClubSyncResult& other) const { return memcmp(this, &other, sizeof(FPlayerClubSyncResult)) == 0; }
+	bool operator!=(const FPlayerClubSyncResult& other) const { return !(*this == other); }
+	bool operator<(const FPlayerClubSyncResult& other) const { return memcmp(this, &other, sizeof(FPlayerClubSyncResult)) < 0; }
+};
+
+// ScriptStruct ProjectX.PresetMutators_X.CategorySettingPair
+// 0x0014
+struct FCategorySettingPair
+{
+	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0000000000000000]               
+	class FName                                        Setting;                                       // 0x0008 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bLockSetting : 1;                              // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+
+	bool operator==(const FCategorySettingPair& other) const { return memcmp(this, &other, sizeof(FCategorySettingPair)) == 0; }
+	bool operator!=(const FCategorySettingPair& other) const { return !(*this == other); }
+	bool operator<(const FCategorySettingPair& other) const { return memcmp(this, &other, sizeof(FCategorySettingPair)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_CheckReplacementDedicatedServer_X.CheckReplacementDedicatedServerData
+// 0x0034
+struct FCheckReplacementDedicatedServerData
+{
+	class FString                                      ServerId;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      IP;                                            // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Host;                                          // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Port;                                          // 0x0030 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FCheckReplacementDedicatedServerData& other) const { return memcmp(this, &other, sizeof(FCheckReplacementDedicatedServerData)) == 0; }
+	bool operator!=(const FCheckReplacementDedicatedServerData& other) const { return !(*this == other); }
+	bool operator<(const FCheckReplacementDedicatedServerData& other) const { return memcmp(this, &other, sizeof(FCheckReplacementDedicatedServerData)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameDLC_X.SteamJsonResponseGetPublisherAppOwnership3
+// 0x0028
+struct FSteamJsonResponseGetPublisherAppOwnership3
+{
+	uint64_t                                           AppID;                                         // 0x0000 (0x0008) [0x0000000000000000]               
+	uint64_t                                           OwnerSteamID;                                  // 0x0008 (0x0008) [0x0000000000000000]               
+	uint32_t                                           OwnsApp : 1;                                   // 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           Permanent : 1;                                 // 0x0010 (0x0004) [0x0000000000000000] [0x00000002] 
+	class FString                                      TimeStamp;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSteamJsonResponseGetPublisherAppOwnership3& other) const { return memcmp(this, &other, sizeof(FSteamJsonResponseGetPublisherAppOwnership3)) == 0; }
+	bool operator!=(const FSteamJsonResponseGetPublisherAppOwnership3& other) const { return !(*this == other); }
+	bool operator<(const FSteamJsonResponseGetPublisherAppOwnership3& other) const { return memcmp(this, &other, sizeof(FSteamJsonResponseGetPublisherAppOwnership3)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameDLC_X.SteamJsonResponseGetPublisherAppOwnership2
+// 0x0010
+struct FSteamJsonResponseGetPublisherAppOwnership2
+{
+	class TArray<struct FSteamJsonResponseGetPublisherAppOwnership3> Apps;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSteamJsonResponseGetPublisherAppOwnership2& other) const { return memcmp(this, &other, sizeof(FSteamJsonResponseGetPublisherAppOwnership2)) == 0; }
+	bool operator!=(const FSteamJsonResponseGetPublisherAppOwnership2& other) const { return !(*this == other); }
+	bool operator<(const FSteamJsonResponseGetPublisherAppOwnership2& other) const { return memcmp(this, &other, sizeof(FSteamJsonResponseGetPublisherAppOwnership2)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameDLC_X.SteamJsonResponseGetPublisherAppOwnership
+// 0x0010
+struct FSteamJsonResponseGetPublisherAppOwnership
+{
+	struct FSteamJsonResponseGetPublisherAppOwnership2 AppOwnership;                                  // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSteamJsonResponseGetPublisherAppOwnership& other) const { return memcmp(this, &other, sizeof(FSteamJsonResponseGetPublisherAppOwnership)) == 0; }
+	bool operator!=(const FSteamJsonResponseGetPublisherAppOwnership& other) const { return !(*this == other); }
+	bool operator<(const FSteamJsonResponseGetPublisherAppOwnership& other) const { return memcmp(this, &other, sizeof(FSteamJsonResponseGetPublisherAppOwnership)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameDLC_X.SteamPlayerDLCOwnershipState
+// 0x0011
+struct FSteamPlayerDLCOwnershipState
+{
+	class FName                                        Name;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	uint64_t                                           AppID;                                         // 0x0008 (0x0008) [0x0000000000000000]               
+	EDLCOwnershipState                                 State;                                         // 0x0010 (0x0001) [0x0000000000002000] (CPF_Transient)
+
+	bool operator==(const FSteamPlayerDLCOwnershipState& other) const { return memcmp(this, &other, sizeof(FSteamPlayerDLCOwnershipState)) == 0; }
+	bool operator!=(const FSteamPlayerDLCOwnershipState& other) const { return !(*this == other); }
+	bool operator<(const FSteamPlayerDLCOwnershipState& other) const { return memcmp(this, &other, sizeof(FSteamPlayerDLCOwnershipState)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameDLC_X.PlayerDLCInfo
+// 0x0074
+struct FPlayerDLCInfo
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FSteamPlayerDLCOwnershipState> DLCs;                                          // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             ValidationReadyDelegate;                       // 0x0058 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+	float                                              TimeLastOwnershipRequest;                      // 0x0070 (0x0004) [0x0000000000002000] (CPF_Transient)
+
+	bool operator==(const FPlayerDLCInfo& other) const { return memcmp(this, &other, sizeof(FPlayerDLCInfo)) == 0; }
+	bool operator!=(const FPlayerDLCInfo& other) const { return !(*this == other); }
+	bool operator<(const FPlayerDLCInfo& other) const { return memcmp(this, &other, sizeof(FPlayerDLCInfo)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameDLC_X.SteamWebRequestData
+// 0x0050
+struct FSteamWebRequestData
+{
+	class UWebRequest_X*                               Request;                                       // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FUniqueNetId                                PlayerID;                                      // 0x0008 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSteamWebRequestData& other) const { return memcmp(this, &other, sizeof(FSteamWebRequestData)) == 0; }
+	bool operator!=(const FSteamWebRequestData& other) const { return !(*this == other); }
+	bool operator<(const FSteamWebRequestData& other) const { return memcmp(this, &other, sizeof(FSteamWebRequestData)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNet_X.PsyNetKeys
+// 0x0040
+struct FPsyNetKeys
+{
+	class FString                                      Environment;                                   // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PsyNetAuth;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PsyConfigAuth;                                 // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      SteamPublisher;                                // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPsyNetKeys& other) const { return memcmp(this, &other, sizeof(FPsyNetKeys)) == 0; }
+	bool operator!=(const FPsyNetKeys& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetKeys& other) const { return memcmp(this, &other, sizeof(FPsyNetKeys)) < 0; }
+};
+
+// ScriptStruct ProjectX.ReservationBeacon_X.BeaconMessageHandler
+// 0x0018
+struct FBeaconMessageHandler
+{
+	class UClass*                                      MessageClass;                                  // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<struct FScriptDelegate>               Delegates;                                     // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FBeaconMessageHandler& other) const { return memcmp(this, &other, sizeof(FBeaconMessageHandler)) == 0; }
+	bool operator!=(const FBeaconMessageHandler& other) const { return !(*this == other); }
+	bool operator<(const FBeaconMessageHandler& other) const { return memcmp(this, &other, sizeof(FBeaconMessageHandler)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameLeaderboards_X.LeaderboardData
+// 0x0080
+struct FLeaderboardData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	class FString                                      UnSanitizedPlayerName;                         // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0058 (0x0010) [0x0000000040400000] (CPF_NeedCtorLink | CPF_DataBinding)
+	uint32_t                                           bPsyNetUser : 1;                               // 0x0068 (0x0004) [0x0000000040000000] [0x00000001] (CPF_DataBinding)
+	int32_t                                            Rank;                                          // 0x006C (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Value;                                         // 0x0070 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	float                                              MMR;                                           // 0x0074 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	int32_t                                            Division;                                      // 0x0078 (0x0004) [0x0000000040000000] (CPF_DataBinding)
+	uint32_t                                           bIsPrimaryPlayer : 1;                          // 0x007C (0x0004) [0x0000000040000000] [0x100000001] (CPF_DataBinding)
+
+	bool operator==(const FLeaderboardData& other) const { return memcmp(this, &other, sizeof(FLeaderboardData)) == 0; }
+	bool operator!=(const FLeaderboardData& other) const { return !(*this == other); }
+	bool operator<(const FLeaderboardData& other) const { return memcmp(this, &other, sizeof(FLeaderboardData)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameLeaderboards_X.CachedLeaderboardData
+// 0x0020
+struct FCachedLeaderboardData
+{
+	class FName                                        LeaderboardId;                                 // 0x0000 (0x0008) [0x0000000000002000] (CPF_Transient)
+	class TArray<struct FLeaderboardData>              DataList;                                      // 0x0008 (0x0010) [0x0000000000402000] (CPF_Transient | CPF_NeedCtorLink)
+	uint64_t                                           LastLeaderboardSyncTime;                       // 0x0018 (0x0008) [0x0000000000002000] (CPF_Transient)
+
+	bool operator==(const FCachedLeaderboardData& other) const { return memcmp(this, &other, sizeof(FCachedLeaderboardData)) == 0; }
+	bool operator!=(const FCachedLeaderboardData& other) const { return !(*this == other); }
+	bool operator<(const FCachedLeaderboardData& other) const { return memcmp(this, &other, sizeof(FCachedLeaderboardData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetLeaderboardBase_X.GetLeaderboardBaseData
+// 0x0060
+struct FGetLeaderboardBaseData
+{
+	class FString                                      PlayerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                      // 0x0010 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Value;                                         // 0x0058 (0x0004) [0x0000000000000000]               
+	float                                              MMR;                                           // 0x005C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FGetLeaderboardBaseData& other) const { return memcmp(this, &other, sizeof(FGetLeaderboardBaseData)) == 0; }
+	bool operator!=(const FGetLeaderboardBaseData& other) const { return !(*this == other); }
+	bool operator<(const FGetLeaderboardBaseData& other) const { return memcmp(this, &other, sizeof(FGetLeaderboardBaseData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetLeaderboardBase_X.GetLeaderboardPlatformBaseData
+// 0x0020
+struct FGetLeaderboardPlatformBaseData
+{
+	class FString                                      Platform;                                      // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FGetLeaderboardBaseData>       Players;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FGetLeaderboardPlatformBaseData& other) const { return memcmp(this, &other, sizeof(FGetLeaderboardPlatformBaseData)) == 0; }
+	bool operator!=(const FGetLeaderboardPlatformBaseData& other) const { return !(*this == other); }
+	bool operator<(const FGetLeaderboardPlatformBaseData& other) const { return memcmp(this, &other, sizeof(FGetLeaderboardPlatformBaseData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetLeaderboardRankForUsersBase_X.GetLeaderboardRankForUserData
+// 0x0060
+struct FGetLeaderboardRankForUserData
+{
+	class FString                                      PlayerName;                                    // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerID;                                      // 0x0010 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Value;                                         // 0x0058 (0x0004) [0x0000000000000000]               
+	float                                              MMR;                                           // 0x005C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FGetLeaderboardRankForUserData& other) const { return memcmp(this, &other, sizeof(FGetLeaderboardRankForUserData)) == 0; }
+	bool operator!=(const FGetLeaderboardRankForUserData& other) const { return !(*this == other); }
+	bool operator<(const FGetLeaderboardRankForUserData& other) const { return memcmp(this, &other, sizeof(FGetLeaderboardRankForUserData)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameMatchmaking_X.MatchmakingRequestData
+// 0x0060
+struct FMatchmakingRequestData
+{
+	class FString                                      PartyID;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FDSRegionInfo>                 Regions;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<int32_t>                              Playlists;                                     // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            SecondsSearching;                              // 0x0030 (0x0004) [0x0000000000000000]               
+	class FString                                      CurrentServerID;                               // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint32_t                                           bDisableCrossPlay : 1;                         // 0x0048 (0x0004) [0x0000000000000000] [0x00000001] 
+	uint32_t                                           bIgnoreSkill : 1;                              // 0x0048 (0x0004) [0x0000000000000000] [0x00000002] 
+	class TArray<struct FUniqueNetId>                  PartyMembers;                                  // 0x0050 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FMatchmakingRequestData& other) const { return memcmp(this, &other, sizeof(FMatchmakingRequestData)) == 0; }
+	bool operator!=(const FMatchmakingRequestData& other) const { return !(*this == other); }
+	bool operator<(const FMatchmakingRequestData& other) const { return memcmp(this, &other, sizeof(FMatchmakingRequestData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetPopulation_X.GetPopulationData
+// 0x0008
+struct FGetPopulationData
+{
+	int32_t                                            Playlist;                                      // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            PlayerCount;                                   // 0x0004 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FGetPopulationData& other) const { return memcmp(this, &other, sizeof(FGetPopulationData)) == 0; }
+	bool operator!=(const FGetPopulationData& other) const { return !(*this == other); }
+	bool operator<(const FGetPopulationData& other) const { return memcmp(this, &other, sizeof(FGetPopulationData)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGamePrivateMatch_X.PrivateMatchmakingRequestData
+// 0x0014
+struct FPrivateMatchmakingRequestData
+{
+	class FString                                      SubRegionToMatchmake;                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            PlaylistId;                                    // 0x0010 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPrivateMatchmakingRequestData& other) const { return memcmp(this, &other, sizeof(FPrivateMatchmakingRequestData)) == 0; }
+	bool operator!=(const FPrivateMatchmakingRequestData& other) const { return !(*this == other); }
+	bool operator<(const FPrivateMatchmakingRequestData& other) const { return memcmp(this, &other, sizeof(FPrivateMatchmakingRequestData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetGameServerPingList2_X.GetGameServerPingListData
+// 0x0058
+struct FGetGameServerPingListData
+{
+	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      IP;                                            // 0x0010 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      Host;                                          // 0x0020 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Port;                                          // 0x0030 (0x0004) [0x0001000000000000]               
+	class FString                                      Address;                                       // 0x0038 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      SubRegion;                                     // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FGetGameServerPingListData& other) const { return memcmp(this, &other, sizeof(FGetGameServerPingListData)) == 0; }
+	bool operator!=(const FGetGameServerPingListData& other) const { return !(*this == other); }
+	bool operator<(const FGetGameServerPingListData& other) const { return memcmp(this, &other, sizeof(FGetGameServerPingListData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetGameServerPingList_X.GetGameServerPingListData_Deprecated
+// 0x0048
+struct FGetGameServerPingListData_Deprecated
+{
+	class FString                                      Region;                                        // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      IP;                                            // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Host;                                          // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Port;                                          // 0x0030 (0x0004) [0x0000000000000000]               
+	class FString                                      Address;                                       // 0x0038 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FGetGameServerPingListData_Deprecated& other) const { return memcmp(this, &other, sizeof(FGetGameServerPingListData_Deprecated)) == 0; }
+	bool operator!=(const FGetGameServerPingListData_Deprecated& other) const { return !(*this == other); }
+	bool operator<(const FGetGameServerPingListData_Deprecated& other) const { return memcmp(this, &other, sizeof(FGetGameServerPingListData_Deprecated)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameReservations_AssignTeamsByParty_X.PartyByTeam
+// 0x0050
+struct FPartyByTeam
+{
+	struct FUniqueNetId                                PartyID;                                       // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint8_t                                            Team;                                          // 0x0048 (0x0001) [0x0000000000000000]               
+	int32_t                                            Size;                                          // 0x004C (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPartyByTeam& other) const { return memcmp(this, &other, sizeof(FPartyByTeam)) == 0; }
+	bool operator!=(const FPartyByTeam& other) const { return !(*this == other); }
+	bool operator<(const FPartyByTeam& other) const { return memcmp(this, &other, sizeof(FPartyByTeam)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameReservations_X.TeamPairHistory
+// 0x0094
+struct FTeamPairHistory
+{
+	struct FUniqueNetId                                PartyA;                                        // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                PartyB;                                        // 0x0048 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Count;                                         // 0x0090 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FTeamPairHistory& other) const { return memcmp(this, &other, sizeof(FTeamPairHistory)) == 0; }
+	bool operator!=(const FTeamPairHistory& other) const { return !(*this == other); }
+	bool operator<(const FTeamPairHistory& other) const { return memcmp(this, &other, sizeof(FTeamPairHistory)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameReservations_X.PendingReservation
+// 0x0018
+struct FPendingReservation
+{
+	class UIReservationConnection_X*                   Connection_Object;                             // 0x0000 (0x0010) [0x0000000000000000] 
+	class UIReservationConnection_X*                   Connection_Interface;                          // 0x0000 (0x0010) [0x0000000000000000]               
+	class UAddReservationMessage_X*                    Message;                                       // 0x0010 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FPendingReservation& other) const { return memcmp(this, &other, sizeof(FPendingReservation)) == 0; }
+	bool operator!=(const FPendingReservation& other) const { return !(*this == other); }
+	bool operator<(const FPendingReservation& other) const { return memcmp(this, &other, sizeof(FPendingReservation)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameSkill_X.SkillSyncRequest
+// 0x0068
+struct FSkillSyncRequest
+{
+	class URPC_X*                                      RPC;                                           // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FUniqueNetId                                PlayerID;                                      // 0x0008 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0050 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSkillSyncRequest& other) const { return memcmp(this, &other, sizeof(FSkillSyncRequest)) == 0; }
+	bool operator!=(const FSkillSyncRequest& other) const { return !(*this == other); }
+	bool operator<(const FSkillSyncRequest& other) const { return memcmp(this, &other, sizeof(FSkillSyncRequest)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetPartyMemberSkill_X.PartyMemberSkill
+// 0x0058
+struct FPartyMemberSkill
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FPlayerSkillRating>            Skills;                                        // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPartyMemberSkill& other) const { return memcmp(this, &other, sizeof(FPartyMemberSkill)) == 0; }
+	bool operator!=(const FPartyMemberSkill& other) const { return !(*this == other); }
+	bool operator<(const FPartyMemberSkill& other) const { return memcmp(this, &other, sizeof(FPartyMemberSkill)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameStats_X.UploadStatData
+// 0x004C
+struct FUploadStatData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Value;                                         // 0x0048 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FUploadStatData& other) const { return memcmp(this, &other, sizeof(FUploadStatData)) == 0; }
+	bool operator!=(const FUploadStatData& other) const { return !(*this == other); }
+	bool operator<(const FUploadStatData& other) const { return memcmp(this, &other, sizeof(FUploadStatData)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameStats_X.UploadStatDataSet
+// 0x0018
+struct FUploadStatDataSet
+{
+	class FName                                        StatId;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	class TArray<struct FUploadStatData>               Data;                                          // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FUploadStatDataSet& other) const { return memcmp(this, &other, sizeof(FUploadStatDataSet)) == 0; }
+	bool operator!=(const FUploadStatDataSet& other) const { return !(*this == other); }
+	bool operator<(const FUploadStatDataSet& other) const { return memcmp(this, &other, sizeof(FUploadStatDataSet)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlineGameWordFilterProcessor_X.WordFilterRequest
+// 0x0040
+struct FWordFilterRequest
+{
+	class UWebRequest_X*                               Request;                                       // 0x0000 (0x0008) [0x0000000000000000]               
+	class FString                                      Comment;                                       // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Sanitized;                                     // 0x0018 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FScriptDelegate                             Callback;                                      // 0x0028 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FWordFilterRequest& other) const { return memcmp(this, &other, sizeof(FWordFilterRequest)) == 0; }
+	bool operator!=(const FWordFilterRequest& other) const { return !(*this == other); }
+	bool operator<(const FWordFilterRequest& other) const { return memcmp(this, &other, sizeof(FWordFilterRequest)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageManifest_X.StorageMetadata
+// 0x000D
+struct FStorageMetadata
+{
+	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x0008 (0x0004) [0x0001000000000000]               
+	EObjectEncoding                                    Encoding;                                      // 0x000C (0x0001) [0x0001000000000000]               
+
+	bool operator==(const FStorageMetadata& other) const { return memcmp(this, &other, sizeof(FStorageMetadata)) == 0; }
+	bool operator!=(const FStorageMetadata& other) const { return !(*this == other); }
+	bool operator<(const FStorageMetadata& other) const { return memcmp(this, &other, sizeof(FStorageMetadata)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageSync_X.OnlinePlayerStorageSyncResult
+// 0x001D
+struct FOnlinePlayerStorageSyncResult
+{
+	class UClass*                                      DataClass;                                     // 0x0000 (0x0008) [0x0001000000000000]               
+	class UObject*                                     RemoteData;                                    // 0x0008 (0x0008) [0x0001000000000000]               
+	int32_t                                            ServerTick;                                    // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x0014 (0x0004) [0x0001000000000000]               
+	uint32_t                                           bChecksumMatch : 1;                            // 0x0018 (0x0004) [0x0001000000000000] [0x00000001] 
+	EObjectEncoding                                    Encoding;                                      // 0x001C (0x0001) [0x0001000000000000]               
+
+	bool operator==(const FOnlinePlayerStorageSyncResult& other) const { return memcmp(this, &other, sizeof(FOnlinePlayerStorageSyncResult)) == 0; }
+	bool operator!=(const FOnlinePlayerStorageSyncResult& other) const { return !(*this == other); }
+	bool operator<(const FOnlinePlayerStorageSyncResult& other) const { return memcmp(this, &other, sizeof(FOnlinePlayerStorageSyncResult)) < 0; }
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageSync_X.OnlinePlayerStorageSyncRequest
+// 0x000D
+struct FOnlinePlayerStorageSyncRequest
+{
+	class UObject*                                     DataObj;                                       // 0x0000 (0x0008) [0x0001000000000000]               
+	int32_t                                            ClientTick;                                    // 0x0008 (0x0004) [0x0001000000000000]               
+	EObjectEncoding                                    Encoding;                                      // 0x000C (0x0001) [0x0001000000000000]               
+
+	bool operator==(const FOnlinePlayerStorageSyncRequest& other) const { return memcmp(this, &other, sizeof(FOnlinePlayerStorageSyncRequest)) == 0; }
+	bool operator!=(const FOnlinePlayerStorageSyncRequest& other) const { return !(*this == other); }
+	bool operator<(const FOnlinePlayerStorageSyncRequest& other) const { return memcmp(this, &other, sizeof(FOnlinePlayerStorageSyncRequest)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_PlayerStorageGet_X.GetPlayerStorageRequestItem
+// 0x0018
+struct FGetPlayerStorageRequestItem
+{
+	class FName                                        Category;                                      // 0x0000 (0x0008) [0x0001000000000000]               
+	int32_t                                            Tick;                                          // 0x0008 (0x0004) [0x0001000000000000]               
+	int32_t                                            Checksum;                                      // 0x000C (0x0004) [0x0001000000000000]               
+	class UObject*                                     LocalRef;                                      // 0x0010 (0x0008) [0x0001000000002000] (CPF_Transient)
+
+	bool operator==(const FGetPlayerStorageRequestItem& other) const { return memcmp(this, &other, sizeof(FGetPlayerStorageRequestItem)) == 0; }
+	bool operator!=(const FGetPlayerStorageRequestItem& other) const { return !(*this == other); }
+	bool operator<(const FGetPlayerStorageRequestItem& other) const { return memcmp(this, &other, sizeof(FGetPlayerStorageRequestItem)) < 0; }
+};
+
+// ScriptStruct ProjectX.PartyMessageQueue_X.PendingMessage
+// 0x0020
+struct FPendingMessage
+{
+	struct FUniqueLobbyId                              LobbyId;                                       // 0x0000 (0x0010) [0x0000000000000000]               
+	class TArray<class FString>                        Messages;                                      // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPendingMessage& other) const { return memcmp(this, &other, sizeof(FPendingMessage)) == 0; }
+	bool operator!=(const FPendingMessage& other) const { return !(*this == other); }
+	bool operator<(const FPendingMessage& other) const { return memcmp(this, &other, sizeof(FPendingMessage)) < 0; }
+};
+
+// ScriptStruct ProjectX.Parties_X.PsyNetPartyMember
+// 0x0080
+struct FPsyNetPartyMember
+{
+	class FString                                      PartyID;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                UserId;                                        // 0x0010 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Username;                                      // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           JoinedAt;                                      // 0x0068 (0x0008) [0x0000000000000000]               
+	class FString                                      Role;                                          // 0x0070 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPsyNetPartyMember& other) const { return memcmp(this, &other, sizeof(FPsyNetPartyMember)) == 0; }
+	bool operator!=(const FPsyNetPartyMember& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetPartyMember& other) const { return memcmp(this, &other, sizeof(FPsyNetPartyMember)) < 0; }
+};
+
+// ScriptStruct ProjectX.Parties_X.PartyInvite
+// 0x0078
+struct FPartyInvite
+{
+	struct FUniqueNetId                                UserId;                                        // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Username;                                      // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PartyID;                                       // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	uint64_t                                           InvitedAt;                                     // 0x0068 (0x0008) [0x0000000000000000]               
+	uint64_t                                           AcceptedAt;                                    // 0x0070 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FPartyInvite& other) const { return memcmp(this, &other, sizeof(FPartyInvite)) == 0; }
+	bool operator!=(const FPartyInvite& other) const { return !(*this == other); }
+	bool operator<(const FPartyInvite& other) const { return memcmp(this, &other, sizeof(FPartyInvite)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetService_PartyJoinRequestAccepted_X.PartyData
+// 0x0080
+struct FPartyData
+{
+	struct FPsyNetPartyInfo                            Info;                                          // 0x0000 (0x0070) [0x0001000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FPsyNetPartyMember>            Members;                                       // 0x0070 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPartyData& other) const { return memcmp(this, &other, sizeof(FPartyData)) == 0; }
+	bool operator!=(const FPartyData& other) const { return !(*this == other); }
+	bool operator<(const FPartyData& other) const { return memcmp(this, &other, sizeof(FPartyData)) < 0; }
+};
+
+// ScriptStruct ProjectX.PartyMetrics_X.PartyMetricsData
+// 0x000C
+struct FPartyMetricsData
+{
+	int32_t                                            LocalPlayers;                                  // 0x0000 (0x0004) [0x0000000000000000]               
+	int32_t                                            RemotePlayers;                                 // 0x0004 (0x0004) [0x0000000000000000]               
+	uint32_t                                           bPartyLeader : 1;                              // 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+
+	bool operator==(const FPartyMetricsData& other) const { return memcmp(this, &other, sizeof(FPartyMetricsData)) == 0; }
+	bool operator!=(const FPartyMetricsData& other) const { return !(*this == other); }
+	bool operator<(const FPartyMetricsData& other) const { return memcmp(this, &other, sizeof(FPartyMetricsData)) < 0; }
+};
+
+// ScriptStruct ProjectX.PlayerInput_X.GamepadDeadzoneSettings
+// 0x0010
+struct FGamepadDeadzoneSettings
+{
+	EInputPlatformType                                 Type;                                          // 0x0000 (0x0001) [0x0000000000000001] (CPF_Edit)    
+	class FName                                        Key;                                           // 0x0004 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	float                                              Deadzone;                                      // 0x000C (0x0004) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FGamepadDeadzoneSettings& other) const { return memcmp(this, &other, sizeof(FGamepadDeadzoneSettings)) == 0; }
+	bool operator!=(const FGamepadDeadzoneSettings& other) const { return !(*this == other); }
+	bool operator<(const FGamepadDeadzoneSettings& other) const { return memcmp(this, &other, sizeof(FGamepadDeadzoneSettings)) < 0; }
+};
+
+// ScriptStruct ProjectX.PlayerInput_X.KeyboardAxisBlendSettings
+// 0x000C
+struct FKeyboardAxisBlendSettings
+{
+	class FName                                        Axis;                                          // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	float                                              BlendTime;                                     // 0x0008 (0x0004) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FKeyboardAxisBlendSettings& other) const { return memcmp(this, &other, sizeof(FKeyboardAxisBlendSettings)) == 0; }
+	bool operator!=(const FKeyboardAxisBlendSettings& other) const { return !(*this == other); }
+	bool operator<(const FKeyboardAxisBlendSettings& other) const { return memcmp(this, &other, sizeof(FKeyboardAxisBlendSettings)) < 0; }
+};
+
+// ScriptStruct ProjectX.PlayerInput_X.RawAxisValue
+// 0x0010
+struct FRawAxisValue
+{
+	float                                              Value;                                         // 0x0000 (0x0004) [0x0000000000000000]               
+	uint64_t                                           LastFrameChanged;                              // 0x0008 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FRawAxisValue& other) const { return memcmp(this, &other, sizeof(FRawAxisValue)) == 0; }
+	bool operator!=(const FRawAxisValue& other) const { return !(*this == other); }
+	bool operator<(const FRawAxisValue& other) const { return memcmp(this, &other, sizeof(FRawAxisValue)) < 0; }
+};
+
+// ScriptStruct ProjectX.PostProcessManager_X.PPEffectDefaults
+// 0x000C
+struct FPPEffectDefaults
+{
+	class FName                                        EffectName;                                    // 0x0000 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
+	uint32_t                                           bEnabled : 1;                                  // 0x0008 (0x0004) [0x0000000000000003] [0x00000001] (CPF_Edit | CPF_Const)
+
+	bool operator==(const FPPEffectDefaults& other) const { return memcmp(this, &other, sizeof(FPPEffectDefaults)) == 0; }
+	bool operator!=(const FPPEffectDefaults& other) const { return !(*this == other); }
+	bool operator<(const FPPEffectDefaults& other) const { return memcmp(this, &other, sizeof(FPPEffectDefaults)) < 0; }
+};
+
+// ScriptStruct ProjectX.PostProcessManager_X.PPPersistentEffectDefaults
+// 0x001C
+struct FPPPersistentEffectDefaults
+{
+	class FName                                        EffectName;                                    // 0x0000 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
+	class FName                                        MaterialEffectName;                            // 0x0008 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
+	class FName                                        MaterialParamName;                             // 0x0010 (0x0008) [0x0000000000000003] (CPF_Edit | CPF_Const)
+	float                                              DefaultValue;                                  // 0x0018 (0x0004) [0x0000000000000003] (CPF_Edit | CPF_Const)
+
+	bool operator==(const FPPPersistentEffectDefaults& other) const { return memcmp(this, &other, sizeof(FPPPersistentEffectDefaults)) == 0; }
+	bool operator!=(const FPPPersistentEffectDefaults& other) const { return !(*this == other); }
+	bool operator<(const FPPPersistentEffectDefaults& other) const { return memcmp(this, &other, sizeof(FPPPersistentEffectDefaults)) < 0; }
+};
+
+// ScriptStruct ProjectX.PostProcessManager_X.PPChainInfo
+// 0x0010
+struct FPPChainInfo
+{
+	class FName                                        ChainName;                                     // 0x0000 (0x0008) [0x0000000000000001] (CPF_Edit)    
+	class UPostProcessChain*                           ChainReference;                                // 0x0008 (0x0008) [0x0000000000000001] (CPF_Edit)    
+
+	bool operator==(const FPPChainInfo& other) const { return memcmp(this, &other, sizeof(FPPChainInfo)) == 0; }
+	bool operator!=(const FPPChainInfo& other) const { return !(*this == other); }
+	bool operator<(const FPPChainInfo& other) const { return memcmp(this, &other, sizeof(FPPChainInfo)) < 0; }
+};
+
+// ScriptStruct ProjectX.PostProcessManager_X.PostProcessOverride
+// 0x0184
+struct FPostProcessOverride
+{
+	struct FPostProcessSettings                        Settings;                                      // 0x0000 (0x0168) [0x0000000000400000] (CPF_NeedCtorLink)
+	class APostProcessVolume*                          Volume;                                        // 0x0168 (0x0008) [0x0000000000000000]               
+	class FName                                        Id;                                            // 0x0170 (0x0008) [0x0000000000000000]               
+	float                                              BlendInTime;                                   // 0x0178 (0x0004) [0x0000000000000000]               
+	float                                              BlendOutTime;                                  // 0x017C (0x0004) [0x0000000000000000]               
+	uint32_t                                           bEnabled : 1;                                  // 0x0180 (0x0004) [0x0000000000002000] [0x00000001] (CPF_Transient)
+	uint32_t                                           bDefaultEnabled : 1;                           // 0x0180 (0x0004) [0x0000000000000001] [0x00000002] (CPF_Edit)
+
+	bool operator==(const FPostProcessOverride& other) const { return memcmp(this, &other, sizeof(FPostProcessOverride)) == 0; }
+	bool operator!=(const FPostProcessOverride& other) const { return !(*this == other); }
+	bool operator<(const FPostProcessOverride& other) const { return memcmp(this, &other, sizeof(FPostProcessOverride)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetServiceSubscriptions_X.ServiceSubscription
+// 0x0020
+struct FServiceSubscription
+{
+	class UClass*                                      Class;                                         // 0x0000 (0x0008) [0x0000000000000000]               
+	struct FScriptDelegate                             Callback;                                      // 0x0008 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FServiceSubscription& other) const { return memcmp(this, &other, sizeof(FServiceSubscription)) == 0; }
+	bool operator!=(const FServiceSubscription& other) const { return !(*this == other); }
+	bool operator<(const FServiceSubscription& other) const { return memcmp(this, &other, sizeof(FServiceSubscription)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetChannel_X.PendingChannelService
+// 0x001C
+struct FPendingChannelService
+{
+	class UPsyNetClientService_X*                      Service;                                       // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            MessageId;                                     // 0x0008 (0x0004) [0x0000000000000000]               
+	class UAsyncTask*                                  Task;                                          // 0x0010 (0x0008) [0x0000000000000000]               
+	float                                              ReceiveTime;                                   // 0x0018 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPendingChannelService& other) const { return memcmp(this, &other, sizeof(FPendingChannelService)) == 0; }
+	bool operator!=(const FPendingChannelService& other) const { return !(*this == other); }
+	bool operator<(const FPendingChannelService& other) const { return memcmp(this, &other, sizeof(FPendingChannelService)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetMessengerWebSocket_X.QueuedPsyNetMessage
+// 0x0014
+struct FQueuedPsyNetMessage
+{
+	class UPsyNetMessage_X*                            Message;                                       // 0x0000 (0x0008) [0x0000000000000000]               
+	class UAsyncTask*                                  Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
+	float                                              TimeoutTime;                                   // 0x0010 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FQueuedPsyNetMessage& other) const { return memcmp(this, &other, sizeof(FQueuedPsyNetMessage)) == 0; }
+	bool operator!=(const FQueuedPsyNetMessage& other) const { return !(*this == other); }
+	bool operator<(const FQueuedPsyNetMessage& other) const { return memcmp(this, &other, sizeof(FQueuedPsyNetMessage)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetMetrics_X.ServiceMetricsData
+// 0x0024
+struct FServiceMetricsData
+{
+	class FString                                      Service;                                       // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Attempts;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	int32_t                                            Failures;                                      // 0x0014 (0x0004) [0x0000000000000000]               
+	float                                              MinLatency;                                    // 0x0018 (0x0004) [0x0000000000000000]               
+	float                                              MaxLatency;                                    // 0x001C (0x0004) [0x0000000000000000]               
+	float                                              AvgLatency;                                    // 0x0020 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FServiceMetricsData& other) const { return memcmp(this, &other, sizeof(FServiceMetricsData)) == 0; }
+	bool operator!=(const FServiceMetricsData& other) const { return !(*this == other); }
+	bool operator<(const FServiceMetricsData& other) const { return memcmp(this, &other, sizeof(FServiceMetricsData)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetMetrics_X.ServiceErrorData
+// 0x000C
+struct FServiceErrorData
+{
+	class FName                                        Type;                                          // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            Count;                                         // 0x0008 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FServiceErrorData& other) const { return memcmp(this, &other, sizeof(FServiceErrorData)) == 0; }
+	bool operator!=(const FServiceErrorData& other) const { return !(*this == other); }
+	bool operator<(const FServiceErrorData& other) const { return memcmp(this, &other, sizeof(FServiceErrorData)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetRequestQue_X.PsyNetRequest
+// 0x0018
+struct FPsyNetRequest
+{
+	class FName                                        Id;                                            // 0x0000 (0x0008) [0x0000000000000000]               
+	class UTAsyncResult__PsyNetMessage_X*              Task;                                          // 0x0008 (0x0008) [0x0000000000000000]               
+	float                                              TimeoutTime;                                   // 0x0010 (0x0004) [0x0000000000000000]               
+	float                                              SendTime;                                      // 0x0014 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FPsyNetRequest& other) const { return memcmp(this, &other, sizeof(FPsyNetRequest)) == 0; }
+	bool operator!=(const FPsyNetRequest& other) const { return !(*this == other); }
+	bool operator<(const FPsyNetRequest& other) const { return memcmp(this, &other, sizeof(FPsyNetRequest)) < 0; }
+};
+
+// ScriptStruct ProjectX.PsyNetService_PersonaInfo_X.OnlinePersonaData
+// 0x0078
+struct FOnlinePersonaData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PlayerName;                                    // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PresenceInfo;                                  // 0x0058 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      PresenceState;                                 // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FOnlinePersonaData& other) const { return memcmp(this, &other, sizeof(FOnlinePersonaData)) == 0; }
+	bool operator!=(const FOnlinePersonaData& other) const { return !(*this == other); }
+	bool operator<(const FOnlinePersonaData& other) const { return memcmp(this, &other, sizeof(FOnlinePersonaData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RandomStream_X.RandomStream_Mirror
+// 0x0004
+struct FRandomStream_Mirror
+{
+	int32_t                                            Seed;                                          // 0x0000 (0x0004) [0x0000000000001001] (CPF_Edit | CPF_Native)
+
+	bool operator==(const FRandomStream_Mirror& other) const { return memcmp(this, &other, sizeof(FRandomStream_Mirror)) == 0; }
+	bool operator!=(const FRandomStream_Mirror& other) const { return !(*this == other); }
+	bool operator<(const FRandomStream_Mirror& other) const { return memcmp(this, &other, sizeof(FRandomStream_Mirror)) < 0; }
+};
+
+// ScriptStruct ProjectX.RenderProfiler_X.PrimitiveComponentProfile
+// 0x0070
+struct FPrimitiveComponentProfile
+{
+	class FString                                      ContentName;                                   // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class UPrimitiveComponent*>           Components;                                    // 0x0010 (0x0010) [0x0000000004480008] (CPF_ExportObject | CPF_Component | CPF_NeedCtorLink | CPF_EditInline)
+	struct FRenderProfile                              InclusiveProfile;                              // 0x0020 (0x0028) [0x0000000000000000]               
+	struct FRenderProfile                              ExclusiveProfile;                              // 0x0048 (0x0028) [0x0000000000000000]               
+
+	bool operator==(const FPrimitiveComponentProfile& other) const { return memcmp(this, &other, sizeof(FPrimitiveComponentProfile)) == 0; }
+	bool operator!=(const FPrimitiveComponentProfile& other) const { return !(*this == other); }
+	bool operator<(const FPrimitiveComponentProfile& other) const { return memcmp(this, &other, sizeof(FPrimitiveComponentProfile)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_ClubsRecordStats_X.ClubStatRecord
+// 0x0088
+struct FClubStatRecord
+{
+	int32_t                                            ClubID;                                        // 0x0000 (0x0004) [0x0001000000000000]               
+	uint32_t                                           Win : 1;                                       // 0x0004 (0x0004) [0x0001000000000000] [0x00000001] 
+	int32_t                                            TimePlayed;                                    // 0x0008 (0x0004) [0x0021000000000000]               
+	int32_t                                            Goal;                                          // 0x000C (0x0004) [0x0021000000000000]               
+	int32_t                                            AerialGoal;                                    // 0x0010 (0x0004) [0x0021000000000000]               
+	int32_t                                            LongGoal;                                      // 0x0014 (0x0004) [0x0021000000000000]               
+	int32_t                                            BackwardsGoal;                                 // 0x0018 (0x0004) [0x0021000000000000]               
+	int32_t                                            OvertimeGoal;                                  // 0x001C (0x0004) [0x0021000000000000]               
+	int32_t                                            TurtleGoal;                                    // 0x0020 (0x0004) [0x0021000000000000]               
+	int32_t                                            Assist;                                        // 0x0024 (0x0004) [0x0021000000000000]               
+	int32_t                                            Playmaker;                                     // 0x0028 (0x0004) [0x0021000000000000]               
+	int32_t                                            Save;                                          // 0x002C (0x0004) [0x0021000000000000]               
+	int32_t                                            EpicSave;                                      // 0x0030 (0x0004) [0x0021000000000000]               
+	int32_t                                            Savior;                                        // 0x0034 (0x0004) [0x0021000000000000]               
+	int32_t                                            Shot;                                          // 0x0038 (0x0004) [0x0021000000000000]               
+	int32_t                                            Center;                                        // 0x003C (0x0004) [0x0021000000000000]               
+	int32_t                                            Clear;                                         // 0x0040 (0x0004) [0x0021000000000000]               
+	int32_t                                            AerialHit;                                     // 0x0044 (0x0004) [0x0021000000000000]               
+	int32_t                                            BicycleHit;                                    // 0x0048 (0x0004) [0x0021000000000000]               
+	int32_t                                            JuggleHit;                                     // 0x004C (0x0004) [0x0021000000000000]               
+	int32_t                                            Demolish;                                      // 0x0050 (0x0004) [0x0021000000000000]               
+	int32_t                                            Demolition;                                    // 0x0054 (0x0004) [0x0021000000000000]               
+	int32_t                                            FirstTouch;                                    // 0x0058 (0x0004) [0x0021000000000000]               
+	int32_t                                            PoolShot;                                      // 0x005C (0x0004) [0x0021000000000000]               
+	int32_t                                            LowFive;                                       // 0x0060 (0x0004) [0x0021000000000000]               
+	int32_t                                            HighFive;                                      // 0x0064 (0x0004) [0x0021000000000000]               
+	int32_t                                            BreakoutDamage;                                // 0x0068 (0x0004) [0x0021000000000000]               
+	int32_t                                            BreakoutDamageLarge;                           // 0x006C (0x0004) [0x0021000000000000]               
+	int32_t                                            HoopsSwishGoal;                                // 0x0070 (0x0004) [0x0021000000000000]               
+	class TArray<struct FUniqueNetId>                  Players;                                       // 0x0078 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FClubStatRecord& other) const { return memcmp(this, &other, sizeof(FClubStatRecord)) == 0; }
+	bool operator!=(const FClubStatRecord& other) const { return !(*this == other); }
+	bool operator<(const FClubStatRecord& other) const { return memcmp(this, &other, sizeof(FClubStatRecord)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetClubStats_X.StatMilestoneData
+// 0x001D
+struct FStatMilestoneData
+{
+	class FName                                        Stat;                                          // 0x0000 (0x0008) [0x0001000000000000]               
+	class TArray<int32_t>                              Milestones;                                    // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	int32_t                                            Value;                                         // 0x0018 (0x0004) [0x0001000000000000]               
+	EClubBadge                                         Badge;                                         // 0x001C (0x0001) [0x0001000000000000]               
+
+	bool operator==(const FStatMilestoneData& other) const { return memcmp(this, &other, sizeof(FStatMilestoneData)) == 0; }
+	bool operator!=(const FStatMilestoneData& other) const { return !(*this == other); }
+	bool operator<(const FStatMilestoneData& other) const { return memcmp(this, &other, sizeof(FStatMilestoneData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetClubStats_X.SeasonalBadgeTierData
+// 0x0018
+struct FSeasonalBadgeTierData
+{
+	int32_t                                            Season;                                        // 0x0000 (0x0004) [0x0001000000000000]               
+	class TArray<struct FStatBadge>                    Badges;                                        // 0x0008 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FSeasonalBadgeTierData& other) const { return memcmp(this, &other, sizeof(FSeasonalBadgeTierData)) == 0; }
+	bool operator!=(const FSeasonalBadgeTierData& other) const { return !(*this == other); }
+	bool operator<(const FSeasonalBadgeTierData& other) const { return memcmp(this, &other, sizeof(FSeasonalBadgeTierData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetClubStats_X.MilestoneTitleData
+// 0x000C
+struct FMilestoneTitleData
+{
+	EClubBadge                                         Badge;                                         // 0x0000 (0x0001) [0x0001000000000000]               
+	class FName                                        Title;                                         // 0x0004 (0x0008) [0x0001000000000000]               
+
+	bool operator==(const FMilestoneTitleData& other) const { return memcmp(this, &other, sizeof(FMilestoneTitleData)) == 0; }
+	bool operator!=(const FMilestoneTitleData& other) const { return !(*this == other); }
+	bool operator<(const FMilestoneTitleData& other) const { return memcmp(this, &other, sizeof(FMilestoneTitleData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetClubStats_X.ClubCareerStats
+// 0x0078
+struct FClubCareerStats
+{
+	int32_t                                            MatchPlayed;                                   // 0x0000 (0x0004) [0x0001000000000000]               
+	int32_t                                            Win;                                           // 0x0004 (0x0004) [0x0001000000000000]               
+	uint64_t                                           TimePlayed;                                    // 0x0008 (0x0008) [0x0001000000000000]               
+	int32_t                                            Goal;                                          // 0x0010 (0x0004) [0x0001000000000000]               
+	int32_t                                            AerialGoal;                                    // 0x0014 (0x0004) [0x0001000000000000]               
+	int32_t                                            LongGoal;                                      // 0x0018 (0x0004) [0x0001000000000000]               
+	int32_t                                            BackwardsGoal;                                 // 0x001C (0x0004) [0x0001000000000000]               
+	int32_t                                            OvertimeGoal;                                  // 0x0020 (0x0004) [0x0001000000000000]               
+	int32_t                                            TurtleGoal;                                    // 0x0024 (0x0004) [0x0001000000000000]               
+	int32_t                                            Assist;                                        // 0x0028 (0x0004) [0x0001000000000000]               
+	int32_t                                            Playmaker;                                     // 0x002C (0x0004) [0x0001000000000000]               
+	int32_t                                            Save;                                          // 0x0030 (0x0004) [0x0001000000000000]               
+	int32_t                                            EpicSave;                                      // 0x0034 (0x0004) [0x0001000000000000]               
+	int32_t                                            Savior;                                        // 0x0038 (0x0004) [0x0001000000000000]               
+	int32_t                                            Shot;                                          // 0x003C (0x0004) [0x0001000000000000]               
+	int32_t                                            Center;                                        // 0x0040 (0x0004) [0x0001000000000000]               
+	int32_t                                            Clear;                                         // 0x0044 (0x0004) [0x0001000000000000]               
+	int32_t                                            AerialHit;                                     // 0x0048 (0x0004) [0x0001000000000000]               
+	int32_t                                            BicycleHit;                                    // 0x004C (0x0004) [0x0001000000000000]               
+	int32_t                                            JuggleHit;                                     // 0x0050 (0x0004) [0x0001000000000000]               
+	int32_t                                            Demolish;                                      // 0x0054 (0x0004) [0x0001000000000000]               
+	int32_t                                            Demolition;                                    // 0x0058 (0x0004) [0x0001000000000000]               
+	int32_t                                            FirstTouch;                                    // 0x005C (0x0004) [0x0001000000000000]               
+	int32_t                                            PoolShot;                                      // 0x0060 (0x0004) [0x0001000000000000]               
+	int32_t                                            LowFive;                                       // 0x0064 (0x0004) [0x0001000000000000]               
+	int32_t                                            HighFive;                                      // 0x0068 (0x0004) [0x0001000000000000]               
+	int32_t                                            BreakoutDamage;                                // 0x006C (0x0004) [0x0001000000000000]               
+	int32_t                                            BreakoutDamageLarge;                           // 0x0070 (0x0004) [0x0001000000000000]               
+	int32_t                                            HoopsSwishGoal;                                // 0x0074 (0x0004) [0x0001000000000000]               
+
+	bool operator==(const FClubCareerStats& other) const { return memcmp(this, &other, sizeof(FClubCareerStats)) == 0; }
+	bool operator!=(const FClubCareerStats& other) const { return !(*this == other); }
+	bool operator<(const FClubCareerStats& other) const { return memcmp(this, &other, sizeof(FClubCareerStats)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetGenericDataAll_X.GetGenericDataAllData
+// 0x0018
+struct FGetGenericDataAllData
+{
+	class FName                                        DataKey;                                       // 0x0000 (0x0008) [0x0000000000000000]               
+	class FString                                      DataValue;                                     // 0x0008 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FGetGenericDataAllData& other) const { return memcmp(this, &other, sizeof(FGetGenericDataAllData)) == 0; }
+	bool operator!=(const FGetGenericDataAllData& other) const { return !(*this == other); }
+	bool operator<(const FGetGenericDataAllData& other) const { return memcmp(this, &other, sizeof(FGetGenericDataAllData)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_GetPlayerPermissions_X.PlayerPermissionsReponse
+// 0x0058
+struct FPlayerPermissionsReponse
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FName>                          Permissions;                                   // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPlayerPermissionsReponse& other) const { return memcmp(this, &other, sizeof(FPlayerPermissionsReponse)) == 0; }
+	bool operator!=(const FPlayerPermissionsReponse& other) const { return !(*this == other); }
+	bool operator<(const FPlayerPermissionsReponse& other) const { return memcmp(this, &other, sizeof(FPlayerPermissionsReponse)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_Test_X.RPCTestItem
+// 0x0078
+struct FRPCTestItem
+{
+	uint32_t                                           BoolItem : 1;                                  // 0x0000 (0x0004) [0x0000000000000000] [0x00000001] 
+	int32_t                                            IntItem;                                       // 0x0004 (0x0004) [0x0000000000000000]               
+	float                                              FloatItem;                                     // 0x0008 (0x0004) [0x0000000000000000]               
+	class FString                                      StringItem;                                    // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	struct FUniqueNetId                                PlayerItem;                                    // 0x0020 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<class FString>                        StringItems;                                   // 0x0068 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FRPCTestItem& other) const { return memcmp(this, &other, sizeof(FRPCTestItem)) == 0; }
+	bool operator!=(const FRPCTestItem& other) const { return !(*this == other); }
+	bool operator<(const FRPCTestItem& other) const { return memcmp(this, &other, sizeof(FRPCTestItem)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPC_Test_X.RPCTestParam
+// 0x0088
+struct FRPCTestParam
+{
+	struct FRPCTestItem                                TestItem;                                      // 0x0000 (0x0078) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<struct FRPCTestItem>                  TestItems;                                     // 0x0078 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FRPCTestParam& other) const { return memcmp(this, &other, sizeof(FRPCTestParam)) == 0; }
+	bool operator!=(const FRPCTestParam& other) const { return !(*this == other); }
+	bool operator<(const FRPCTestParam& other) const { return memcmp(this, &other, sizeof(FRPCTestParam)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPCQueue_X.PendingRPC
+// 0x0020
+struct FPendingRPC
+{
+	class URPC_X*                                      RPC;                                           // 0x0000 (0x0008) [0x0000000000000000]               
+	int32_t                                            UniqueId;                                      // 0x0008 (0x0004) [0x0000000000000000]               
+	float                                              CreationTime;                                  // 0x000C (0x0004) [0x0000000000000000]               
+	int32_t                                            Failures;                                      // 0x0010 (0x0004) [0x0000000000000000]               
+	float                                              NextSendTime;                                  // 0x0014 (0x0004) [0x0000000000000000]               
+	class UError*                                      PendingError;                                  // 0x0018 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FPendingRPC& other) const { return memcmp(this, &other, sizeof(FPendingRPC)) == 0; }
+	bool operator!=(const FPendingRPC& other) const { return !(*this == other); }
+	bool operator<(const FPendingRPC& other) const { return memcmp(this, &other, sizeof(FPendingRPC)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPCQueue_X.RPCError
+// 0x0020
+struct FRPCError
+{
+	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Message;                                       // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FRPCError& other) const { return memcmp(this, &other, sizeof(FRPCError)) == 0; }
+	bool operator!=(const FRPCError& other) const { return !(*this == other); }
+	bool operator<(const FRPCError& other) const { return memcmp(this, &other, sizeof(FRPCError)) < 0; }
+};
+
+// ScriptStruct ProjectX.RPCQueue_X.RPCResponse
+// 0x0030
+struct FRPCResponse
+{
+	int32_t                                            Id;                                            // 0x0000 (0x0004) [0x0000000000000000]               
+	struct FRPCError                                   Error;                                         // 0x0008 (0x0020) [0x0000000000400000] (CPF_NeedCtorLink)
+	class URPC_X*                                      Result;                                        // 0x0028 (0x0008) [0x0000000000000000]               
+
+	bool operator==(const FRPCResponse& other) const { return memcmp(this, &other, sizeof(FRPCResponse)) == 0; }
+	bool operator!=(const FRPCResponse& other) const { return !(*this == other); }
+	bool operator<(const FRPCResponse& other) const { return memcmp(this, &other, sizeof(FRPCResponse)) < 0; }
+};
+
+// ScriptStruct ProjectX.ServerExploitManager_X.MatchExploitReportData
+// 0x0058
+struct FMatchExploitReportData
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0000000000400000] (CPF_NeedCtorLink)
+	class TArray<EExploitType>                         ReportedReasons;                               // 0x0048 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FMatchExploitReportData& other) const { return memcmp(this, &other, sizeof(FMatchExploitReportData)) == 0; }
+	bool operator!=(const FMatchExploitReportData& other) const { return !(*this == other); }
+	bool operator<(const FMatchExploitReportData& other) const { return memcmp(this, &other, sizeof(FMatchExploitReportData)) < 0; }
+};
+
+// ScriptStruct ProjectX.ShakeComponent_X.ShakeReceiver
+// 0x000C
+struct FShakeReceiver
+{
+	class APlayerController*                           Player;                                        // 0x0000 (0x0008) [0x0000000000000000]               
+	float                                              Scale;                                         // 0x0008 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FShakeReceiver& other) const { return memcmp(this, &other, sizeof(FShakeReceiver)) == 0; }
+	bool operator!=(const FShakeReceiver& other) const { return !(*this == other); }
+	bool operator<(const FShakeReceiver& other) const { return memcmp(this, &other, sizeof(FShakeReceiver)) < 0; }
+};
+
+// ScriptStruct ProjectX.SystemMetrics_X.OSMetrics
+// 0x0030
+struct FOSMetrics
+{
+	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Bits;                                          // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Native;                                        // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FOSMetrics& other) const { return memcmp(this, &other, sizeof(FOSMetrics)) == 0; }
+	bool operator!=(const FOSMetrics& other) const { return !(*this == other); }
+	bool operator<(const FOSMetrics& other) const { return memcmp(this, &other, sizeof(FOSMetrics)) < 0; }
+};
+
+// ScriptStruct ProjectX.SystemMetrics_X.CpuMetrics
+// 0x0040
+struct FCpuMetrics
+{
+	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Desc;                                          // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Cores;                                         // 0x0020 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Threads;                                       // 0x0030 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FCpuMetrics& other) const { return memcmp(this, &other, sizeof(FCpuMetrics)) == 0; }
+	bool operator!=(const FCpuMetrics& other) const { return !(*this == other); }
+	bool operator<(const FCpuMetrics& other) const { return memcmp(this, &other, sizeof(FCpuMetrics)) < 0; }
+};
+
+// ScriptStruct ProjectX.SystemMetrics_X.MemoryMetrics
+// 0x0004
+struct FMemoryMetrics
+{
+	float                                              Physical;                                      // 0x0000 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FMemoryMetrics& other) const { return memcmp(this, &other, sizeof(FMemoryMetrics)) == 0; }
+	bool operator!=(const FMemoryMetrics& other) const { return !(*this == other); }
+	bool operator<(const FMemoryMetrics& other) const { return memcmp(this, &other, sizeof(FMemoryMetrics)) < 0; }
+};
+
+// ScriptStruct ProjectX.SystemMetrics_X.VideoCardMetrics
+// 0x0014
+struct FVideoCardMetrics
+{
+	class FString                                      Type;                                          // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	int32_t                                            RAM;                                           // 0x0010 (0x0004) [0x0000000000000000]               
+
+	bool operator==(const FVideoCardMetrics& other) const { return memcmp(this, &other, sizeof(FVideoCardMetrics)) == 0; }
+	bool operator!=(const FVideoCardMetrics& other) const { return !(*this == other); }
+	bool operator<(const FVideoCardMetrics& other) const { return memcmp(this, &other, sizeof(FVideoCardMetrics)) < 0; }
+};
+
+// ScriptStruct ProjectX.SystemMetrics_X.NetworkAdapterMetrics
+// 0x0010
+struct FNetworkAdapterMetrics
+{
+	class TArray<class FString>                        Types;                                         // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FNetworkAdapterMetrics& other) const { return memcmp(this, &other, sizeof(FNetworkAdapterMetrics)) == 0; }
+	bool operator!=(const FNetworkAdapterMetrics& other) const { return !(*this == other); }
+	bool operator<(const FNetworkAdapterMetrics& other) const { return memcmp(this, &other, sizeof(FNetworkAdapterMetrics)) < 0; }
+};
+
+// ScriptStruct ProjectX.WebCache_X.CachedDataRequest
+// 0x0050
+struct FCachedDataRequest
+{
+	class FString                                      URL;                                           // 0x0000 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class FString                                      Path;                                          // 0x0010 (0x0010) [0x0000000000400000] (CPF_NeedCtorLink)
+	class UStringMap*                                  Headers;                                       // 0x0020 (0x0008) [0x0000000004080008] (CPF_ExportObject | CPF_Component | CPF_EditInline)
+	class UCachedWebData_X*                            CachedWebData;                                 // 0x0028 (0x0008) [0x0000000000000000]               
+	uint32_t                                           bZipResponse : 1;                              // 0x0030 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FScriptDelegate                             Callback;                                      // 0x0038 (0x0018) [0x0000000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FCachedDataRequest& other) const { return memcmp(this, &other, sizeof(FCachedDataRequest)) == 0; }
+	bool operator!=(const FCachedDataRequest& other) const { return !(*this == other); }
+	bool operator<(const FCachedDataRequest& other) const { return memcmp(this, &other, sizeof(FCachedDataRequest)) < 0; }
+};
+
+// ScriptStruct ProjectX.ServerPlayerIdCache_X.PlayerIdLink
+// 0x0068
+struct FPlayerIdLink
+{
+	struct FUniqueNetId                                PlayerID;                                      // 0x0000 (0x0048) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      EpicAccountId;                                 // 0x0048 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+	class FString                                      ProductUserId;                                 // 0x0058 (0x0010) [0x0001000000400000] (CPF_NeedCtorLink)
+
+	bool operator==(const FPlayerIdLink& other) const { return memcmp(this, &other, sizeof(FPlayerIdLink)) == 0; }
+	bool operator!=(const FPlayerIdLink& other) const { return !(*this == other); }
+	bool operator<(const FPlayerIdLink& other) const { return memcmp(this, &other, sizeof(FPlayerIdLink)) < 0; }
+};
+
+/*
+# ========================================================================================= #
+#
+# ========================================================================================= #
+*/
+
+#ifdef _MSC_VER
+#pragma pack(pop)
+#endif

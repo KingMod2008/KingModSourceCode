@@ -1,0 +1,28 @@
+KingMod
+
+Build the x64 Release configuration with Visual Studio C++ and Windows SDK.
+The project uses C++20 and toolset v145 for Release (v143 for Debug).
+Install vcpkg and integrate it with MSBuild, or set VcpkgRoot explicitly.
+Required x64-windows-static packages: curl, openssl, zlib, detours, minhook.
+Bundled FreeType and Discord RPC libraries are retained as build dependencies.
+
+Build KingMod and RocketSim together:
+  msbuild KingMod.sln /p:Configuration=Release /p:Platform=x64 /m
+
+RocketSim is a project dependency and is compiled automatically from source.
+No manually downloaded RocketSim.lib is required.
+The optional standalone CMake build remains available:
+  cmake -S RocketSim -B RocketSim/build -A x64
+  cmake --build RocketSim/build --config Release
+
+Optional standalone injector:
+  cmake -S . -B build-injector -A x64
+  cmake --build build-injector --config Release
+
+KingMod runs without a license key or authentication server.
+Third-party notices are retained in THIRD_PARTY_NOTICES and vendor license files.
+
+Public builds ship without personal Discord IDs or signing keys.
+Set KINGMOD_DISCORD_APPLICATION_ID and KINGMOD_PSYNET_SIGNING_KEY through
+compiler definitions when these optional integrations are needed.
+Their defaults are empty, which disables Discord RPC and response signing.

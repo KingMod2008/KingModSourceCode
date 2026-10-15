@@ -1,0 +1,242 @@
+[
+  {
+    "file": "01-welcome-notice.png",
+    "title": "Welcome notice"
+  },
+  {
+    "file": "02-main-menu-and-motd.png",
+    "title": "Main menu and MOTD"
+  },
+  {
+    "file": "03-match-tools.png",
+    "title": "Match tools"
+  },
+  {
+    "file": "04-psynet-inspector.png",
+    "title": "PsyNet inspector"
+  },
+  {
+    "file": "05-invites-and-favorites.png",
+    "title": "Invites and favorites"
+  },
+  {
+    "file": "06-matchmaking-shield.png",
+    "title": "Matchmaking shield"
+  },
+  {
+    "file": "07-freeplay.png",
+    "title": "Freeplay"
+  },
+  {
+    "file": "08-local-world.png",
+    "title": "Local world"
+  },
+  {
+    "file": "09-effects.png",
+    "title": "Effects"
+  },
+  {
+    "file": "10-tas-controls.png",
+    "title": "TAS controls"
+  },
+  {
+    "file": "11-workshop-browser.png",
+    "title": "Workshop browser"
+  },
+  {
+    "file": "12-installed-maps.png",
+    "title": "Installed maps"
+  },
+  {
+    "file": "13-freeplay-launcher.png",
+    "title": "Freeplay launcher"
+  },
+  {
+    "file": "14-server-join.png",
+    "title": "Server join"
+  },
+  {
+    "file": "15-host-controls.png",
+    "title": "Host controls"
+  },
+  {
+    "file": "16-physics-and-bots.png",
+    "title": "Physics and bots"
+  },
+  {
+    "file": "17-player-manager.png",
+    "title": "Player manager"
+  },
+  {
+    "file": "18-king-sync.png",
+    "title": "King Sync"
+  },
+  {
+    "file": "19-item-browser.png",
+    "title": "Item browser"
+  },
+  {
+    "file": "20-item-attributes.png",
+    "title": "Item attributes"
+  },
+  {
+    "file": "21-item-categories.png",
+    "title": "Item categories"
+  },
+  {
+    "file": "22-quality-sets.png",
+    "title": "Quality sets"
+  },
+  {
+    "file": "23-extra-items.png",
+    "title": "Extra items"
+  },
+  {
+    "file": "24-trade-up-simulator.png",
+    "title": "Trade-up simulator"
+  },
+  {
+    "file": "25-equipped-loadouts.png",
+    "title": "Equipped loadouts"
+  },
+  {
+    "file": "26-custom-paint.png",
+    "title": "Custom paint"
+  },
+  {
+    "file": "27-boost-colors.png",
+    "title": "Boost colors"
+  },
+  {
+    "file": "28-custom-models.png",
+    "title": "Custom models"
+  },
+  {
+    "file": "29-body-transforms.png",
+    "title": "Body transforms"
+  },
+  {
+    "file": "30-titles-browser.png",
+    "title": "Titles browser"
+  },
+  {
+    "file": "31-custom-titles.png",
+    "title": "Custom titles"
+  },
+  {
+    "file": "32-ball-prediction.png",
+    "title": "Ball prediction"
+  },
+  {
+    "file": "33-prediction-settings.png",
+    "title": "Prediction settings"
+  },
+  {
+    "file": "34-minimap.png",
+    "title": "Minimap"
+  },
+  {
+    "file": "35-ball-visuals.png",
+    "title": "Ball visuals"
+  },
+  {
+    "file": "36-hud-colors.png",
+    "title": "HUD colors"
+  },
+  {
+    "file": "37-custom-modals.png",
+    "title": "Custom modals"
+  },
+  {
+    "file": "38-player-overlays.png",
+    "title": "Player overlays"
+  },
+  {
+    "file": "39-input-overlays.png",
+    "title": "Input overlays"
+  },
+  {
+    "file": "40-ball-textures.png",
+    "title": "Ball textures"
+  },
+  {
+    "file": "41-avatar-textures.png",
+    "title": "Avatar textures"
+  },
+  {
+    "file": "42-custom-decals.png",
+    "title": "Custom decals"
+  },
+  {
+    "file": "43-custom-banners.png",
+    "title": "Custom banners"
+  },
+  {
+    "file": "44-boost-meter-textures.png",
+    "title": "Boost meter textures"
+  },
+  {
+    "file": "45-camera-settings.png",
+    "title": "Camera settings"
+  },
+  {
+    "file": "46-cinematic-mode.png",
+    "title": "Cinematic mode"
+  },
+  {
+    "file": "47-camera-paths.png",
+    "title": "Camera paths"
+  },
+  {
+    "file": "48-training-lab.png",
+    "title": "Training lab"
+  },
+  {
+    "file": "49-training-assists.png",
+    "title": "Training assists"
+  },
+  {
+    "file": "50-session-analytics.png",
+    "title": "Session analytics"
+  },
+  {
+    "file": "51-rank-display.png",
+    "title": "Rank display"
+  },
+  {
+    "file": "52-playlist-display.png",
+    "title": "Playlist display"
+  },
+  {
+    "file": "53-player-settings.png",
+    "title": "Player settings"
+  },
+  {
+    "file": "54-rocket-pass-display.png",
+    "title": "Rocket Pass display"
+  },
+  {
+    "file": "55-online-status.png",
+    "title": "Online status"
+  },
+  {
+    "file": "56-dashboard.png",
+    "title": "Dashboard"
+  },
+  {
+    "file": "57-presets.png",
+    "title": "Presets"
+  },
+  {
+    "file": "58-automation.png",
+    "title": "Automation"
+  },
+  {
+    "file": "59-feature-profiles.png",
+    "title": "Feature profiles"
+  },
+  {
+    "file": "60-ui-customization.png",
+    "title": "UI customization"
+  }
+]

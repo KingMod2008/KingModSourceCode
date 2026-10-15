@@ -1,0 +1,45 @@
+#include "resource.h"
+
+                                
+IDR_KING_FONT RCDATA "Fonts\\king.ttf"
+IDR_KING_ITALIC_FONT RCDATA "Fonts\\kingitalc.ttf"
+IDR_KINGMOD_TOAST_ICON RCDATA "icon\\kingmod3d.png"
+IDR_IMG_ALPHA_PINK RCDATA "icon\\alpha-pink.png"
+IDR_IMG_AUTHENTICATED RCDATA "icon\\AUTHENTICATED.png"
+IDR_IMG_CARD RCDATA "icon\\card.png"
+IDR_IMG_COLORS RCDATA "icon\\colors.png"
+IDR_IMG_GARAGE RCDATA "icon\\garage.png"
+IDR_IMG_MAIN RCDATA "icon\\main.png"
+IDR_IMG_MISC RCDATA "icon\\misc.png"
+IDR_IMG_PERSONAL RCDATA "icon\\personal.png"
+IDR_IMG_PSYNET RCDATA "icon\\psynet.png"
+IDR_IMG_RANKS RCDATA "icon\\ranks.png"
+IDR_IMG_SETTINGS RCDATA "icon\\settings.png"
+IDR_IMG_TEXTURE RCDATA "icon\\texture.png"
+IDR_IMG_TITLES RCDATA "icon\\titles.png"
+IDR_IMG_USERS RCDATA "icon\\users.png"
+IDR_IMG_VISUAL RCDATA "icon\\visual.png"
+
+                                                                                    
+                                                          
+IDR_COLLISION_MESH_SOCCAR_0 RCDATA "CollisionMeshes\\soccar\\mesh_0.cmf"
+IDR_COLLISION_MESH_SOCCAR_1 RCDATA "CollisionMeshes\\soccar\\mesh_1.cmf"
+IDR_COLLISION_MESH_SOCCAR_2 RCDATA "CollisionMeshes\\soccar\\mesh_2.cmf"
+IDR_COLLISION_MESH_SOCCAR_3 RCDATA "CollisionMeshes\\soccar\\mesh_3.cmf"
+IDR_COLLISION_MESH_SOCCAR_4 RCDATA "CollisionMeshes\\soccar\\mesh_4.cmf"
+IDR_COLLISION_MESH_SOCCAR_5 RCDATA "CollisionMeshes\\soccar\\mesh_5.cmf"
+IDR_COLLISION_MESH_SOCCAR_6 RCDATA "CollisionMeshes\\soccar\\mesh_6.cmf"
+IDR_COLLISION_MESH_SOCCAR_7 RCDATA "CollisionMeshes\\soccar\\mesh_7.cmf"
+IDR_COLLISION_MESH_SOCCAR_8 RCDATA "CollisionMeshes\\soccar\\mesh_8.cmf"
+IDR_COLLISION_MESH_SOCCAR_9 RCDATA "CollisionMeshes\\soccar\\mesh_9.cmf"
+IDR_COLLISION_MESH_SOCCAR_10 RCDATA "CollisionMeshes\\soccar\\mesh_10.cmf"
+IDR_COLLISION_MESH_SOCCAR_11 RCDATA "CollisionMeshes\\soccar\\mesh_11.cmf"
+IDR_COLLISION_MESH_SOCCAR_12 RCDATA "CollisionMeshes\\soccar\\mesh_12.cmf"
+IDR_COLLISION_MESH_SOCCAR_13 RCDATA "CollisionMeshes\\soccar\\mesh_13.cmf"
+IDR_COLLISION_MESH_SOCCAR_14 RCDATA "CollisionMeshes\\soccar\\mesh_14.cmf"
+IDR_COLLISION_MESH_SOCCAR_15 RCDATA "CollisionMeshes\\soccar\\mesh_15.cmf"
+
+                   
+IDR_DISCORD_RPC_X86 RCDATA "RLSDK\\RPC_DISCORD\\win32-dynamic\\bin\\discord-rpc.dll"
+IDR_DISCORD_RPC_X64 RCDATA "RLSDK\\RPC_DISCORD\\win64-dynamic\\bin\\discord-rpc.dll"
+
